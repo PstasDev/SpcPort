@@ -12,7 +12,7 @@
 **Leginkább** GitHub Pages-en deployolva
 
 ## Elérés
-![SpcPort.botond.eu](https://spcport.botond.eu)
+[SpcPort.botond.eu](https://spcport.botond.eu)
 
 
 ## Böngésző kompatibilitás
