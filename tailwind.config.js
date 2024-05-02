@@ -1,5 +1,5 @@
 module.exports = {
-  darkMode: 'class',
+  darkMode: 'media',
   content: [
     './**/*.html',
     'node_modules/preline/dist/*.js',
