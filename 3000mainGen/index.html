@@ -7,86 +7,135 @@
 
     <link rel="stylesheet" href="/static/src/output.css">
 </head>
-<body class="p-5">
+<body class="p-5 bg-white lg:px-60 dark:bg-slate-900">
 
-<form id="lineForm" class="mb-10">
-    <!-- Textarea -->
-    <div class="relative">
-        <textarea id="textInput" class="p-4 pb-12 block w-full h-60 bg-gray-300 border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Másold ide a kérdéseket a feladaleírásból"></textarea>
-    
-        <!-- Toolbar -->
-        <div class="absolute bottom-3 inset-x-px p-2 mx-6 rounded-md bg-white dark:bg-neutral-800">
-        <div class="flex justify-between items-center">
-            <!-- Button Group -->
-            <div class="flex items-center">
-    
-                <div data-hs-input-number class="flex justify-between items-center gap-x-3">
-                    <span class="block text-xs text-gray-500 dark:text-neutral-400">
-                        Kezdőszám
-                      </span>
-                    <input type="text" id="startNumber" class="py-1 px-2 w-10 rounded-lg text-sm bg-gray-200 dark:bg-neutral-800" value="1" data-hs-input-number-input>
+    <div class="hidden">
+        <span class="text-orange-300"></span>
+        <span class="text-teal-500"></span>
+        <span class="text-yellow-500"></span>
+    </div>
+
+    <h1 class="mb-5 text-4xl font-bold text-gray-800 dark:text-neutral-200">
+        3000 Main Generátor
+    </h1>
+    <form id="lineForm" class="mb-10">
+        <!-- Textarea -->
+        <div class="relative">
+            <label class="mb-5 text-lg text-gray-800 dark:text-neutral-200">
+                Bemenet
+            </label>
+            <textarea id="textInput" class="block w-full p-4 pb-12 text-sm bg-gray-300 border-gray-200 rounded-lg h-60 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Másold ide a kérdéseket a feladaleírásból"></textarea>
+
+            <!-- Toolbar -->
+            <div class="absolute p-2 mx-6 bg-white rounded-md bottom-3 inset-x-px dark:bg-neutral-900">
+            <div class="flex items-center justify-between">
+                <!-- Button Group -->
+                <div class="flex items-center">
+
+                    <div data-hs-input-number class="flex items-center justify-between gap-x-3">
+                        <span class="block text-xs text-gray-500 dark:text-neutral-400">
+                            Kezdőszám
+                        </span>
+                        <input type="number" min="0" id="startNumber" class="px-2 py-1 text-sm bg-gray-200 rounded-lg w-14 dark:bg-neutral-300" value="1" data-hs-input-number-input>
+                    </div>
+                    <!-- End Attach Button -->
+                    <span class="block mx-3 text-xs text-gray-500 dark:text-neutral-400">
+                        Nyelv
+                    </span>
+                    <select id="languageSelect" class="w-20 px-2 py-1 text-sm rounded-lg dark:bg-neutral-300" name="language">
+                        <option value="csharp">C#</option>
+                        <option value="cpp">C++</option>
+                        <option value="python">Python</option>
+                    </select>
                 </div>
-                <!-- End Attach Button -->
-                <span class="block text-xs text-gray-500 dark:text-neutral-400 mx-3">
-                    Nyelv
-                  </span>
-                <select id="languageSelect" class="py-1 px-2 w-20 rounded-lg text-sm" name="language">
-                    <option value="csharp">C#</option>
-                    <option value="cpp">C++</option>
-                    <option value="python">Python</option>
-                </select>
+                <!-- End Button Group -->
+
+                <!-- Button Group -->
+                <div class="flex items-center gap-x-1">
+
+                <!-- Send Button -->
+                <button type="submit" class="inline-flex items-center justify-center flex-shrink-0 text-white bg-blue-600 rounded-lg size-8 hover:bg-blue-500 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"></path>
+                    </svg>
+                </button>
+                <!-- End Send Button -->
+                </div>
+                <!-- End Button Group -->
             </div>
-            <!-- End Button Group -->
-    
-            <!-- Button Group -->
-            <div class="flex items-center gap-x-1">
-    
-            <!-- Send Button -->
-            <button type="submit" class="inline-flex flex-shrink-0 justify-center items-center size-8 rounded-lg text-white bg-blue-600 hover:bg-blue-500 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <!-- End Toolbar -->
+        </div>
+        <!-- End Textarea -->
+    </form>
+    <label class="mb-5 text-lg text-gray-800 dark:text-neutral-200">
+        Kimenet
+    </label>
+    <div id="resultArea" class="p-3 font-mono text-white bg-black rounded-lg dark:bg-slate-800">
+        Küldd be a formot az eredményhez
+    </div>
+
+    <h2 class="my-5 text-2xl font-bold text-gray-800 dark:text-neutral-200">
+        Használat
+    </h2>
+
+    <ol class="gap-5 text-gray-800 dark:text-neutral-200">
+        <li class="flex flex-col p-4 my-3 bg-white border border-gray-200 shadow-sm rounded-xl md:p-5 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
+            <p class="text-lg font-bold text-gray-800 dark:text-white">1. Jelöld ki a minta alapján, majd másold ki a kérdéseket a 3000-es feladatból, amit éppen megoldanál</p>
+            <div class="max-w-full p-3 mx-auto mt-5 font-mono text-white truncate bg-black rounded-lg lg:max-w-2xl dark:bg-slate-800">
+                1. <span class="bg-blue-600 dark:bg-blue-800 animate-pulse">Írjuk ki a sorozatban található utolsó köbszámot!</span>
+                <br>
+                2. <span class="bg-blue-600 dark:bg-blue-800 animate-pulse">Írjuk ki a sorozatban található első négyzetszámot!</span>
+                <br>
+                ...
+            </div>
+        </li>
+        <li class="flex flex-col p-4 my-3 bg-white border border-gray-200 shadow-sm rounded-xl md:p-5 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
+            <p class="text-lg font-bold text-gray-800 dark:text-white">2. Illeszd be a bemenet mezőbe a kérdéseket, állítsd be a testreszabható beállításokat</p>
+        </li>
+        <li class="flex flex-col p-4 my-3 bg-white border border-gray-200 shadow-sm rounded-xl md:p-5 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
+            <p class="text-lg font-bold text-gray-800 dark:text-white">3. Kattints a <button type="submit" class="inline-flex items-center justify-center flex-shrink-0 mx-2 text-white bg-blue-600 rounded-lg size-8">
                 <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"></path>
                 </svg>
-            </button>
-            <!-- End Send Button -->
+            </button> gombra a generáláshoz</p>
+        </li>
+        <li class="flex flex-col p-4 my-3 bg-white border border-gray-200 shadow-sm rounded-xl md:p-5 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
+            <p class="text-lg font-bold text-gray-800 dark:text-white">4. Másold át az eredményt a kódod megfelelő helyére a minta alapján.</p>
+            <div class="max-w-full p-3 mx-auto mt-5 font-mono text-white truncate bg-black rounded-lg lg:max-w-2xl dark:bg-slate-800">
+                <span class="text-blue-600">static void</span> <span class="text-yellow-500">Main</span>(<span class="text-blue-600">string</span>[] <span class="text-blue-400">args</span>) {
+                    <br>
+                    <span class="ml-7"><span class="text-teal-400">List</span>&lt<span class="text-blue-600">int</span>&gt <span class="text-blue-300">lista</span> = <span class="text-yellow-500">Beolvas</span>(<span class="text-orange-300">"input.txt"</span>);</span>
+                    <br>
+                    <span class="ml-7 animate-pulse"><span class="text-blue-400">Console</span>.<span class="text-yellow-500">WriteLine</span>(<span class="text-orange-300">"1. Írjuk ki a sorozatban található utolsó köbszámot!"</span>);</span>
+                    <br>
+                    <span class="ml-7 animate-pulse"><span class="text-blue-400">Console</span>.<span class="text-yellow-500">WriteLine</span>(<span class="text-orange-300">"2. Írjuk ki a sorozatban található első négyzetszámot!"</span>);</span>
+                    <br>
+                }
             </div>
-            <!-- End Button Group -->
-        </div>
-        </div>
-        <!-- End Toolbar -->
-    </div>
-    <!-- End Textarea -->
-</form>
+        </li>
+        <li class="flex flex-col p-4 my-3 bg-white border border-gray-200 shadow-sm rounded-xl md:p-5 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400">
+            <p class="text-lg font-bold text-gray-800 dark:text-white">5. Elkezdheted meghívni a saját függvényeid a minta alapján</p>
+            <div class="max-w-full p-3 mx-auto mt-5 font-mono text-white truncate bg-black rounded-lg lg:max-w-2xl dark:bg-slate-800">
+                <span class="text-blue-600">static void</span> <span class="text-yellow-500">Main</span>(<span class="text-blue-600">string</span>[] <span class="text-blue-400">args</span>) {
+                    <br>
+                    <span class="ml-7"><span class="text-teal-400">List</span>&lt<span class="text-blue-600">int</span>&gt <span class="text-blue-300">lista</span> = <span class="text-yellow-500">Beolvas</span>(<span class="text-orange-300">"input.txt"</span>);</span>
+                    <br>
+                    <span class="ml-7"><span class="text-blue-400">Console</span>.<span class="text-yellow-500">WriteLine</span>(<span class="text-orange-300">"1. Írjuk ki a sorozatban található utolsó köbszámot!"</span>);</span>
+                    <br>
+                    <span class="ml-7 animate-pulse"><span class="text-blue-400">Console</span>.<span class="text-yellow-500">WriteLine</span>(<span class="text-yellow-500">utsokobszam</span>(<span class="text-blue-400">lista</span>));</span>
+                    <br>
+                    <br>
+                    <span class="ml-7"><span class="text-blue-400">Console</span>.<span class="text-yellow-500">WriteLine</span>(<span class="text-orange-300">"2. Írjuk ki a sorozatban található első négyzetszámot!"</span>);</span>
+                    <br>
+                    <span class="ml-7 animate-pulse"><span class="text-blue-400">Console</span>.<span class="text-yellow-500">WriteLine</span>(<span class="text-yellow-500">elsonegyzetszam</span>(<span class="text-blue-400">lista</span>));</span>
+                    <br>
+                }
+            </div>
+        </li>
+    </ol>
 
-<div id="resultArea" class="bg-black text-white font-mono rounded-lg p-3">
-    Küldd be a formot az eredményhez
-</div>
-
-<script>
-document.getElementById("lineForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form submission
-    var textInput = document.getElementById("textInput").value;
-    var language = document.getElementById("languageSelect").value;
-    var startNumber = parseInt(document.getElementById("startNumber").value);
-    var lines = textInput.split("\n");
-    var result = "";
-    var count = startNumber;
-
-    for (var i = 0; i < lines.length; i++) {
-        if (lines[i].trim() !== "") { // Ignore empty lines
-            if (language === "csharp") {
-                result += `Console.WriteLine("${count}. ${lines[i].trim()}");\n`;
-            } else if (language === "cpp") {
-                result += `std::cout << "${count}. ${lines[i].trim()}" << std::endl;\n`;
-            } else if (language === "python") {
-                result += `print("${count}. ${lines[i].trim()}")\n`;
-            }
-            count++;
-        }
-    }
-
-    document.getElementById("resultArea").innerText = result;
-});
-</script>
+    <script src="script.js"></script>
 
 </body>
 </html>
