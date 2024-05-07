@@ -3,7 +3,7 @@
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/PstasDev/SpcPort)
 ![GitHub Top Language](https://img.shields.io/github/languages/top/PstasDev/SpcPort)
 
-**Leginkább** SZLG-s projektek
+**Leginkább** sulis projektek
 
 **Leginkább** webes projektek
 
