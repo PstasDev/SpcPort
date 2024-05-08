@@ -2054,6 +2054,11 @@ video {
   .max-md\:max-h-40 {
     max-height: 10rem;
   }
+  
+  .max-md\:rounded-l-xl {
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+  }
 }
 
 @media (min-width: 640px) {
