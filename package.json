@@ -6,6 +6,7 @@
   "dependencies": {
     "@preline/input-number": "^2.1.0",
     "@preline/scrollspy": "^2.1.0",
+    "@preline/theme-switch": "^2.1.0",
     "preline": "^2.1.0",
     "rippleui": "^1.12.1"
   }
