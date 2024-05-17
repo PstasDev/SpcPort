@@ -11,6 +11,9 @@ module.exports = {
           "0 0px 10px var(--tw-shadow-color)",
           "0 0px 20px var(--tw-shadow-color)",
         ]
+      },
+      fontFamily: {
+        'h1': ['Rubik Broken Fax', 'sans']
       }
     },
   },
