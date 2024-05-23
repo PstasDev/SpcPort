@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Broken+Fax&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="static/src/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <script src="static/js/kareszage.js" defer></script>
 </head>
 <body class="bg-white dark:bg-neutral-900 scroll-smooth">
     <!-- ========== HEADER ========== -->
@@ -17,7 +20,7 @@
         <nav class="relative w-full max-w-[85rem] drop-shadow-xl bg-white dark:bg-neutral-800 rounded-b-[28px] md:rounded-[28px] py-3 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-0 lg:mx-auto" aria-label="Global">
         <div class="flex items-center justify-between">
             <!-- Logo -->
-            <a class="flex-none font-h1 inline-block text-xl font-bold text-black rounded-md dark:text-white focus:outline-none focus:opacity-80" href="/" aria-label="Portfolio">
+            <a class="flex-none inline-block text-xl font-bold text-black rounded-md dark:text-white focus:outline-none focus:opacity-80" href="/" aria-label="Portfolio">
                 Portfolio
             </a>
             <!-- End Logo -->
@@ -47,8 +50,8 @@
         <!-- Hero -->
         <section class="">
             <div class="max-w-5xl px-4 pt-24 pb-24 mx-auto xl:px-0 lg:pt-32">
-            <div class="inline-flex items-baseline gap-x-1 flex-wrap">
-                <h1 class="text-5xl font-h1 text-transparent animate-textroll bg-gradient-to-tr from-sky-800 to-cyan-100 bg-clip-text md:text-6xl">Portfolio</h1>
+            <div class="inline-flex flex-wrap items-baseline gap-x-1">
+                <h1 class="text-5xl text-transparent animate-textroll bg-gradient-to-tr from-sky-800 to-cyan-100 bg-clip-text md:text-6xl">Portfolio</h1>
                 <span class="text-sm text-transparent bg-clip-text bg-gradient-to-r from-neutral-500 to-neutral-400 dark:from-neutral-300 dark:to-neutral-400 md:text-xl">sulis projektekről és az idén tanultakról</span>
                 <span class="max-md:hidden inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-800/30 dark:text-yellow-500 ml-2">Feltöltés alatt</span>
             </div>
@@ -60,9 +63,175 @@
             </div>
         </section>
         <!-- End Hero -->
+
+        <!-- Dekorelem -->
         <svg xmlns="http://www.w3.org/2000/svg" id="top-wave" viewBox="0 0 1440 320" class="-mt-20 stroke-2 drop-shadow-glow shadow-cyan-500 stroke-cyan-500">
             <path fill="none" d="M0,160L30,165.3C60,171,120,181,180,197.3C240,213,300,235,360,208C420,181,480,107,540,80C600,53,660,75,720,106.7C780,139,840,181,900,208C960,235,1020,245,1080,234.7C1140,224,1200,192,1260,165.3C1320,139,1380,117,1410,106.7L1440,96"></path>
         </svg>
+        <!-- Dekorelem end -->
+
+        <a href="#tanaraink" class="flex justify-center w-full max-lg:hidden">
+            <svg id="scrollMore" class="transition-[opacity] bg-gray-100 border-neutral-400 dark:bg-neutral-800 rounded-xl border dark:border-neutral-500 sticky -top-5 w-8 h-8 text-gray-800 md:w-20 md:h-20 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19V5m0 14-4-4m4 4 4-4"/>
+            </svg>
+        </a>
+
+        <section id="tanaraink" class="pt-5 lg:pt-10">
+            <h2 class="mb-5 text-2xl font-semibold text-center text-black dark:text-white md:text-5xl">Tanáraink</h2>
+            <!-- Icon Blocks -->
+            <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+                <!-- Grid -->
+                <div class="flex flex-col justify-around w-full md:flex-row gap-y-3">
+                <!-- Icon Block -->
+                <div class="flex flex-col justify-center p-4 text-center border border-gray-200 h-36 sm:h-56 rounded-xl md:p-5 dark:border-neutral-700 md:px-20 md:py-16">
+                    <!-- Icon -->
+                    <div class="flex items-center justify-center mx-auto size-20 md:size-40">
+                        <img src="media/molnar.png" alt="Molnár Tanárúr grafika">
+                    </div>
+                    <!-- End Icon -->
+                    <div class="mt-3">
+                    <h3 class="font-semibold text-gray-800 text-md sm:text-xl dark:text-neutral-200">
+                        Molnár Attila
+                    </h3>
+                    </div>
+                </div>
+                <!-- End Icon Block -->
+                <!-- Icon Block -->
+                <div class="flex flex-col justify-center p-4 text-center border border-gray-200 h-36 sm:h-56 rounded-xl md:p-5 dark:border-neutral-700 md:px-20 md:py-16">
+                    <!-- Icon -->
+                    <div class="flex items-center justify-center mx-auto size-20 md:size-40">
+                        <img src="media/nagy.png" alt="Nagy Tanárúr grafika">
+                    </div>
+                    <!-- End Icon -->
+                    <div class="mt-3">
+                    <h3 class="font-semibold text-gray-800 text-md sm:text-xl dark:text-neutral-200">
+                        Nagy Bendegúz
+                    </h3>
+                    </div>
+                </div>
+                <!-- End Icon Block -->
+
+                </div>
+                <!-- End Grid -->
+            </div>
+            <!-- End Icon Blocks -->
+        </section>
+
+        <section id="articles" class="flex flex-col max-w-6xl gap-8 px-4 pt-5 pb-24 mx-auto xl:px-0 lg:pt-10">
+            <h2 class="mb-5 text-2xl font-semibold text-center text-black dark:text-white md:text-5xl">Idén tanultakról</h2>
+            <h3 class="text-2xl font-semibold text-black underline dark:text-white md:text-4xl decoration-dashed">Bevezetés</h3>
+            <article id="articleLogika">
+                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Kijelentéslogika</h4>
+                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+            </article>
+            <article id="articleAnalitikusFak">
+                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Analitikus fák</h4>
+                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+            </article>
+            <article id="articleGepiSzamok">
+                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Gépi számok</h4>
+                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+            </article>
+            <h3 class="text-2xl font-semibold text-black underline dark:text-white md:text-4xl decoration-dashed">Közben: Alkalmazói alapismeretek</h3>
+            <article id="articleWord">
+                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Szövegszerkesztés</h4>
+                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+            </article>
+            <h3 class="text-2xl font-semibold text-black underline dark:text-white md:text-4xl decoration-dashed">Programozás</h3>
+            <article id="articleCSAlapok">
+                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">C# Alapok</h4>
+                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+            </article>
+            <h3 class="text-2xl font-semibold text-black underline dark:text-white md:text-4xl decoration-dashed">Karesz</h3>
+            <div class="p-4 text-gray-800 bg-blue-100 border border-blue-200 rounded-lg dark:bg-blue-800/10 dark:border-blue-900 dark:text-white" role="alert">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                    <svg class="flex-shrink-0 mt-1 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4"></path>
+                        <path d="M12 8h.01"></path>
+                    </svg>
+                    </div>
+                    <div class="ms-3">
+                    <h3 class="font-semibold">
+                        Tudtad, hogy Karesz idén <span id="kareszage">3</span> éves?
+                    </h3>
+                    <div class="mt-2 text-sm text-gray-600 dark:text-neutral-400">
+                        Nem vicc, tényleg ilyen idős! Tudj meg többet!
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex space-x-3">
+                        <a href="/karesz/" class="inline-flex items-center text-sm font-semibold text-blue-600 border border-transparent rounded-lg gap-x-2 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400">
+                            Karesz Lore
+                            <svg viewBox="0 0 24 24" class="w-6 h-6 md:w-4 md:h-4" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14 5C13.4477 5 13 4.55228 13 4C13 3.44772 13.4477 3 14 3H20C20.5523 3 21 3.44772 21 4V10C21 10.5523 20.5523 11 20 11C19.4477 11 19 10.5523 19 10V6.41421L11.7071 13.7071C11.3166 14.0976 10.6834 14.0976 10.2929 13.7071C9.90237 13.3166 9.90237 12.6834 10.2929 12.2929L17.5858 5H14ZM5 7C4.44772 7 4 7.44772 4 8V19C4 19.5523 4.44772 20 5 20H16C16.5523 20 17 19.5523 17 19V14.4375C17 13.8852 17.4477 13.4375 18 13.4375C18.5523 13.4375 19 13.8852 19 14.4375V19C19 20.6569 17.6569 22 16 22H5C3.34315 22 2 20.6569 2 19V8C2 6.34315 3.34315 5 5 5H9.5625C10.1148 5 10.5625 5.44772 10.5625 6C10.5625 6.55228 10.1148 7 9.5625 7H5Z" fill="currentColor"></path> </g></svg>
+                        </a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <article id="articleLogoKaresz">
+                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">LogoKaresz</h4>
+                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+            </article>
+            <article id="articleOOPKaresz">
+                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">OOPKaresz</h4>
+                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+            </article>
+            <h3 class="text-2xl font-semibold text-black underline dark:text-white md:text-4xl decoration-dashed">Git</h3>
+            <article id="articleGit">
+                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Git Verziókezelés</h4>
+                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+            </article>
+            <h3 class="text-2xl font-semibold text-black underline dark:text-white md:text-4xl decoration-dashed">Középhaladó Programozás</h3>
+            <article id="articleProgThm">
+                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Programozási tételek</h4>
+                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+            </article>
+            <article id="articleAdatszerkezetek">
+                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Adatszerkezetek</h4>
+                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+            </article>
+            <h3 class="text-2xl font-semibold text-black underline dark:text-white md:text-4xl decoration-dashed">Webprogramozás Alapok</h3>
+            <article id="articleWeb">
+                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">HTML, CSS, JS</h4>
+                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+            </article>
+        </section>
+
+        <section id="versenyek">
+            <!-- Hero -->
+            <div class="relative overflow-hidden dark:bg-cyan-900">
+                <div class="relative z-10">
+                <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+                    <div class="max-w-2xl mx-auto text-center">
+                    <!-- Title -->
+                    <div class="max-w-2xl mt-5">
+                        <h1 class="block text-4xl font-semibold text-gray-800 md:text-5xl lg:text-6xl dark:text-neutral-200">
+                        Versenyek
+                        </h1>
+                    </div>
+                    <!-- End Title -->
+
+                    <div class="max-w-3xl mt-5">
+                        <p class="text-lg text-gray-600 dark:text-neutral-400">A tanévben rendezett versenyekkel kapcsolatos információk egy másik oldalra költöztek, hogy meglegyen az aloldal-minimum</p>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="flex justify-center gap-3 mt-8">
+                        <a class="inline-flex items-center px-4 py-3 text-sm font-semibold text-white border border-transparent rounded-lg bg-cyan-600 gap-x-2 hover:bg-cyan-700 disabled:opacity-50 disabled:pointer-events-none" href="/versenyek/">
+                        További információ
+                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                        </a>
+                    </div>
+                    <!-- End Buttons -->
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!-- End Hero -->
+        </section>
+
         <!-- Card Blog -->
         <section id="projects">
             <div class="max-w-xl mx-auto mt-5 text-center">
@@ -137,8 +306,8 @@
                                     Üres projekt, a GitHub Pages tesztelésére
                                 </p>
                                 <div class="flex flex-wrap gap-2 my-1 md:my-2 max-md:hidden">
-                                    <span class="inline-flex items-center gap-x-1.5 py-1 md:py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">HTML</span>
-                                    <span class="inline-flex items-center gap-x-1.5 py-1 md:py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500">tailwind/Preline</span>
+                                    <span class="inline-flex items-center gap-x-1.5 py-1 md:py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500"><i class="devicon-html5-plain"></i>HTML</span>
+                                    <span class="inline-flex items-center gap-x-1.5 py-1 md:py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500"><i class="devicon-tailwindcss-original"></i>tailwind/Preline</span>
                                 </div>
                                 <div class="inline-flex flex-wrap gap-2 max-md:hidden">
                                     <span class="inline-flex items-center px-2 py-1 text-xs font-medium text-teal-800 bg-teal-100 rounded-full gap-x-1 dark:bg-teal-500/10 dark:text-teal-500">
@@ -233,8 +402,8 @@
                                     Üres projekt, a GitHub Pages tesztelésére
                                 </p>
                                 <div class="flex flex-wrap gap-2 my-1 md:my-2 max-md:hidden">
-                                    <span class="inline-flex items-center gap-x-1.5 py-1 md:py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">HTML</span>
-                                    <span class="inline-flex items-center gap-x-1.5 py-1 md:py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500">tailwind/Preline</span>
+                                    <span class="inline-flex items-center gap-x-1.5 py-1 md:py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500"><i class="devicon-html5-plain"></i>HTML</span>
+                                    <span class="inline-flex items-center gap-x-1.5 py-1 md:py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500"><i class="devicon-tailwindcss-original"></i>tailwind/Preline</span>
                                 </div>
                                 <div class="inline-flex flex-wrap gap-2 max-md:hidden">
                                     <span class="inline-flex items-center px-2 py-1 text-xs font-medium text-teal-800 bg-teal-100 rounded-full gap-x-1 dark:bg-teal-500/10 dark:text-teal-500">
@@ -346,9 +515,9 @@
                                 3000+-os feladatokhoz, Main függvény Generátor
                             </p>
                             <div class="flex flex-wrap gap-2 my-2 max-md:hidden">
-                                <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">HTML</span>
-                                <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500">tailwind/Preline</span>
-                                <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-800/30 dark:text-yellow-500">JavaScript</span>
+                                <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500"><i class="devicon-html5-plain"></i>HTML</span>
+                                <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500"><i class="devicon-tailwindcss-original"></i>tailwind/Preline</span>
+                                <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-800/30 dark:text-yellow-500"><i class="devicon-javascript-plain"></i>JavaScript</span>
                             </div>
                             <div class="inline-flex flex-wrap gap-2 max-md:hidden">
                                 <span class="inline-flex items-center px-2 py-1 text-xs font-medium text-teal-800 bg-teal-100 rounded-full gap-x-1 dark:bg-teal-500/10 dark:text-teal-500">
@@ -359,7 +528,7 @@
                                     <span class="">Online</span>
                                 </span>
                             </div>
-                            <a href="https://3000.botond.eu" class="flex items-center mt-1 lg:mt-2 gap-x-1 text-sm md:text-md text-gray-500 underline dark:text-neutral-500">
+                            <a href="https://3000.botond.eu" class="flex items-center mt-1 text-sm text-gray-500 underline lg:mt-2 gap-x-1 md:text-md dark:text-neutral-500">
                                 További anyagok a 3000-es feladatokhoz
                                 <svg viewBox="0 0 24 24" class="w-6 h-6 md:w-4 md:h-4" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14 5C13.4477 5 13 4.55228 13 4C13 3.44772 13.4477 3 14 3H20C20.5523 3 21 3.44772 21 4V10C21 10.5523 20.5523 11 20 11C19.4477 11 19 10.5523 19 10V6.41421L11.7071 13.7071C11.3166 14.0976 10.6834 14.0976 10.2929 13.7071C9.90237 13.3166 9.90237 12.6834 10.2929 12.2929L17.5858 5H14ZM5 7C4.44772 7 4 7.44772 4 8V19C4 19.5523 4.44772 20 5 20H16C16.5523 20 17 19.5523 17 19V14.4375C17 13.8852 17.4477 13.4375 18 13.4375C18.5523 13.4375 19 13.8852 19 14.4375V19C19 20.6569 17.6569 22 16 22H5C3.34315 22 2 20.6569 2 19V8C2 6.34315 3.34315 5 5 5H9.5625C10.1148 5 10.5625 5.44772 10.5625 6C10.5625 6.55228 10.1148 7 9.5625 7H5Z" fill="currentColor"></path> </g></svg>
                             </a>
@@ -446,8 +615,8 @@
                                 Információk méhekről. Emellett NKP oktatófeladat kivitelezése: audio, video tagek.
                             </p>
                             <div class="flex flex-wrap gap-2 my-2 max-md:hidden">
-                                <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">HTML</span>
-                                <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500">CSS</span>
+                                <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500"><i class="devicon-html5-plain"></i>HTML</span>
+                                <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500"><i class="devicon-css3-plain"></i>CSS</span>
                             </div>
                             <div class="inline-flex flex-wrap gap-2 max-md:hidden">
                                 <span class="inline-flex items-center px-2 py-1 text-xs font-medium text-teal-800 bg-teal-100 rounded-full gap-x-1 dark:bg-teal-500/10 dark:text-teal-500">
@@ -507,7 +676,7 @@
                     <div class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-3 sm:gap-8">
                         <!-- Stats -->
                         <div>
-                            <p class="text-3xl font-semibold text-cyan-600">~4512 <span class="text-sm">sor</span></p>
+                            <p class="text-3xl font-semibold text-cyan-600">~5925 <span class="text-sm">sor</span></p>
                             <p class="mt-1 text-gray-500 dark:text-neutral-500">kód szükséges ennek az oldalnak a működéséhez</p>
                         </div>
                         <!-- End Stats -->
@@ -584,19 +753,7 @@
 
     <script src="./node_modules/preline/dist/preline.js"></script>
 
-    <script>
-        var prevScrollpos = window.pageYOffset;
-        window.onscroll = function() {
-        var currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) {
-            document.getElementById("navbar").style.top = "0";
-        } else {
-            document.getElementById("navbar").style.top = "-15rem";
-        }
-        prevScrollpos = currentScrollPos;
-        }
-    </script>
-
+    <script src="static/js/onscroll.js"></script>
 
 </body>
 </html>
