@@ -1974,10 +1974,6 @@ video {
   display: block;
 }
 
-.select-all {
-  user-select: all;
-}
-
 @media not all and (min-width: 768px) {
   .max-md\:hidden {
     display: none;
