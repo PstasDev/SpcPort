@@ -14,7 +14,9 @@
 
     <script src="static/js/kareszage.js" defer></script>
 </head>
-<body class="bg-white dark:bg-neutral-900 scroll-smooth">
+<!-- Azért ilyen bonyi a bg color, hogy végtelen legyen lefele a felhő színe -->
+<!-- onscroll.js gondoskodik arról, hogy a teteje is passzoljon a dolognak. -->
+<body class="bg-gradient-to-b from-white to-cyan-900 from-98 to-99 bg-cyan-900 dark:bg-cyan-600 dark:to-cyan-600 dark:from-neutral-900 scroll-smooth">
     <!-- ========== HEADER ========== -->
     <header id="navbar" class="transition-[top] fixed inset-x-0 z-50 md:mt-4 flex flex-wrap w-full md:top-4 md:justify-start md:flex-nowrap">
         <nav class="relative w-full max-w-[85rem] drop-shadow-xl bg-white dark:bg-neutral-800 rounded-b-[28px] md:rounded-[28px] py-3 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-0 lg:mx-auto" aria-label="Global">
@@ -26,7 +28,7 @@
             <!-- End Logo -->
 
             <div class="md:hidden">
-            <button type="button" class="flex items-center justify-center text-sm font-semibold text-white rounded-full hs-collapse-toggle size-8 bg-neutral-800 disabled:opacity-50 disabled:pointer-events-none" data-hs-collapse="#navbar-collapse" aria-controls="navbar-collapse" aria-label="Toggle navigation">
+            <button type="button" class="flex items-center justify-center text-sm font-semibold bg-transparent rounded-full dark:text-white hs-collapse-toggle size-8 text-neutral-800 disabled:opacity-50 disabled:pointer-events-none" data-hs-collapse="#navbar-collapse" aria-controls="navbar-collapse" aria-label="Toggle navigation">
                 <svg class="flex-shrink-0 hs-collapse-open:hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
                 <svg class="flex-shrink-0 hidden hs-collapse-open:block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
             </button>
@@ -36,7 +38,7 @@
         <!-- Collapse -->
         <div id="navbar-collapse" class="hidden overflow-hidden transition-all duration-300 hs-collapse basis-full grow md:block">
             <div class="flex flex-col py-2 mt-5 gap-y-4 gap-x-0 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
-                <a class="inline-flex items-center px-3 py-2 text-sm font-medium font-semibold text-black transition-all rounded-xl dark:text-white bg-cyan-400 hover:bg-cyan-400 dark:bg-cyan-600 hover:bg-cyan-500 text-neutral-800 focus:outline-none" href="#projects">
+                <a class="inline-flex items-center px-3 py-2 text-sm font-semibold text-black transition-all rounded-xl dark:text-white bg-cyan-400 hover:bg-cyan-500 dark:bg-cyan-600 dark:hover:bg-cyan-700 focus:outline-none" href="#projects">
                     Projektek
                 </a>
             </div>
@@ -70,13 +72,14 @@
         </svg>
         <!-- Dekorelem end -->
 
-        <a href="#tanaraink" class="flex justify-center w-full max-lg:hidden">
-            <svg id="scrollMore" class="transition-[opacity] bg-gray-100 border-neutral-400 dark:bg-neutral-800 rounded-xl border dark:border-neutral-500 sticky -top-5 w-8 h-8 text-gray-800 md:w-20 md:h-20 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19V5m0 14-4-4m4 4 4-4"/>
-            </svg>
-        </a>
+        <div class="fixed justify-center w-full bottom-5 left-[45%] max-lg:hidden">
+            <a href="#tanaraink" id="scrollMoreA" class="transition-[opacity] flex bg-gray-100 border-neutral-400 dark:bg-neutral-800 rounded-xl border dark:border-neutral-500 -top-5 text-gray-800 text-nowrap px-3 gap-2 w-min items-center justify-center dark:text-white py-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down size-6" id="scrollMore"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+                Görgess tovább
+            </a>
+        </div>
 
-        <section id="tanaraink" class="pt-5 lg:pt-10">
+        <section id="tanaraink" class="pt-5 mt-20 lg:pt-10">
             <h2 class="mb-5 text-2xl font-semibold text-center text-black dark:text-white md:text-5xl">Tanáraink</h2>
             <!-- Icon Blocks -->
             <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
@@ -111,144 +114,203 @@
                 </div>
                 <!-- End Icon Block -->
 
-                </div>
-                <!-- End Grid -->
             </div>
-            <!-- End Icon Blocks -->
-        </section>
+            <!-- End Grid -->
+        </div>
+        <!-- End Icon Blocks -->
+    </section>
 
-        <section id="tabs" class="max-w-6xl px-4 pt-5 pb-24 mx-auto lg:pt-10">
-            <div class="flex flex-nowrap">
-                <div class="border-e border-gray-200 dark:border-neutral-700">
-                  <nav class="flex flex-col space-y-2" aria-label="Tabs" role="tablist" data-hs-tabs-vertical="true">
-                    <button type="button" class="dark:hs-tab-active:text-cyan-100 hs-tab-active:text-cyan-900 font-semibold rounded-lg dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 active" id="vertical-tab-with-border-item-1" data-hs-tab="#vertical-tab-with-border-1" aria-controls="vertical-tab-with-border-1" role="tab">
-                      Kijelentéslogika
-                    </button>
-                    <button type="button" class="rounded-lg dark:hs-tab-active:text-cyan-100 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60" id="vertical-tab-with-border-item-2" data-hs-tab="#vertical-tab-with-border-2" aria-controls="vertical-tab-with-border-2" role="tab">
-                      Analitikus fák
-                    </button>
-                    <button type="button" class="rounded-lg dark:hs-tab-active:text-cyan-100 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60" id="vertical-tab-with-border-item-3" data-hs-tab="#vertical-tab-with-border-3" aria-controls="vertical-tab-with-border-3" role="tab">
-                      Gépi számok
-                    </button>
-                    <button type="button" class="rounded-lg dark:hs-tab-active:text-cyan-100 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60" id="vertical-tab-with-border-item-4" data-hs-tab="#vertical-tab-with-border-4" aria-controls="vertical-tab-with-border-4" role="tab">
-                      Szövegszerkesztés
-                    </button>
-                    <button type="button" class="rounded-lg dark:hs-tab-active:text-cyan-100 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60" id="vertical-tab-with-border-item-5" data-hs-tab="#vertical-tab-with-border-5" aria-controls="vertical-tab-with-border-5" role="tab">
-                      LogoKaresz
-                    </button>
-                  </nav>
-                </div>
-            
-                <div class="ms-3">
-                  <div id="vertical-tab-with-border-1" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-1">
-                    <article id="articleLogika">
-                        <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Kijelentéslogika</h4>
-                        <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
-                    </article>
-                  </div>
-                  <div id="vertical-tab-with-border-2" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-2">
-                    <p class="text-gray-500 dark:text-neutral-400">
-                      This is the <em class="font-semibold text-gray-800 dark:text-neutral-200">second</em> item's tab body.
-                    </p>
-                  </div>
-                  <div id="vertical-tab-with-border-3" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-3">
-                    <p class="text-gray-500 dark:text-neutral-400">
-                      This is the <em class="font-semibold text-gray-800 dark:text-neutral-200">third</em> item's tab body.
-                    </p>
-                  </div>
-                </div>
-              </div>
-        </section>
+    <!-- Ez egy aside cucc ami annyit csinál, hogy 3remmel feljebb van mint a tabs valójában.
+    Ennek azért van értelme, mert az a tagek amik lentebb helyezkednek el és a #tabs sectionre mutattak,
+    azokról indulva ki lett a navbar által takarva a heading, de így nem, mert 3remmel feljebbre linkel. -->
+    <aside class="relative -top-12" id="tabs"></aside>
 
-        <section id="articles" class="flex flex-col max-w-6xl gap-8 px-4 pt-5 pb-24 mx-auto xl:px-0 lg:pt-10">
-            <h2 class="mb-5 text-2xl font-semibold text-center text-black dark:text-white md:text-5xl">Idén tanultakról</h2>
-            <h3 class="text-2xl font-semibold text-black underline dark:text-white md:text-4xl decoration-dashed">Bevezetés</h3>
-            
-            <article id="articleAnalitikusFak">
-                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Analitikus fák</h4>
-                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
-            </article>
-            <article id="articleGepiSzamok">
-                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Gépi számok</h4>
-                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
-            </article>
-            <h3 class="text-2xl font-semibold text-black underline dark:text-white md:text-4xl decoration-dashed">Közben: Alkalmazói alapismeretek</h3>
-            <article id="articleWord">
-                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Szövegszerkesztés</h4>
-                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
-            </article>
-            <h3 class="text-2xl font-semibold text-black underline dark:text-white md:text-4xl decoration-dashed">Programozás</h3>
-            <article id="articleCSAlapok">
-                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">C# Alapok</h4>
-                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
-            </article>
-            <h3 class="text-2xl font-semibold text-black underline dark:text-white md:text-4xl decoration-dashed">Karesz</h3>
-            <div class="p-4 text-gray-800 bg-cyan-100 border border-cyan-200 rounded-lg dark:bg-cyan-800/10 dark:border-cyan-900 dark:text-white" role="alert">
-                <div class="flex">
-                    <div class="flex-shrink-0">
-                    <svg class="flex-shrink-0 mt-1 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M12 16v-4"></path>
-                        <path d="M12 8h.01"></path>
-                    </svg>
-                    </div>
-                    <div class="ms-3">
-                    <h3 class="font-semibold">
-                        Tudtad, hogy Karesz idén <span id="kareszage">3</span> éves?
-                    </h3>
-                    <div class="mt-2 text-sm text-gray-600 dark:text-neutral-400">
-                        Nem vicc, tényleg ilyen idős! Tudj meg többet!
-                    </div>
-                    <div class="mt-4">
-                        <div class="flex space-x-3">
-                        <a href="/karesz/" class="inline-flex items-center text-sm font-semibold text-cyan-600 border border-transparent rounded-lg gap-x-2 hover:text-cyan-800 disabled:opacity-50 disabled:pointer-events-none dark:text-cyan-500 dark:hover:text-cyan-400">
-                            Karesz Lore
-                            <svg viewBox="0 0 24 24" class="w-6 h-6 md:w-4 md:h-4" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14 5C13.4477 5 13 4.55228 13 4C13 3.44772 13.4477 3 14 3H20C20.5523 3 21 3.44772 21 4V10C21 10.5523 20.5523 11 20 11C19.4477 11 19 10.5523 19 10V6.41421L11.7071 13.7071C11.3166 14.0976 10.6834 14.0976 10.2929 13.7071C9.90237 13.3166 9.90237 12.6834 10.2929 12.2929L17.5858 5H14ZM5 7C4.44772 7 4 7.44772 4 8V19C4 19.5523 4.44772 20 5 20H16C16.5523 20 17 19.5523 17 19V14.4375C17 13.8852 17.4477 13.4375 18 13.4375C18.5523 13.4375 19 13.8852 19 14.4375V19C19 20.6569 17.6569 22 16 22H5C3.34315 22 2 20.6569 2 19V8C2 6.34315 3.34315 5 5 5H9.5625C10.1148 5 10.5625 5.44772 10.5625 6C10.5625 6.55228 10.1148 7 9.5625 7H5Z" fill="currentColor"></path> </g></svg>
+    <section class="max-w-6xl px-4 pt-5 pb-24 mx-auto lg:pt-10">
+        <h2 class="mb-5 text-2xl font-semibold text-center text-black dark:text-white md:text-5xl">Idén tanultakról</h2>
+            <div class="flex flex-col-reverse gap-5 flex-nowrap sm:flex-row sm:gap-0">
+                <div class="border-gray-200 border-e dark:border-neutral-700">
+                    <nav class="flex flex-col space-y-2" aria-label="Tabs" role="tablist" data-hs-tabs-vertical="true">
+                        <span class="text-cyan-900 dark:text-cyan-700">Bevezetés</span>
+                        <hr class="border-gray-200 dark:border-neutral-700">
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60 active" id="vertical-tab-with-border-item-1" data-hs-tab="#vertical-tab-with-border-1" aria-controls="vertical-tab-with-border-1" role="tab">
+                                Kijelentéslogika
+                            </button>
                         </a>
-                        </div>
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-2" data-hs-tab="#vertical-tab-with-border-2" aria-controls="vertical-tab-with-border-2" role="tab">
+                                Analitikus fák
+                            </button>
+                        </a>
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-3" data-hs-tab="#vertical-tab-with-border-3" aria-controls="vertical-tab-with-border-3" role="tab">
+                                Gépi számok
+                            </button>
+                        </a>
+                        <span class="text-cyan-900 dark:text-cyan-700">Közben: Alkalmazói alapismeretek</span>
+                        <hr class="border-gray-200 dark:border-neutral-700">
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-4" data-hs-tab="#vertical-tab-with-border-4" aria-controls="vertical-tab-with-border-4" role="tab">
+                                Szövegszerkesztés
+                            </button>
+                        </a>
+                        <span class="text-cyan-900 dark:text-cyan-700">Programozás</span>
+                        <hr class="border-gray-200 dark:border-neutral-700">
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-5" data-hs-tab="#vertical-tab-with-border-5" aria-controls="vertical-tab-with-border-5" role="tab">
+                                C# Alapok
+                            </button>
+                        </a>
+                        <span class="text-cyan-900 dark:text-cyan-700">Karesz</span>
+                        <hr class="border-gray-200 dark:border-neutral-700">
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-6" data-hs-tab="#vertical-tab-with-border-6" aria-controls="vertical-tab-with-border-6" role="tab">
+                                LogoKaresz
+                            </button>
+                        </a>
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-7" data-hs-tab="#vertical-tab-with-border-7" aria-controls="vertical-tab-with-border-7" role="tab">
+                                OOPKaresz
+                            </button>
+                        </a>
+                        <span class="text-cyan-900 dark:text-cyan-700">Git</span>
+                        <hr class="border-gray-200 dark:border-neutral-700">
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-8" data-hs-tab="#vertical-tab-with-border-8" aria-controls="vertical-tab-with-border-8" role="tab">
+                                Git Verziókezelés
+                            </button>
+                        </a>
+                        <span class="text-cyan-900 dark:text-cyan-700">Középhaladó Programozás</span>
+                        <hr class="border-gray-200 dark:border-neutral-700">
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-9" data-hs-tab="#vertical-tab-with-border-9" aria-controls="vertical-tab-with-border-9" role="tab">
+                                Programozási tételek
+                            </button>
+                        </a>
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-10" data-hs-tab="#vertical-tab-with-border-10" aria-controls="vertical-tab-with-border-10" role="tab">
+                                Adatszerkezetek
+                            </button>
+                        </a>
+                        <span class="text-cyan-900 dark:text-cyan-700">Webprogramozás Alapok</span>
+                        <hr class="border-gray-200 dark:border-neutral-700">
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-11" data-hs-tab="#vertical-tab-with-border-11" aria-controls="vertical-tab-with-border-11" role="tab">
+                                HTML, CSS JS
+                            </button>
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="ms-3">
+                    <div id="vertical-tab-with-border-1" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-1">
+                        <article id="articleLogika">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Kijelentéslogika</h4>
+                            <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+                        </article>
                     </div>
+                    <div id="vertical-tab-with-border-2" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-2">
+                        <article id="articleAnalitikusFak">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Analitikus fák</h4>
+                            <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-3" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-3">
+                        <article id="articleGepiSzamok">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Gépi számok</h4>
+                            <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-4" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-4">
+                        <article id="articleWord">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Szövegszerkesztés</h4>
+                            <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-5" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-5">
+                        <article id="articleCSAlapok">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">C# Alapok</h4>
+                            <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-6" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-6">
+                        <article id="articleLogoKaresz">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">LogoKaresz</h4>
+                            <div class="p-4 my-2 text-gray-800 border rounded-lg bg-cyan-100 border-cyan-200 dark:bg-cyan-800/10 dark:border-cyan-900 dark:text-white" role="alert">
+                                <div class="flex">
+                                    <div class="flex-shrink-0">
+                                    <svg class="flex-shrink-0 mt-1 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M12 16v-4"></path>
+                                        <path d="M12 8h.01"></path>
+                                    </svg>
+                                    </div>
+                                    <div class="ms-3">
+                                    <h3 class="font-semibold">
+                                        Tudtad, hogy Karesz idén <span id="kareszage">3</span> éves?
+                                    </h3>
+                                    <div class="mt-2 text-sm text-gray-600 dark:text-neutral-400">
+                                        Nem vicc, tényleg ilyen idős! Tudj meg többet!
+                                    </div>
+                                    <div class="mt-4">
+                                        <div class="flex space-x-3">
+                                        <a href="/karesz/" class="inline-flex items-center text-sm font-semibold border border-transparent rounded-lg text-cyan-600 gap-x-2 hover:text-cyan-800 disabled:opacity-50 disabled:pointer-events-none dark:text-cyan-500 dark:hover:text-cyan-400">
+                                            Karesz Lore
+                                            <svg viewBox="0 0 24 24" class="w-6 h-6 md:w-4 md:h-4" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14 5C13.4477 5 13 4.55228 13 4C13 3.44772 13.4477 3 14 3H20C20.5523 3 21 3.44772 21 4V10C21 10.5523 20.5523 11 20 11C19.4477 11 19 10.5523 19 10V6.41421L11.7071 13.7071C11.3166 14.0976 10.6834 14.0976 10.2929 13.7071C9.90237 13.3166 9.90237 12.6834 10.2929 12.2929L17.5858 5H14ZM5 7C4.44772 7 4 7.44772 4 8V19C4 19.5523 4.44772 20 5 20H16C16.5523 20 17 19.5523 17 19V14.4375C17 13.8852 17.4477 13.4375 18 13.4375C18.5523 13.4375 19 13.8852 19 14.4375V19C19 20.6569 17.6569 22 16 22H5C3.34315 22 2 20.6569 2 19V8C2 6.34315 3.34315 5 5 5H9.5625C10.1148 5 10.5625 5.44772 10.5625 6C10.5625 6.55228 10.1148 7 9.5625 7H5Z" fill="currentColor"></path> </g></svg>
+                                        </a>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-7" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-7">
+                        <article id="articleOOPKaresz">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">OOPKaresz</h4>
+                            <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-8" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-8">
+                        <article id="articleGit">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Git</h4>
+                            <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-9" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-9">
+                        <article id="articleProgThm">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Programozási tételek</h4>
+                            <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-10" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-10">
+                        <article id="articleAdatszerkezetek">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Adatszerkezetek</h4>
+                            <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-11" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-11">
+                        <article id="articleWeb">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">HTML, CSS, JS</h4>
+                            <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
+                        </article>
                     </div>
                 </div>
             </div>
-            <article id="articleLogoKaresz">
-                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">LogoKaresz</h4>
-                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
-            </article>
-            <article id="articleOOPKaresz">
-                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">OOPKaresz</h4>
-                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
-            </article>
-            <h3 class="text-2xl font-semibold text-black underline dark:text-white md:text-4xl decoration-dashed">Git</h3>
-            <article id="articleGit">
-                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Git Verziókezelés</h4>
-                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
-            </article>
-            <h3 class="text-2xl font-semibold text-black underline dark:text-white md:text-4xl decoration-dashed">Középhaladó Programozás</h3>
-            <article id="articleProgThm">
-                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Programozási tételek</h4>
-                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
-            </article>
-            <article id="articleAdatszerkezetek">
-                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">Adatszerkezetek</h4>
-                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
-            </article>
-            <h3 class="text-2xl font-semibold text-black underline dark:text-white md:text-4xl decoration-dashed">Webprogramozás Alapok</h3>
-            <article id="articleWeb">
-                <h4 class="mb-3 text-xl font-semibold text-black dark:text-white md:text-3xl">HTML, CSS, JS</h4>
-                <p class="text-black dark:text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat earum consequuntur praesentium, accusamus non quae autem debitis explicabo necessitatibus corrupti nemo, optio quasi, dolorem unde pariatur id ipsa voluptates quidem.</p>
-            </article>
         </section>
 
         <section id="versenyek">
             <!-- Hero -->
-            <div class="relative overflow-hidden dark:bg-cyan-900">
+            <div class="relative overflow-hidden bg-cyan-100 dark:bg-cyan-900">
                 <div class="relative z-10">
                 <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
                     <div class="max-w-2xl mx-auto text-center">
                     <!-- Title -->
                     <div class="max-w-2xl mt-5">
-                        <h1 class="block text-4xl font-semibold text-gray-800 md:text-5xl lg:text-6xl dark:text-neutral-200">
-                        Versenyek
+                        <h1 class="flex items-center justify-center text-4xl font-semibold text-gray-800 md:text-5xl lg:text-6xl dark:text-neutral-200 gap-x-3">
+                            <svg version="1.0" id="Layer_1" class="translate-y-[1px] size-12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve" fill="currentColor" stroke="currentColor"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="currentColor" d="M60,4H48c0-2.215-1.789-4-4-4H20c-2.211,0-4,1.785-4,4H4C1.789,4,0,5.785,0,8v8c0,8.836,7.164,16,16,16 c0.188,0,0.363-0.051,0.547-0.059C17.984,37.57,22.379,41.973,28,43.43V56h-8c-2.211,0-4,1.785-4,4v4h32v-4c0-2.215-1.789-4-4-4h-8 V43.43c5.621-1.457,10.016-5.859,11.453-11.488C47.637,31.949,47.812,32,48,32c8.836,0,16-7.164,16-16V8C64,5.785,62.211,4,60,4z M8,16v-4h8v12C11.582,24,8,20.414,8,16z M56,16c0,4.414-3.582,8-8,8V12h8V16z"></path> </g></svg>
+                            Versenyek
                         </h1>
                     </div>
                     <!-- End Title -->
@@ -259,7 +321,7 @@
 
                     <!-- Buttons -->
                     <div class="flex justify-center gap-3 mt-8">
-                        <a class="inline-flex items-center px-4 py-3 text-sm font-semibold text-white border border-transparent rounded-lg bg-cyan-600 gap-x-2 hover:bg-cyan-700 disabled:opacity-50 disabled:pointer-events-none" href="/versenyek/">
+                        <a class="inline-flex items-center px-4 py-3 text-sm font-semibold text-white transition-colors border border-transparent rounded-lg bg-cyan-600 gap-x-2 hover:bg-cyan-700 disabled:opacity-50 disabled:pointer-events-none" href="/versenyek/">
                         További információ
                         <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                         </a>
@@ -716,7 +778,7 @@
                     <div class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-3 sm:gap-8">
                         <!-- Stats -->
                         <div>
-                            <p class="text-3xl font-semibold text-cyan-600">~5925 <span class="text-sm">sor</span></p>
+                            <p class="text-3xl font-semibold text-cyan-600">~6107 <span class="text-sm">sor</span></p>
                             <p class="mt-1 text-gray-500 dark:text-neutral-500">kód szükséges ennek az oldalnak a működéséhez</p>
                         </div>
                         <!-- End Stats -->
@@ -740,7 +802,6 @@
         </section>
         <!-- End Features -->
     </main>
-
 
 
     <!-- ========== FOOTER ========== -->
@@ -775,6 +836,14 @@
         </div>
         <!-- End Grid -->
     </footer>
+    <!-- To the top button -->
+
+    <div class="fixed w-full right-5 bottom-3">
+        <a href="#" type="button" id="tothetop" class="absolute inline-flex items-center px-3 py-3 text-sm font-semibold text-white transition-all border border-transparent rounded-full opacity-0 md:px-4 bottom-3 right-3 bg-neutral-500 gap-x-2 hover:bg-neutral-700 disabled:opacity-50 disabled:pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-from-line"><path d="m18 9-6-6-6 6"/><path d="M12 3v14"/><path d="M5 21h14"/></svg>
+            <span class="max-md:hidden">A lap tetejére</span>
+        </a>
+    </div>
     <!-- ========== END FOOTER ========== -->
 
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" class="" preserveAspectRatio="none" viewBox="0 350 1440 200">

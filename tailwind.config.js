@@ -14,6 +14,11 @@ module.exports = {
       },
       fontFamily: {
         'h1': ['Rubik Broken Fax', 'sans']
+      },
+      gradientColorStopPositions: {
+        // Végtelen felhő az aljánhoz :D
+        98: '99%',
+        99: '99.9%',
       }
     },
   },
