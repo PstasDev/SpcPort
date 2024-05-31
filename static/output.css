@@ -891,10 +891,6 @@ video {
   height: 100%;
 }
 
-.h-auto {
-  height: auto;
-}
-
 .w-1\/6 {
   width: 16.666667%;
 }
@@ -1695,6 +1691,10 @@ video {
   padding-inline-start: 1.25rem;
 }
 
+.ps-px {
+  padding-inline-start: 1px;
+}
+
 .pt-24 {
   padding-top: 6rem;
 }
@@ -2193,6 +2193,11 @@ video {
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
+.hover\:text-neutral-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(82 82 82 / var(--tw-text-opacity));
+}
+
 .hover\:text-purple-400:hover {
   --tw-text-opacity: 1;
   color: rgb(192 132 252 / var(--tw-text-opacity));
@@ -2252,6 +2257,11 @@ video {
 
 .focus\:text-cyan-900\/90:focus {
   color: rgb(22 78 99 / 0.9);
+}
+
+.focus\:text-neutral-500:focus {
+  --tw-text-opacity: 1;
+  color: rgb(115 115 115 / var(--tw-text-opacity));
 }
 
 .focus\:opacity-80:focus {
@@ -2760,6 +2770,11 @@ video {
   color: rgb(34 211 238 / var(--tw-text-opacity));
 }
 
+.dark\:hover\:text-neutral-300:hover:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(212 212 212 / var(--tw-text-opacity));
+}
+
 .dark\:hover\:text-neutral-400:hover:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(163 163 163 / var(--tw-text-opacity));
@@ -2781,6 +2796,11 @@ video {
 
 .dark\:focus\:text-cyan-100\/90:focus:is(.dark *) {
   color: rgb(207 250 254 / 0.9);
+}
+
+.dark\:focus\:text-neutral-300:focus:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(212 212 212 / var(--tw-text-opacity));
 }
 
 .dark\:focus\:text-neutral-400:focus:is(.dark *) {
@@ -2913,9 +2933,19 @@ video {
     gap: 2rem;
   }
 
+  .sm\:px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .sm\:px-1 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
   }
 
   .sm\:text-3xl {
@@ -2990,16 +3020,16 @@ video {
     height: 18rem;
   }
 
+  .md\:w-1\/2 {
+    width: 50%;
+  }
+
   .md\:w-32 {
     width: 8rem;
   }
 
   .md\:w-4 {
     width: 1rem;
-  }
-
-  .md\:w-1\/2 {
-    width: 50%;
   }
 
   .md\:max-w-4xl {
@@ -3107,6 +3137,11 @@ video {
     padding-bottom: 4rem;
   }
 
+  .md\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
   .md\:ps-7 {
     padding-inline-start: 1.75rem;
   }
@@ -3158,26 +3193,6 @@ video {
 
   .lg\:mt-2 {
     margin-top: 0.5rem;
-  }
-
-  .lg\:h-10 {
-    height: 2.5rem;
-  }
-
-  .lg\:h-96 {
-    height: 24rem;
-  }
-
-  .lg\:h-80 {
-    height: 20rem;
-  }
-
-  .lg\:h-72 {
-    height: 18rem;
-  }
-
-  .lg\:w-1\/2 {
-    width: 50%;
   }
 
   .lg\:max-w-2xl {

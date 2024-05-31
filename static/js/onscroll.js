@@ -25,7 +25,7 @@ window.onscroll = function() {
     }
 
     if (tothetop) {
-        if (currentScrollPos > 500) {
+        if (currentScrollPos > 200) {
             tothetop.style.opacity = "1";
             tothetop.style.pointerEvents = "auto";
 
