@@ -12,11 +12,15 @@
     <link rel="stylesheet" href="static/output.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
+    
+    <link rel="stylesheet" href="static/accessibility.css">
     <script src="static/js/kareszage.js" defer></script>
+
 </head>
 <!-- Azért ilyen bonyi a bg color, hogy végtelen legyen lefele a felhő színe -->
 <!-- onscroll.js gondoskodik arról, hogy a teteje is passzoljon a dolognak. -->
 <body class="bg-gradient-to-b from-white to-cyan-900 from-98 to-99 bg-cyan-900 dark:bg-cyan-600 dark:to-cyan-600 dark:from-neutral-900 scroll-smooth">
+    <div class="skipnav"><a href="#maincontent" class="text-black dark:text-white">Navigáció átugrása</a></div>
     <!-- ========== HEADER ========== -->
     <header id="navbar" class="transition-[top] fixed inset-x-0 z-50 md:mt-4 flex flex-wrap w-full md:justify-start md:flex-nowrap">
         <nav class="relative w-full max-w-[85rem] drop-shadow-xl bg-white dark:bg-neutral-800 rounded-b-[28px] md:rounded-[28px] py-3 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-0 lg:mx-auto" aria-label="Global">
@@ -51,7 +55,7 @@
     </header>
     <!-- ========== END HEADER ========== -->
 
-    <main>
+    <main id="maincontent">
         <!-- Hero -->
         <section class="">
             <div class="max-w-5xl px-4 pt-24 pb-24 mx-auto xl:px-0 lg:pt-32">
