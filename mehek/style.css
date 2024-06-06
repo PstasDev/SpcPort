@@ -55,3 +55,29 @@ h2 svg {
   color:white;
   text-align: center;
 }
+
+summary {
+  color: #dbc66e;
+  text-decoration: underline;
+}
+
+caption {
+  color: #dbc66e;
+  font-size: 2rem;
+}
+
+details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+th {
+  color: #efc10d;
+  padding:5px;
+}
+
+td {
+  color:#dbc66e;
+}
