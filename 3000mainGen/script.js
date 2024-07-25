@@ -1,15 +1,15 @@
 document.getElementById("lineForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault();
     var textInput = document.getElementById("textInput").value;
     var language = document.getElementById("languageSelect").value;
     var startNumber = parseInt(document.getElementById("startNumber").value);
-    startNumber = isNaN(startNumber) ? 1 : startNumber; // Default to 1 if startNumber is null or NaN
+    startNumber = isNaN(startNumber) ? 1 : startNumber;
     var lines = textInput.split("\n");
     var result = "";
     var count = startNumber;
 
     for (var i = 0; i < lines.length; i++) {
-        if (lines[i].trim() !== "") { // Ignore empty lines
+        if (lines[i].trim() !== "") {
             var line = lines[i].trim();
             if (language === "csharp") {
                 result += '<span class="text-teal-500">Console</span>.<span class="text-yellow-500">WriteLine</span>(<span class="text-orange-300">"' + count + '. ' + line + '"</span>);<br>';
@@ -26,6 +26,5 @@ document.getElementById("lineForm").addEventListener("submit", function(event) {
         result = "Érvénytelen bemenet";
     }
 
-    // Set the innerHTML of resultArea to the generated result
     document.getElementById("resultArea").innerHTML = '<code class="language-' + language + '">' + result + '</code>';
 });

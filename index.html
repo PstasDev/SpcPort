@@ -1,524 +1,1066 @@
 <!DOCTYPE html>
-<html lang="hu" class="">
+<html lang="hu" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sulis Portfolio</title>
 
-    <link rel="stylesheet" href="static/src/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Broken+Fax&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    
+    <link rel="stylesheet" href="static/accessibility.css">
+    <script src="static/js/kareszage.js" defer></script>
 </head>
-<body class="bg-white dark:bg-neutral-900">
+<!-- Azért ilyen bonyi a bg color, hogy végtelen legyen lefele a felhő színe -->
+<!-- onscroll.js gondoskodik arról, hogy a teteje is passzoljon a dolognak. -->
+<body class="bg-gradient-to-b from-white to-cyan-900 from-98 to-99 bg-cyan-900 dark:bg-cyan-600 dark:to-cyan-600 dark:from-neutral-900 scroll-smooth">
+    <div class="skipnav"><a href="#maincontent" class="text-black dark:text-white">Navigáció átugrása</a></div>
+    <!-- ========== HEADER ========== -->
+    <header id="navbar" class="transition-[top] fixed inset-x-0 z-50 md:mt-4 flex flex-wrap w-full md:justify-start md:flex-nowrap">
+        <nav class="relative w-full max-w-[85rem] drop-shadow-xl bg-white dark:bg-neutral-800 rounded-b-[28px] md:rounded-[28px] py-3 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-0 lg:mx-auto" aria-label="Global">
+        <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <a class="flex-none inline-block text-xl font-bold text-black rounded-md dark:text-white focus:outline-none focus:opacity-80" href="/" aria-label="Portfolio">
+                Portfolio
+            </a>
+            <!-- End Logo -->
 
-    <!-- Hero -->
-    <div class="relative overflow-hidden before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/squared-bg-element.svg')] dark:before:bg-[url('https://preline.co/assets/svg/examples-dark/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:size-full before:-z-[1] before:transform before:-translate-x-1/2">
-        <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
-            <!-- Announcement Banner -->
-            <div class="flex justify-center">
-                <a class="inline-flex items-center p-2 px-3 text-xs text-gray-600 transition bg-white border border-gray-200 rounded-full gap-x-2 hover:border-gray-300 dark:bg-neutral-800 dark:border-neutral-700 dark:hover:border-neutral-600 dark:text-neutral-400" href="https://github.com/PstasDev/SpcPort">
-                    <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-                    </svg>
-                    GitHub Repo
-                    <span class="flex items-center gap-x-1">
-                        <span class="text-blue-600 border-gray-200 border-s ps-2 dark:text-blue-500 dark:border-neutral-700">Link</span>
-                        <svg class="flex-shrink-0 text-blue-600 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m9 18 6-6-6-6"/>
-                        </svg>
-                    </span>
+            <div class="md:hidden">
+            <button type="button" class="flex items-center justify-center text-sm font-semibold bg-transparent rounded-full dark:text-white hs-collapse-toggle size-8 text-neutral-800 disabled:opacity-50 disabled:pointer-events-none" data-hs-collapse="#navbar-collapse" aria-controls="navbar-collapse" aria-label="Toggle navigation">
+                <svg class="flex-shrink-0 hs-collapse-open:hidden size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+                <svg class="flex-shrink-0 hidden hs-collapse-open:block size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+            </div>
+        </div>
+
+        <!-- Collapse -->
+        <div id="navbar-collapse" class="hidden overflow-hidden transition-all duration-300 hs-collapse basis-full grow md:block">
+            <div class="flex flex-col py-2 mt-5 gap-y-4 gap-x-0 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
+                <a class="text-sm text-black transition-colors dark:text-white ps-px sm:px-1 hover:text-neutral-600 dark:hover:text-neutral-300 focus:outline-none focus:text-neutral-500 dark:focus:text-neutral-300" href="/versenyek/">Versenyek</a>
+
+                <a class="inline-flex items-center px-3 py-2 text-sm font-semibold text-black transition-all rounded-xl dark:text-white bg-cyan-400 hover:bg-cyan-500 dark:bg-cyan-600 dark:hover:bg-cyan-700 focus:outline-none" href="#projects">
+                    Projektek
                 </a>
             </div>
-            <!-- End Announcement Banner -->
-            <!-- Title -->
+        </div>
+        <!-- End Collapse -->
+        </nav>
+    </header>
+    <!-- ========== END HEADER ========== -->
+
+    <main id="maincontent">
+        <!-- Hero -->
+        <section class="">
+            <div class="max-w-5xl px-4 pt-24 pb-24 mx-auto xl:px-0 lg:pt-32">
+            <div class="inline-flex flex-wrap items-baseline gap-x-1">
+                <h1 class="text-5xl text-transparent animate-textroll bg-gradient-to-tr from-sky-800 to-cyan-100 bg-clip-text md:text-6xl">Portfolio</h1>
+                <span class="text-sm text-transparent bg-clip-text bg-gradient-to-r from-neutral-500 to-neutral-400 dark:from-neutral-300 dark:to-neutral-400 md:text-xl">sulis projektekről és az idén tanultakról</span>
+            </div>
+            <div class="max-w-4xl">
+                <p class="mt-5 text-lg text-neutral-400">
+                    Ez az oldal bemutatja mi mindent tanultunk ezen tanév során. Egészen a fárasztóbb, agyzsibbasztóbb kijelentéslogikától kezdve az utolsó <span class="font-semibold shadow-cyan-500 dark:shadow-cyan-400 bg-clip-text text-cyan-500 dark:text-cyan-400 drop-shadow-glow">fancy</span> stylesheet-ünking.
+                </p>
+            </div>
+            </div>
+        </section>
+        <!-- End Hero -->
+
+        <!-- Dekorelem -->
+        <svg xmlns="http://www.w3.org/2000/svg" id="top-wave" viewBox="0 0 1440 320" class="-mt-20 stroke-2 drop-shadow-glow shadow-cyan-500 stroke-cyan-500">
+            <path fill="none" d="M0,160L30,165.3C60,171,120,181,180,197.3C240,213,300,235,360,208C420,181,480,107,540,80C600,53,660,75,720,106.7C780,139,840,181,900,208C960,235,1020,245,1080,234.7C1140,224,1200,192,1260,165.3C1320,139,1380,117,1410,106.7L1440,96"></path>
+        </svg>
+        <!-- Dekorelem end -->
+
+        <div class="fixed justify-center w-full bottom-5 left-[45%] max-lg:hidden">
+            <a href="#tanaraink" id="scrollMoreA" class="transition-[opacity] flex bg-gray-100 border-neutral-400 dark:bg-neutral-800 rounded-xl border dark:border-neutral-500 -top-5 text-gray-800 text-nowrap px-3 gap-2 w-min items-center justify-center dark:text-white py-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down size-6" id="scrollMore"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+                Görgess tovább
+            </a>
+        </div>
+
+        <section id="tanaraink" class="pt-5 mt-20 lg:pt-10">
+            <h2 class="mb-5 text-2xl font-semibold text-center text-black dark:text-white md:text-5xl">Tanáraink</h2>
+            <!-- Icon Blocks -->
+            <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+                <!-- Grid -->
+                <div class="flex flex-col justify-around w-full md:flex-row gap-y-3">
+                <!-- Icon Block -->
+                <div class="flex flex-col justify-center p-4 text-center border border-gray-200 h-36 sm:h-56 rounded-xl md:p-5 dark:border-neutral-700 md:px-20 md:py-16">
+                    <!-- Icon -->
+                    <div class="flex items-center justify-center mx-auto size-20 md:size-40">
+                        <img src="media/molnar.png" alt="Molnár Tanárúr grafika">
+                    </div>
+                    <!-- End Icon -->
+                    <div class="mt-3">
+                    <h3 class="font-semibold text-gray-800 text-md sm:text-xl dark:text-neutral-200">
+                        Molnár Attila
+                    </h3>
+                    </div>
+                </div>
+                <!-- End Icon Block -->
+                <!-- Icon Block -->
+                <div class="flex flex-col justify-center p-4 text-center border border-gray-200 h-36 sm:h-56 rounded-xl md:p-5 dark:border-neutral-700 md:px-20 md:py-16">
+                    <!-- Icon -->
+                    <div class="flex items-center justify-center mx-auto size-20 md:size-40">
+                        <img src="media/nagy.png" alt="Nagy Tanárúr grafika">
+                    </div>
+                    <!-- End Icon -->
+                    <div class="mt-3">
+                    <h3 class="font-semibold text-gray-800 text-md sm:text-xl dark:text-neutral-200">
+                        Nagy Bendegúz
+                    </h3>
+                    </div>
+                </div>
+                <!-- End Icon Block -->
+
+            </div>
+            <!-- End Grid -->
+        </div>
+        <!-- End Icon Blocks -->
+    </section>
+
+    <!-- Ez egy aside cucc ami annyit csinál, hogy 3remmel feljebb van mint a tabs valójában.
+    Ennek azért van értelme, mert az a tagek amik lentebb helyezkednek el és a #tabs sectionre mutattak,
+    azokról indulva ki lett a navbar által takarva a heading, de így nem, mert 3remmel feljebbre linkel. -->
+    <aside class="relative -top-12" id="tabs"></aside>
+
+    <section class="max-w-6xl px-4 pt-5 pb-24 mx-auto lg:pt-10">
+        <h2 class="mb-5 text-2xl font-semibold text-center text-black dark:text-white md:text-5xl">Idén tanultakról</h2>
+            <div class="flex flex-col-reverse gap-5 flex-nowrap sm:flex-row sm:gap-0">
+                <div class="border-gray-200 border-e dark:border-neutral-700">
+                    <nav class="flex flex-col space-y-2" aria-label="Tabs" role="tablist" data-hs-tabs-vertical="true" class="max-w-full sm:w-1/6">
+                        <span class="pr-5 text-cyan-900 dark:text-cyan-700">Bevezetés</span>
+                        <hr class="border-gray-200 dark:border-neutral-700">
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 text-wrap text-left mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60 active" id="vertical-tab-with-border-item-1" data-hs-tab="#vertical-tab-with-border-1" aria-controls="vertical-tab-with-border-1" role="tab">
+                                Kijelentéslogika (Igazságtáblázatok)
+                            </button>
+                        </a>
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 text-wrap text-left mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-2" data-hs-tab="#vertical-tab-with-border-2" aria-controls="vertical-tab-with-border-2" role="tab">
+                                Analitikus fák
+                            </button>
+                        </a>
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 text-wrap text-left mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-3" data-hs-tab="#vertical-tab-with-border-3" aria-controls="vertical-tab-with-border-3" role="tab">
+                                Gépi számok
+                            </button>
+                        </a>
+                        <span class="pr-5 text-cyan-900 dark:text-cyan-700">Közben: Alkalmazói alapismeretek</span>
+                        <hr class="border-gray-200 dark:border-neutral-700">
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 text-wrap text-left mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-4" data-hs-tab="#vertical-tab-with-border-4" aria-controls="vertical-tab-with-border-4" role="tab">
+                                Szövegszerkesztés
+                            </button>
+                        </a>
+                        <span class="pr-5 text-cyan-900 dark:text-cyan-700">Programozás</span>
+                        <hr class="border-gray-200 dark:border-neutral-700">
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 text-wrap text-left mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-5" data-hs-tab="#vertical-tab-with-border-5" aria-controls="vertical-tab-with-border-5" role="tab">
+                                C# Alapok
+                            </button>
+                        </a>
+                        <span class="pr-5 text-cyan-900 dark:text-cyan-700">Karesz</span>
+                        <hr class="border-gray-200 dark:border-neutral-700">
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 text-wrap text-left mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-6" data-hs-tab="#vertical-tab-with-border-6" aria-controls="vertical-tab-with-border-6" role="tab">
+                                LogoKaresz
+                            </button>
+                        </a>
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 text-wrap text-left mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-7" data-hs-tab="#vertical-tab-with-border-7" aria-controls="vertical-tab-with-border-7" role="tab">
+                                OOPKaresz
+                            </button>
+                        </a>
+                        <span class="pr-5 text-cyan-900 dark:text-cyan-700">Git</span>
+                        <hr class="border-gray-200 dark:border-neutral-700">
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 text-wrap text-left mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-8" data-hs-tab="#vertical-tab-with-border-8" aria-controls="vertical-tab-with-border-8" role="tab">
+                                Git Verziókezelés
+                            </button>
+                        </a>
+                        <span class="pr-5 text-cyan-900 dark:text-cyan-700">Középhaladó Programozás</span>
+                        <hr class="border-gray-200 dark:border-neutral-700">
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 text-wrap text-left mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-9" data-hs-tab="#vertical-tab-with-border-9" aria-controls="vertical-tab-with-border-9" role="tab">
+                                Programozási tételek
+                            </button>
+                        </a>
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 text-wrap text-left mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-10" data-hs-tab="#vertical-tab-with-border-10" aria-controls="vertical-tab-with-border-10" role="tab">
+                                Adatszerkezetek
+                            </button>
+                        </a>
+                        <span class="pr-5 text-cyan-900 dark:text-cyan-700">Webprogramozás Alapok</span>
+                        <hr class="border-gray-200 dark:border-neutral-700">
+                        <a href="#tabs" tabindex="-1" class="w-full pr-2">
+                            <button type="button" class="rounded-lg w-full dark:hs-tab-active:text-cyan-100 text-wrap text-left mr-2 hs-tab-active:text-cyan-900 font-semibold dark:hs-tab-active:bg-cyan-600/40 hs-tab-active:bg-cyan-400/40 dark:text-cyan-600/90 text-cyan-800 py-1.5 transition-colors px-4 inline-flex items-center gap-x-2 text-md whitespace-nowrap dark:hover:text-cyan-100/90 hover:text-cyan-900/90 dark:hover:bg-cyan-600/20 hover:bg-cyan-400/20 focus:outline-none disabled:opacity-50 disabled:pointer-events-none dark:hs-tab-active:hover:bg-cyan-600/60 hs-tab-active:hover:bg-cyan-300/60 dark:focus:text-cyan-100/90 focus:text-cyan-900/90 dark:focus:bg-cyan-600/20 focus:bg-cyan-400/20 dark:hs-tab-active:focus:bg-cyan-600/60 hs-tab-active:focus:bg-cyan-300/60" id="vertical-tab-with-border-item-11" data-hs-tab="#vertical-tab-with-border-11" aria-controls="vertical-tab-with-border-11" role="tab">
+                                HTML, CSS JS
+                            </button>
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="w-5/6 ms-3">
+                    <div id="vertical-tab-with-border-1" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-1">
+                        <article id="articleLogika">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-cyan-200 md:text-3xl">Kijelentéslogika (Igazságtáblázatok)</h4>
+                            <p class="text-black dark:text-white">
+                                Informatikával kapcsolatos gimnáziumi tanulmányaink kezdeteként Kijelentéslogikával foglalkoztunk. Nulladrendű logika, a Klasszikus Kijelentéslogika témaköre. A logika központi feladata mindig az, hogy meghatározza a helyes következtetés fogalmát. Ezt a klasszikus kijelentéslogikában a szintaxis és a szemantika területén is meg lehet tenni. Viszont a logika feladata az is, hogy ha lehetséges, akkor egy következtetés helyességének eldöntését is leírja. Azaz adjon olyan eljárást/algoritmust, amellyel -- ha lehet -- véges időn belül ki lehessen deríteni, hogy egy következtetés helyes-e vagy sem.
+                                <div class="flex items-end text-black dark:text-white gap-x-2">
+                                    <span class="font-semibold">Szintaxis összefoglalása:</span>
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" class="overflow-hidden">
+                                        <mi>A</mi>
+                                        <mo>::=</mo>
+                                        <mstyle>
+                                            <mspace width="1em"></mspace>
+                                        </mstyle>
+                                        <mi>p</mi>
+                                        <mstyle>
+                                            <mspace width="1em"></mspace>
+                                        </mstyle>
+                                        <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+                                        <mstyle>
+                                            <mspace width="1em"></mspace>
+                                        </mstyle>
+                                        <mi mathvariant="normal">&#xAC;</mi>
+                                        <mi>A</mi>
+                                        <mstyle>
+                                            <mspace width="1em"></mspace>
+                                        </mstyle>
+                                        <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+                                        <mstyle>
+                                            <mspace width="1em"></mspace>
+                                        </mstyle>
+                                        <mi>A</mi>
+                                        <mo>&#x2227;</mo>
+                                        <mi>B</mi>
+                                        <mstyle>
+                                            <mspace width="1em"></mspace>
+                                        </mstyle>
+                                        <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+                                        <mstyle>
+                                            <mspace width="1em"></mspace>
+                                        </mstyle>
+                                        <mi>A</mi>
+                                        <mo>&#x2228;</mo>
+                                        <mi>B</mi>
+                                        <mstyle>
+                                            <mspace width="1em"></mspace>
+                                        </mstyle>
+                                        <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+                                        <mstyle>
+                                            <mspace width="1em"></mspace>
+                                        </mstyle>
+                                        <mi>A</mi>
+                                        <mo accent="false" stretchy="false">&#x2192;</mo>
+                                        <mi>B</mi>
+                                        <mstyle>
+                                            <mspace width="1em"></mspace>
+                                        </mstyle>
+                                        <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+                                        <mstyle>
+                                            <mspace width="1em"></mspace>
+                                        </mstyle>
+                                        <mi>A</mi>
+                                        <mo stretchy="false">&#x2194;</mo>
+                                        <mi>B</mi>
+                                    </math>
+                                </div>
+                            </p>
+                            <h5 class="text-lg font-semibold text-black dark:text-cyan-200">Igazságtáblázatok</h5>
+                            <p class="text-black dark:text-white">
+                                Az igazságtáblázatokkal megtudhatjuk, hogy ha egy adott logikai kifejezés, egy adott forumulának sorra vesszük minden lehetséges bementét, akkor mik a lehetséges kimenetelek. Egy ilyen logikai táblázatból leolvasható hogy logikai igazsággal állunk-e szemben vagy egy ellentmondással. Hogy helyes-e a következtetés vagy, hogy két kijelentés ekvivalens-e.
+                            </p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-2" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-2">
+                        <article id="articleAnalitikusFak">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-cyan-200 md:text-3xl">Analitikus fák</h4>
+                            <p class="text-black dark:text-white">Ebben a témakörben Analitikus fának nevezett ábrákon tanultuk meg ábrázolni a különböző elágazásokat a kijelentéseinkben, így elemezve azokat.</p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-3" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-3">
+                        <article id="articleGepiSzamok">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-cyan-200 md:text-3xl">Gépi számok</h4>
+                            <p class="text-black dark:text-white">A gépi számok témakörében megtanultuk, hogyan kezelik a különböző számokat a számítógépek, hogyan lesznek azok tárolva, valamint belenéztünk a kettes és a tizes számrendszer közötti átváltásba is.</p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-4" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-4">
+                        <article id="articleWord">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-cyan-200 md:text-3xl">Szövegszerkesztés</h4>
+                            <p class="text-black dark:text-white">A Szövegszerkesztés témakörében megtanultuk a Microsoft Word folyékony használatát. Megtanultuk a szövegszerkesztés alapjait, megtanultunk különböző stílusokat kezelni, majd ezen friss tudás felhasználásával még el tudtuk készíteni az év eleji osztálykirándulásunk beszámolóját, amely így végül nem magyarból hanem informatikából lett értékelve.</p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-5" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-5">
+                        <article id="articleCSAlapok">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-cyan-200 md:text-3xl">C# Alapok</h4>
+                            <p class="text-black dark:text-white">Ebben a témakörben megtanultuk alapszinten használni a C# nyelvet, a Visual Studio 2022 alapszintű használatát, ahogy is .NET Framework feladatokkal kezdtünk el foglalni. Megtanultuk az alapvetű szintaxisokat, hogyan tudunk különböző változókat használni, a konzolra írni, onnan beolvasni vagy fájlból beolvasni, illetve kaptunk egy kis bevezetést az algoritmikus programozásba, megtanultuk a <code>for</code>, <code>foreach</code> ciklusuok használatát.</p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-6" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-6">
+                        <article id="articleLogoKaresz">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-cyan-200 md:text-3xl">LogoKaresz</h4>
+                            <div class="p-4 my-2 text-gray-800 border rounded-lg bg-cyan-100 border-cyan-200 dark:bg-cyan-800/10 dark:border-cyan-900 dark:text-white" role="alert">
+                                <div class="flex">
+                                    <div class="flex-shrink-0">
+                                    <svg class="flex-shrink-0 mt-1 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M12 16v-4"></path>
+                                        <path d="M12 8h.01"></path>
+                                    </svg>
+                                    </div>
+                                    <div class="ms-3">
+                                    <h3 class="font-semibold">
+                                        Tudtad, hogy Karesz idén <span id="kareszage">3</span> éves?
+                                    </h3>
+                                    <div class="mt-2 text-sm text-gray-600 dark:text-neutral-400">
+                                        Nem vicc, tényleg ilyen idős! Karel-t a Robotot a Stanfordi Egyetemen találták ki a 1981-ben. Azóta sok-sok feldolgozása született, majd egy "Programozás Elan-nal" című könyvben jelenik meg először Magyarországon, <b>Karesz, a Robot</b> címmel. 
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-black dark:text-white">LogoKaresz - egy <b>Karesz, a Robot</b> oktatóprogram. Ezen típus a Logo típusú feladatokkal készít fel a kásőbbi, bonyolultabb algoritmikus gondolkodást igénylő feladatokra. Először még csak egyszerű ábrákat rajzoltunk mint például egy pókháló, egy-egy sorminta, mint egy lábnyom, de már ezeknek is paraméterezhetőnek kellett mind lennie: állthatónak kellett lennie az ábrák méretének. Ezek után nemsokkal nagyobb fába vágtuk a fejszénk, Mozaikokat kellett rajzolnunk. Eleinte nem volt olyan nehéz. Kellett rajzolni egy cipzárt vagy egy csempét. De lassan jöttek az egy fokkal jobban kinéző mandalák, optikai illúziók, térhatású négyzetes hálók, stb. A Fraktálokba egy kicsit beleizzadtunk, majd jött egy olyan témakör ami még annál is nehezebb volt: rekurzív fák rajzolása.</p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-7" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-7">
+                        <article id="articleOOPKaresz">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-cyan-200 md:text-3xl">OOPKaresz</h4>
+                            <p class="text-black dark:text-white">A LogoKaresz témakörrel párhuzamosan vettünk egy másik <b>Karesz, a robot</b> szoftvert is, ami az Objektum Orientált Programozásra(OOP) vezet rá. Ez a program hajaz legjobban az eredeti rendeltetésére a Karesznak. Itt egy négyzethálós pályán kell mozogni Karesszal vagy több Karesszal. Lehetnek azonban akadályok, labirintusok, láva, mozgatható színes kavicsok, melyekre Karesznak vannak különböző érzékelői melyekkel megoldhatja a megadott pályákat, a megadott feladatokat.</p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-8" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-8">
+                        <article id="articleGit">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-cyan-200 md:text-3xl">Git</h4>
+                            <p class="text-black dark:text-white">A projektjeink, házi feladataink megoldásánál elengedhetetlen volt a Git verziókezelő rendszer használata, mivel házi feladatinkat GitHub-ra feltöltve adhattuk le mentorainknak, tanárainknak. Ezek mellett nekünk is segített a "felhőben" tárolni fájljainkat, hogy hozhassuk-vihessük haza, illetve az iskolába. Visual Stuido 2022 integrációját viszonylag hamar megtanultuk, mivel az volt a legegyszerűbb, majd amikor a Visual Studio Code-ot kezdtük használni Webes projektjeink megoldásához, átvettük a Code integrációját, illetve a GitHub Desktop használatát is, egy bővített Git működés-magyarázat mellett.</p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-9" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-9">
+                        <article id="articleProgThm">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-cyan-200 md:text-3xl">Programozási tételek</h4>
+                            <p class="text-black dark:text-white">Ebben a témakörben megtanultuk mik is azok a programozási tételek(mint pl.: megszámlálás, keresés, maximumkeresés, stb.) és <a href="https://3000.botond.eu">3000+os feladatokkal</a> megtanulhattuk azt, hogy melyek azok a gyakorlati kérdések, amelyekre választ adhatunk ezen tételek alkalmazásával.</p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-10" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-10">
+                        <article id="articleAdatszerkezetek">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-cyan-200 md:text-3xl">Adatszerkezetek</h4>
+                            <p class="text-black dark:text-white">Ebben a témakörben megtanultuk a C#-ban használt leggyakoribb adatszerkezeteinket, azok felhasználási módját. Ezek az adatszerkezetek a következők voltak: szöveg, szám, lista, tömb, szótár, osztály.</p>
+                        </article>
+                    </div>
+                    <div id="vertical-tab-with-border-11" class="hidden" role="tabpanel" aria-labelledby="vertical-tab-with-border-item-11">
+                        <article id="articleWeb">
+                            <h4 class="mb-3 text-xl font-semibold text-black dark:text-cyan-200 md:text-3xl">HTML, CSS, JS</h4>
+                            <p class="text-black dark:text-white">Ebben a témakörben az interaktív digitális kultúra tankönyv feladataival bevezetést kaptunk a webprogramozás világába. Ezen témakör lezárásáképp készül ez a weboldal, beadandó projekt formában. Számonkérhető tanórai anyagként szerepeli a HTML5 használata, DOM megértése, CSS alapszíntű használata, Google Fonts használata, felhasználói élményt javító JS használata, valamint a szorgalmasabbak számára be lettek mutatva a CSS Framework-ök, leginkább a Tailwind CSS, daisyUI component library alkalmazásával.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="versenyek">
+            <!-- Hero -->
+            <div class="relative overflow-hidden bg-cyan-100 dark:bg-cyan-900">
+                <div class="relative z-10">
+                <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+                    <div class="max-w-2xl mx-auto text-center">
+                    <!-- Title -->
+                    <div class="max-w-2xl mt-5">
+                        <h1 class="flex items-center justify-center text-4xl font-semibold text-gray-800 md:text-5xl lg:text-6xl dark:text-neutral-200 gap-x-3">
+                            <svg version="1.0" id="Layer_1" class="translate-y-[1px] size-12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve" fill="currentColor" stroke="currentColor"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="currentColor" d="M60,4H48c0-2.215-1.789-4-4-4H20c-2.211,0-4,1.785-4,4H4C1.789,4,0,5.785,0,8v8c0,8.836,7.164,16,16,16 c0.188,0,0.363-0.051,0.547-0.059C17.984,37.57,22.379,41.973,28,43.43V56h-8c-2.211,0-4,1.785-4,4v4h32v-4c0-2.215-1.789-4-4-4h-8 V43.43c5.621-1.457,10.016-5.859,11.453-11.488C47.637,31.949,47.812,32,48,32c8.836,0,16-7.164,16-16V8C64,5.785,62.211,4,60,4z M8,16v-4h8v12C11.582,24,8,20.414,8,16z M56,16c0,4.414-3.582,8-8,8V12h8V16z"></path> </g></svg>
+                            Versenyek
+                        </h1>
+                    </div>
+                    <!-- End Title -->
+
+                    <div class="max-w-3xl mt-5">
+                        <p class="text-lg text-gray-600 dark:text-neutral-400">A tanévben rendezett versenyekkel kapcsolatos információk egy másik oldalra költöztek, hogy meglegyen az aloldal-minimum</p>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="flex justify-center gap-3 mt-8">
+                        <a class="inline-flex items-center px-4 py-3 text-sm font-semibold text-white transition-colors border border-transparent rounded-lg bg-cyan-600 gap-x-2 hover:bg-cyan-700 disabled:opacity-50 disabled:pointer-events-none" href="/versenyek/">
+                        További információ
+                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                        </a>
+                    </div>
+                    <!-- End Buttons -->
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!-- End Hero -->
+        </section>
+
+        <aside class="relative -top-12" id="projects"></aside>
+
+        <!-- Card Blog -->
+        <section>
             <div class="max-w-xl mx-auto mt-5 text-center">
-                <h1 class="block text-4xl font-bold text-gray-800 md:text-5xl lg:text-6xl dark:text-neutral-200">
-                    Sulis Projektek
-                </h1>
+                <h2 class="block text-3xl font-semibold text-gray-800 md:text-4xl lg:text-5xl dark:text-neutral-200">
+                    Projektek
+                </h2>
             </div>
-            <!-- End Title -->
-            <div class="max-w-3xl mx-auto mt-5 text-center">
-                <p class="text-lg text-gray-600 dark:text-neutral-400">Főleg webes projektek gyűjteménye <span class="font-bold">deployolva</span></p>
-            </div>
-            <!-- Buttons -->
-            <!-- <div class="flex justify-center gap-3 mt-8">
-                <a class="inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-center text-white border border-transparent rounded-full gap-x-3 bg-gradient-to-tl from-blue-600 to-violet-600 hover:from-violet-600 hover:to-blue-600 dark:focus:ring-offset-gray-800" href="#">
-                    Continue with Github
-                </a>
-            </div> -->
-            <!-- End Buttons -->
-        </div>
-    </div>
-    <!-- End Hero -->
-
-
-    <!-- Card Blog -->
-    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-        <!-- Grid -->
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <!-- Card -->
-            <div class="flex flex-col h-full bg-white border border-gray-200 shadow-sm max-md:max-h-40 group rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-                <div class="flex flex-col items-center justify-center w-full bg-purple-600 h-1/4 md:h-52 rounded-t-xl">
-                    <svg class="mt-3" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                        width="169px" height="34px" viewBox="0 0 169 34" enable-background="new 0 0 169 34" xml:space="preserve">
-                    <path fill="#FFFFFF" d="M98.955,23.733h-2.081V0.78h7.009c5.723,0,7.682,3.305,7.682,6.886s-1.959,6.886-7.682,6.886h-4.927V23.733z
-                        M98.955,12.624h5.203c4.315,0,5.141-2.755,5.141-4.958s-0.827-4.958-5.141-4.958h-5.203V12.624z M119.193,10.023
-                        c-2.05,0-3.397,0.367-4.591,0.765V8.951c1.347-0.581,3.122-0.826,4.591-0.826c4.591,0,5.785,2.081,5.785,5.141v10.466h-1.194
-                        l-0.459-1.224c-1.377,1.01-3.091,1.53-4.621,1.53c-4.009,0-5.356-2.357-5.356-4.928c0-2.601,1.439-4.529,5.448-4.774l4.04-0.245
-                        v-0.857C122.835,11.002,122.04,10.023,119.193,10.023z M118.642,15.991c-2.173,0.214-3.122,1.347-3.122,3.121
-                        c0,1.377,0.337,3.03,3.244,3.03c1.653,0,2.754-0.46,4.07-1.224v-5.325L118.642,15.991z M131.71,19.449
-                        c-0.337,0.336-0.582,0.765-0.582,1.132c0,0.765,0.367,1.102,1.163,1.193l5.203,0.612c2.877,0.306,4.193,1.439,4.193,4.101
-                        c0,3.734-3.734,5.203-7.957,5.203c-4.285,0-6.855-1.255-6.855-4.621c0-2.081,1.439-3.459,3.153-4.04v-0.031
-                        c-0.582-0.398-0.979-1.01-0.979-2.02c0-0.856,0.52-1.56,1.163-2.081c-1.836-1.01-2.448-2.877-2.448-5.019
-                        c0-3.152,1.346-5.754,5.968-5.754c0.949,0,1.745,0.122,2.449,0.306h5.203v1.163l-2.571,0.735c0.643,0.979,0.887,2.203,0.887,3.55
-                        c0,3.153-1.347,5.754-5.968,5.754C132.965,19.633,132.291,19.571,131.71,19.449z M132.597,23.58c-2.02,0.46-3.734,1.408-3.734,3.367
-                        c0,2.265,1.714,2.908,4.866,2.908c3.061,0,5.937-0.765,5.937-3.367c0-1.561-0.735-2.173-2.601-2.388L132.597,23.58z M137.708,13.879
-                        c0-2.02-0.398-3.887-3.979-3.887s-3.978,1.867-3.978,3.887s0.398,3.886,3.978,3.886S137.708,15.899,137.708,13.879z M149.206,8.125
-                        c5.203,0,5.815,3.55,5.815,7.957v0.979h-10.1c0.123,2.662,0.827,5.081,4.285,5.081c2.203,0,3.55-0.214,5.05-0.857v1.836
-                        c-1.714,0.765-3.55,0.918-5.05,0.918c-5.172,0-6.427-3.55-6.427-7.957S144.033,8.125,149.206,8.125z M144.921,15.317h7.957
-                        c0-2.724-0.153-5.295-3.673-5.295C145.655,10.023,145.013,12.563,144.921,15.317z M163.191,14.95
-                        c4.346,0.398,5.387,1.867,5.387,4.376c0,2.356-1.5,4.713-6.151,4.713c-1.469,0-3.581-0.368-4.56-0.765v-1.836
-                        c0.949,0.336,2.418,0.704,4.591,0.704c3.183,0,4.04-1.347,4.04-2.785c0-1.408-0.429-2.387-3.458-2.632
-                        c-4.438-0.398-5.356-1.959-5.356-4.07c0-2.173,1.408-4.529,5.723-4.529c1.438,0,3.06,0.183,4.407,0.765v1.837
-                        c-1.193-0.398-2.387-0.704-4.438-0.704c-3.03,0-3.673,1.133-3.673,2.632C159.703,14.001,160.253,14.705,163.191,14.95z
-                        M17.184,10.327H9.687c-0.194,0-0.35,0.157-0.35,0.35v3.666c0,0.193,0.157,0.35,0.35,0.35h2.925v4.555c0,0-0.657,0.223-2.472,0.223
-                        c-2.142,0-5.134-0.783-5.134-7.362c0-6.582,3.116-7.447,6.041-7.447c2.532,0,3.623,0.446,4.317,0.66
-                        c0.218,0.067,0.42-0.15,0.42-0.344l0.837-3.541c0-0.09-0.031-0.199-0.134-0.274C16.204,0.963,14.484,0,10.139,0
-                        C5.134,0,0,2.129,0,12.366c0,10.241,5.878,11.766,10.832,11.766c4.102,0,6.589-1.752,6.589-1.752c0.102-0.057,0.114-0.2,0.114-0.265
-                        V10.678C17.535,10.484,17.378,10.327,17.184,10.327z M56.129,1.226c0-0.195-0.155-0.352-0.349-0.352h-4.221
-                        c-0.193,0-0.349,0.157-0.349,0.352c0,0.001,0.001,8.158,0.001,8.158h-6.58V1.226c0-0.195-0.156-0.352-0.349-0.352h-4.221
-                        c-0.192,0-0.349,0.157-0.349,0.352v22.095c0,0.194,0.157,0.353,0.349,0.353h4.221c0.193,0,0.349-0.158,0.349-0.353v-9.453h6.58
-                        c0,0-0.012,9.452-0.012,9.453c0,0.194,0.157,0.353,0.349,0.353h4.232c0.193,0,0.348-0.158,0.349-0.353V1.226z M25.303,4.125
-                        c0-1.52-1.218-2.748-2.722-2.748c-1.502,0-2.722,1.228-2.722,2.748c0,1.519,1.22,2.751,2.722,2.751
-                        C24.085,6.876,25.303,5.644,25.303,4.125z M25.002,18.657c0-0.566,0-10.197,0-10.197c0-0.194-0.156-0.352-0.349-0.352h-4.208
-                        c-0.192,0-0.365,0.199-0.365,0.393c0,0,0,12.27,0,14.613c0,0.429,0.268,0.556,0.614,0.556c0,0,1.796,0,3.792,0
-                        c0.416,0,0.518-0.203,0.518-0.564C25.002,22.323,25.002,19.252,25.002,18.657z M72.511,8.141h-4.189
-                        c-0.192,0-0.349,0.158-0.349,0.353v10.831c0,0-1.064,0.779-2.575,0.779c-1.511,0-1.911-0.685-1.911-2.165c0-1.48,0-9.444,0-9.444
-                        c0-0.195-0.156-0.353-0.349-0.353h-4.251c-0.192,0-0.349,0.158-0.349,0.353c0,0,0,5.768,0,10.16c0,4.397,2.448,5.472,5.816,5.472
-                        c2.763,0,4.991-1.526,4.991-1.526s0.106,0.804,0.154,0.9c0.048,0.096,0.173,0.19,0.309,0.19l2.705-0.012
-                        c0.192,0,0.349-0.157,0.349-0.351L72.86,8.495C72.86,8.3,72.704,8.141,72.511,8.141z M84.19,7.645c-2.379,0-3.997,1.061-3.997,1.061
-                        v-7.48c0-0.195-0.156-0.352-0.348-0.352h-4.233c-0.193,0-0.349,0.157-0.349,0.352v22.095c0,0.194,0.156,0.353,0.349,0.353
-                        c0,0,2.937,0,2.937,0c0.132,0,0.232-0.069,0.306-0.188c0.073-0.118,0.178-1.018,0.178-1.018s1.732,1.64,5.009,1.64
-                        c3.847,0,6.053-1.952,6.053-8.764C90.094,8.535,86.571,7.645,84.19,7.645z M82.538,20.091c-1.453-0.045-2.438-0.704-2.438-0.704
-                        v-6.995c0,0,0.971-0.596,2.165-0.702c1.509-0.135,2.962,0.321,2.962,3.919C85.227,19.404,84.571,20.152,82.538,20.091z
-                        M37.058,8.106h-3.166c0,0-0.005-4.183-0.005-4.184c0-0.158-0.081-0.238-0.265-0.238h-4.315c-0.168,0-0.258,0.074-0.258,0.235v4.322
-                        c0,0-2.162,0.522-2.309,0.564c-0.145,0.043-0.253,0.177-0.253,0.337v2.716c0,0.195,0.156,0.353,0.349,0.353h2.212
-                        c0,0,0,2.841,0,6.535c0,4.858,3.404,5.335,5.702,5.335c1.05,0,2.305-0.338,2.513-0.414c0.125-0.045,0.198-0.175,0.198-0.317
-                        l0.004-2.991c0-0.195-0.164-0.353-0.35-0.353c-0.184,0-0.657,0.076-1.142,0.076c-1.556,0-2.082-0.723-2.082-1.66
-                        c0-0.935-0.001-6.211-0.001-6.211h3.167c0.193,0,0.349-0.158,0.349-0.353V8.458C37.407,8.263,37.25,8.106,37.058,8.106z"/>
-                    </svg>
-
-
-                </div>
-                <div class="flex md:p-4 md:p-6 max-md:h-full">
-                    <div class="flex flex-col w-full p-4">
-                        <span class="block mb-1 text-xs font-semibold text-purple-600 uppercase dark:text-purple-500">
-                        GitHub Pages Deploy
-                        </span>
-                        <a class="font-semibold text-gray-800 text-md md:text-xl dark:text-neutral-300 dark:hover:text-white" href="./elso">
-                            Első tesztprojekt
-                        </a>
-                        <p class="text-xs text-gray-500 md:mt-3 md:text-sm dark:text-neutral-500">
-                            Üres projekt, a GitHub Pages tesztelésére
-                        </p>
-                        <div class="flex flex-wrap gap-2 my-1 md:my-2 max-md:hidden">
-                            <span class="inline-flex items-center gap-x-1.5 py-1 md:py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">HTML</span>
-                            <span class="inline-flex items-center gap-x-1.5 py-1 md:py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500">tailwind/Preline</span>
+            <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+                <!-- Grid -->
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Card -->
+                    <div class="flex flex-col h-full bg-white border border-gray-200 shadow-sm max-md:max-h-40 group rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+                        <div class="flex flex-col items-center justify-center w-full bg-purple-600 h-1/4 md:h-52 rounded-t-xl">
+                            <svg class="mt-3" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                width="169px" height="34px" viewBox="0 0 169 34" enable-background="new 0 0 169 34" xml:space="preserve">
+                            <path fill="#FFFFFF" d="M98.955,23.733h-2.081V0.78h7.009c5.723,0,7.682,3.305,7.682,6.886s-1.959,6.886-7.682,6.886h-4.927V23.733z
+                                M98.955,12.624h5.203c4.315,0,5.141-2.755,5.141-4.958s-0.827-4.958-5.141-4.958h-5.203V12.624z M119.193,10.023
+                                c-2.05,0-3.397,0.367-4.591,0.765V8.951c1.347-0.581,3.122-0.826,4.591-0.826c4.591,0,5.785,2.081,5.785,5.141v10.466h-1.194
+                                l-0.459-1.224c-1.377,1.01-3.091,1.53-4.621,1.53c-4.009,0-5.356-2.357-5.356-4.928c0-2.601,1.439-4.529,5.448-4.774l4.04-0.245
+                                v-0.857C122.835,11.002,122.04,10.023,119.193,10.023z M118.642,15.991c-2.173,0.214-3.122,1.347-3.122,3.121
+                                c0,1.377,0.337,3.03,3.244,3.03c1.653,0,2.754-0.46,4.07-1.224v-5.325L118.642,15.991z M131.71,19.449
+                                c-0.337,0.336-0.582,0.765-0.582,1.132c0,0.765,0.367,1.102,1.163,1.193l5.203,0.612c2.877,0.306,4.193,1.439,4.193,4.101
+                                c0,3.734-3.734,5.203-7.957,5.203c-4.285,0-6.855-1.255-6.855-4.621c0-2.081,1.439-3.459,3.153-4.04v-0.031
+                                c-0.582-0.398-0.979-1.01-0.979-2.02c0-0.856,0.52-1.56,1.163-2.081c-1.836-1.01-2.448-2.877-2.448-5.019
+                                c0-3.152,1.346-5.754,5.968-5.754c0.949,0,1.745,0.122,2.449,0.306h5.203v1.163l-2.571,0.735c0.643,0.979,0.887,2.203,0.887,3.55
+                                c0,3.153-1.347,5.754-5.968,5.754C132.965,19.633,132.291,19.571,131.71,19.449z M132.597,23.58c-2.02,0.46-3.734,1.408-3.734,3.367
+                                c0,2.265,1.714,2.908,4.866,2.908c3.061,0,5.937-0.765,5.937-3.367c0-1.561-0.735-2.173-2.601-2.388L132.597,23.58z M137.708,13.879
+                                c0-2.02-0.398-3.887-3.979-3.887s-3.978,1.867-3.978,3.887s0.398,3.886,3.978,3.886S137.708,15.899,137.708,13.879z M149.206,8.125
+                                c5.203,0,5.815,3.55,5.815,7.957v0.979h-10.1c0.123,2.662,0.827,5.081,4.285,5.081c2.203,0,3.55-0.214,5.05-0.857v1.836
+                                c-1.714,0.765-3.55,0.918-5.05,0.918c-5.172,0-6.427-3.55-6.427-7.957S144.033,8.125,149.206,8.125z M144.921,15.317h7.957
+                                c0-2.724-0.153-5.295-3.673-5.295C145.655,10.023,145.013,12.563,144.921,15.317z M163.191,14.95
+                                c4.346,0.398,5.387,1.867,5.387,4.376c0,2.356-1.5,4.713-6.151,4.713c-1.469,0-3.581-0.368-4.56-0.765v-1.836
+                                c0.949,0.336,2.418,0.704,4.591,0.704c3.183,0,4.04-1.347,4.04-2.785c0-1.408-0.429-2.387-3.458-2.632
+                                c-4.438-0.398-5.356-1.959-5.356-4.07c0-2.173,1.408-4.529,5.723-4.529c1.438,0,3.06,0.183,4.407,0.765v1.837
+                                c-1.193-0.398-2.387-0.704-4.438-0.704c-3.03,0-3.673,1.133-3.673,2.632C159.703,14.001,160.253,14.705,163.191,14.95z
+                                M17.184,10.327H9.687c-0.194,0-0.35,0.157-0.35,0.35v3.666c0,0.193,0.157,0.35,0.35,0.35h2.925v4.555c0,0-0.657,0.223-2.472,0.223
+                                c-2.142,0-5.134-0.783-5.134-7.362c0-6.582,3.116-7.447,6.041-7.447c2.532,0,3.623,0.446,4.317,0.66
+                                c0.218,0.067,0.42-0.15,0.42-0.344l0.837-3.541c0-0.09-0.031-0.199-0.134-0.274C16.204,0.963,14.484,0,10.139,0
+                                C5.134,0,0,2.129,0,12.366c0,10.241,5.878,11.766,10.832,11.766c4.102,0,6.589-1.752,6.589-1.752c0.102-0.057,0.114-0.2,0.114-0.265
+                                V10.678C17.535,10.484,17.378,10.327,17.184,10.327z M56.129,1.226c0-0.195-0.155-0.352-0.349-0.352h-4.221
+                                c-0.193,0-0.349,0.157-0.349,0.352c0,0.001,0.001,8.158,0.001,8.158h-6.58V1.226c0-0.195-0.156-0.352-0.349-0.352h-4.221
+                                c-0.192,0-0.349,0.157-0.349,0.352v22.095c0,0.194,0.157,0.353,0.349,0.353h4.221c0.193,0,0.349-0.158,0.349-0.353v-9.453h6.58
+                                c0,0-0.012,9.452-0.012,9.453c0,0.194,0.157,0.353,0.349,0.353h4.232c0.193,0,0.348-0.158,0.349-0.353V1.226z M25.303,4.125
+                                c0-1.52-1.218-2.748-2.722-2.748c-1.502,0-2.722,1.228-2.722,2.748c0,1.519,1.22,2.751,2.722,2.751
+                                C24.085,6.876,25.303,5.644,25.303,4.125z M25.002,18.657c0-0.566,0-10.197,0-10.197c0-0.194-0.156-0.352-0.349-0.352h-4.208
+                                c-0.192,0-0.365,0.199-0.365,0.393c0,0,0,12.27,0,14.613c0,0.429,0.268,0.556,0.614,0.556c0,0,1.796,0,3.792,0
+                                c0.416,0,0.518-0.203,0.518-0.564C25.002,22.323,25.002,19.252,25.002,18.657z M72.511,8.141h-4.189
+                                c-0.192,0-0.349,0.158-0.349,0.353v10.831c0,0-1.064,0.779-2.575,0.779c-1.511,0-1.911-0.685-1.911-2.165c0-1.48,0-9.444,0-9.444
+                                c0-0.195-0.156-0.353-0.349-0.353h-4.251c-0.192,0-0.349,0.158-0.349,0.353c0,0,0,5.768,0,10.16c0,4.397,2.448,5.472,5.816,5.472
+                                c2.763,0,4.991-1.526,4.991-1.526s0.106,0.804,0.154,0.9c0.048,0.096,0.173,0.19,0.309,0.19l2.705-0.012
+                                c0.192,0,0.349-0.157,0.349-0.351L72.86,8.495C72.86,8.3,72.704,8.141,72.511,8.141z M84.19,7.645c-2.379,0-3.997,1.061-3.997,1.061
+                                v-7.48c0-0.195-0.156-0.352-0.348-0.352h-4.233c-0.193,0-0.349,0.157-0.349,0.352v22.095c0,0.194,0.156,0.353,0.349,0.353
+                                c0,0,2.937,0,2.937,0c0.132,0,0.232-0.069,0.306-0.188c0.073-0.118,0.178-1.018,0.178-1.018s1.732,1.64,5.009,1.64
+                                c3.847,0,6.053-1.952,6.053-8.764C90.094,8.535,86.571,7.645,84.19,7.645z M82.538,20.091c-1.453-0.045-2.438-0.704-2.438-0.704
+                                v-6.995c0,0,0.971-0.596,2.165-0.702c1.509-0.135,2.962,0.321,2.962,3.919C85.227,19.404,84.571,20.152,82.538,20.091z
+                                M37.058,8.106h-3.166c0,0-0.005-4.183-0.005-4.184c0-0.158-0.081-0.238-0.265-0.238h-4.315c-0.168,0-0.258,0.074-0.258,0.235v4.322
+                                c0,0-2.162,0.522-2.309,0.564c-0.145,0.043-0.253,0.177-0.253,0.337v2.716c0,0.195,0.156,0.353,0.349,0.353h2.212
+                                c0,0,0,2.841,0,6.535c0,4.858,3.404,5.335,5.702,5.335c1.05,0,2.305-0.338,2.513-0.414c0.125-0.045,0.198-0.175,0.198-0.317
+                                l0.004-2.991c0-0.195-0.164-0.353-0.35-0.353c-0.184,0-0.657,0.076-1.142,0.076c-1.556,0-2.082-0.723-2.082-1.66
+                                c0-0.935-0.001-6.211-0.001-6.211h3.167c0.193,0,0.349-0.158,0.349-0.353V8.458C37.407,8.263,37.25,8.106,37.058,8.106z"/>
+                            </svg>
                         </div>
-                        <div class="inline-flex flex-wrap gap-2 max-md:hidden">
-                            <span class="inline-flex items-center px-2 py-1 text-xs font-medium text-teal-800 bg-teal-100 rounded-full gap-x-1 dark:bg-teal-500/10 dark:text-teal-500">
-                                <span class="relative flex w-2 h-2">
-                                    <span class="absolute inline-flex w-full h-full bg-teal-800 rounded-full opacity-75 dark:bg-teal-500 animate-ping"></span>
-                                    <span class="relative inline-flex w-2 h-2 bg-teal-900 rounded-full dark:bg-teal-600"></span>
+                        <div class="flex md:p-4 md:p-6 max-md:h-full">
+                            <div class="flex flex-col w-full p-4">
+                                <span class="block mb-1 text-xs font-semibold text-purple-600 uppercase dark:text-purple-500">
+                                GitHub Pages Deploy
                                 </span>
-                                <span class="">Online</span>
-                            </span>
+                                <a class="font-semibold text-gray-800 text-md md:text-xl dark:text-neutral-300 dark:hover:text-white" href="./elso">
+                                    Első tesztprojekt
+                                </a>
+                                <p class="text-xs text-gray-500 md:mt-3 md:text-sm dark:text-neutral-500">
+                                    Üres projekt, a GitHub Pages tesztelésére
+                                </p>
+                                <div class="flex flex-wrap gap-2 my-1 md:my-2 max-md:hidden">
+                                    <span class="inline-flex items-center gap-x-1.5 py-1 md:py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500"><i class="devicon-html5-plain"></i>HTML</span>
+                                    <span class="inline-flex items-center gap-x-1.5 py-1 md:py-1.5 px-3 rounded-full text-xs font-medium bg-cyan-100 text-cyan-800 dark:bg-cyan-800/30 dark:text-cyan-500"><i class="devicon-tailwindcss-original"></i>tailwind/Preline</span>
+                                </div>
+                                <div class="inline-flex flex-wrap gap-2 max-md:hidden">
+                                    <span class="inline-flex items-center px-2 py-1 text-xs font-medium text-teal-800 bg-teal-100 rounded-full gap-x-1 dark:bg-teal-500/10 dark:text-teal-500">
+                                        <span class="relative flex w-2 h-2">
+                                            <span class="absolute inline-flex w-full h-full bg-teal-800 rounded-full opacity-75 dark:bg-teal-500 animate-ping"></span>
+                                            <span class="relative inline-flex w-2 h-2 bg-teal-900 rounded-full dark:bg-teal-600"></span>
+                                        </span>
+                                        <span class="">Online</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Mobile buttons -->
+                            <div class="flex w-1/6 h-full border-l divide-y divide-gray-200 md:hidden justify-self-end flex-colborder-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
+                                <a href="./elso" class="inline-flex items-center justify-center w-full h-full px-4 text-purple-500 transition-colors bg-white dark:bg-neutral-900 font-sm rounded-br-xl hover:text-purple-400 disabled:opacity-50 disabled:pointer-events-none dark:hover:bg-neutral-800 hover:bg-gray-50">
+                                    <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14 5C13.4477 5 13 4.55228 13 4C13 3.44772 13.4477 3 14 3H20C20.5523 3 21 3.44772 21 4V10C21 10.5523 20.5523 11 20 11C19.4477 11 19 10.5523 19 10V6.41421L11.7071 13.7071C11.3166 14.0976 10.6834 14.0976 10.2929 13.7071C9.90237 13.3166 9.90237 12.6834 10.2929 12.2929L17.5858 5H14ZM5 7C4.44772 7 4 7.44772 4 8V19C4 19.5523 4.44772 20 5 20H16C16.5523 20 17 19.5523 17 19V14.4375C17 13.8852 17.4477 13.4375 18 13.4375C18.5523 13.4375 19 13.8852 19 14.4375V19C19 20.6569 17.6569 22 16 22H5C3.34315 22 2 20.6569 2 19V8C2 6.34315 3.34315 5 5 5H9.5625C10.1148 5 10.5625 5.44772 10.5625 6C10.5625 6.55228 10.1148 7 9.5625 7H5Z" fill="currentColor"></path> </g></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Desktop buttons -->
+                        <div class="flex mt-auto border-t border-gray-200 divide-x divide-gray-200 max-md:hidden dark:border-neutral-700 dark:divide-neutral-700">
+                            <a class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white transition-colors bg-purple-500 shadow-sm gap-x-2 rounded-es-xl hover:bg-purple-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-purple-800 dark:text-white dark:hover:bg-purple-900" href="./elso">
+                            Megtekintés
+                            </a>
+                            <a class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-gray-800 bg-white shadow-sm gap-x-2 rounded-ee-xl hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" href="https://github.com/PstasDev/SpcPort/tree/main/elso">
+                                <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" width="20" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="currentColor" d="M7 12.923a1 1 0 0 1-.554-.166.983.983 0 0 1-.277-1.373l4-5.94a1 1 0 0 1 1.385-.274.983.983 0 0 1 .277 1.373l-4 5.94a1 1 0 0 1-.833.44zm10.708-3.257l-3 2.97a1.02 1.02 0 0 1-1.42 0 .99.99 0 0 1 0-1.406l2.29-2.267-2.29-2.277a.98.98 0 0 1 0-1.4 1.015 1.015 0 0 1 1.42 0l3 2.97a.99.99 0 0 1 0 1.41zM4.712 11.23a.99.99 0 0 1 0 1.406 1.02 1.02 0 0 1-1.42 0l-3-2.97a.99.99 0 0 1 0-1.406l3-2.97a1.015 1.015 0 0 1 1.42 0 .98.98 0 0 1 0 1.4l-2.29 2.273z"></path> </g></svg>
+                                Forráskód
+                            </a>
                         </div>
                     </div>
-                    <!-- Mobile buttons -->
-                    <div class="flex w-1/6 h-full border-l divide-y divide-gray-200 md:hidden justify-self-end flex-colborder-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
-                        <a href="./elso" class="inline-flex items-center justify-center w-full h-full px-4 text-purple-500 transition-colors bg-white dark:bg-neutral-900 font-sm rounded-br-xl hover:text-purple-400 disabled:opacity-50 disabled:pointer-events-none dark:hover:bg-neutral-800 hover:bg-gray-50">
-                            <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14 5C13.4477 5 13 4.55228 13 4C13 3.44772 13.4477 3 14 3H20C20.5523 3 21 3.44772 21 4V10C21 10.5523 20.5523 11 20 11C19.4477 11 19 10.5523 19 10V6.41421L11.7071 13.7071C11.3166 14.0976 10.6834 14.0976 10.2929 13.7071C9.90237 13.3166 9.90237 12.6834 10.2929 12.2929L17.5858 5H14ZM5 7C4.44772 7 4 7.44772 4 8V19C4 19.5523 4.44772 20 5 20H16C16.5523 20 17 19.5523 17 19V14.4375C17 13.8852 17.4477 13.4375 18 13.4375C18.5523 13.4375 19 13.8852 19 14.4375V19C19 20.6569 17.6569 22 16 22H5C3.34315 22 2 20.6569 2 19V8C2 6.34315 3.34315 5 5 5H9.5625C10.1148 5 10.5625 5.44772 10.5625 6C10.5625 6.55228 10.1148 7 9.5625 7H5Z" fill="currentColor"></path> </g></svg>
-                        </a>
-                    </div>
-                </div>
-                <!-- Desktop buttons -->
-                <div class="flex mt-auto border-t border-gray-200 divide-x divide-gray-200 max-md:hidden dark:border-neutral-700 dark:divide-neutral-700">
-                    <a class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white transition-colors bg-purple-500 shadow-sm gap-x-2 rounded-es-xl hover:bg-purple-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-purple-800 dark:text-white dark:hover:bg-purple-900" href="./elso">
-                    Megtekintés
-                    </a>
-                    <a class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-gray-800 bg-white shadow-sm gap-x-2 rounded-ee-xl hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" href="https://github.com/PstasDev/SpcPort/tree/main/elso">
-                        <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" width="20" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="currentColor" d="M7 12.923a1 1 0 0 1-.554-.166.983.983 0 0 1-.277-1.373l4-5.94a1 1 0 0 1 1.385-.274.983.983 0 0 1 .277 1.373l-4 5.94a1 1 0 0 1-.833.44zm10.708-3.257l-3 2.97a1.02 1.02 0 0 1-1.42 0 .99.99 0 0 1 0-1.406l2.29-2.267-2.29-2.277a.98.98 0 0 1 0-1.4 1.015 1.015 0 0 1 1.42 0l3 2.97a.99.99 0 0 1 0 1.41zM4.712 11.23a.99.99 0 0 1 0 1.406 1.02 1.02 0 0 1-1.42 0l-3-2.97a.99.99 0 0 1 0-1.406l3-2.97a1.015 1.015 0 0 1 1.42 0 .98.98 0 0 1 0 1.4l-2.29 2.273z"></path> </g></svg>
-                        Forráskód
-                    </a>
-                </div>
-            </div>
-            <!-- End Card -->
-            <!-- Card -->
-            <div class="flex flex-col h-full bg-white border border-gray-200 shadow-sm max-md:max-h-40 group rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-                <div class="flex flex-col items-center justify-center w-full bg-purple-600 h-1/4 md:h-52 rounded-t-xl">
-                    <svg class="mt-3" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                        width="169px" height="34px" viewBox="0 0 169 34" enable-background="new 0 0 169 34" xml:space="preserve">
-                    <path fill="#FFFFFF" d="M98.955,23.733h-2.081V0.78h7.009c5.723,0,7.682,3.305,7.682,6.886s-1.959,6.886-7.682,6.886h-4.927V23.733z
-                        M98.955,12.624h5.203c4.315,0,5.141-2.755,5.141-4.958s-0.827-4.958-5.141-4.958h-5.203V12.624z M119.193,10.023
-                        c-2.05,0-3.397,0.367-4.591,0.765V8.951c1.347-0.581,3.122-0.826,4.591-0.826c4.591,0,5.785,2.081,5.785,5.141v10.466h-1.194
-                        l-0.459-1.224c-1.377,1.01-3.091,1.53-4.621,1.53c-4.009,0-5.356-2.357-5.356-4.928c0-2.601,1.439-4.529,5.448-4.774l4.04-0.245
-                        v-0.857C122.835,11.002,122.04,10.023,119.193,10.023z M118.642,15.991c-2.173,0.214-3.122,1.347-3.122,3.121
-                        c0,1.377,0.337,3.03,3.244,3.03c1.653,0,2.754-0.46,4.07-1.224v-5.325L118.642,15.991z M131.71,19.449
-                        c-0.337,0.336-0.582,0.765-0.582,1.132c0,0.765,0.367,1.102,1.163,1.193l5.203,0.612c2.877,0.306,4.193,1.439,4.193,4.101
-                        c0,3.734-3.734,5.203-7.957,5.203c-4.285,0-6.855-1.255-6.855-4.621c0-2.081,1.439-3.459,3.153-4.04v-0.031
-                        c-0.582-0.398-0.979-1.01-0.979-2.02c0-0.856,0.52-1.56,1.163-2.081c-1.836-1.01-2.448-2.877-2.448-5.019
-                        c0-3.152,1.346-5.754,5.968-5.754c0.949,0,1.745,0.122,2.449,0.306h5.203v1.163l-2.571,0.735c0.643,0.979,0.887,2.203,0.887,3.55
-                        c0,3.153-1.347,5.754-5.968,5.754C132.965,19.633,132.291,19.571,131.71,19.449z M132.597,23.58c-2.02,0.46-3.734,1.408-3.734,3.367
-                        c0,2.265,1.714,2.908,4.866,2.908c3.061,0,5.937-0.765,5.937-3.367c0-1.561-0.735-2.173-2.601-2.388L132.597,23.58z M137.708,13.879
-                        c0-2.02-0.398-3.887-3.979-3.887s-3.978,1.867-3.978,3.887s0.398,3.886,3.978,3.886S137.708,15.899,137.708,13.879z M149.206,8.125
-                        c5.203,0,5.815,3.55,5.815,7.957v0.979h-10.1c0.123,2.662,0.827,5.081,4.285,5.081c2.203,0,3.55-0.214,5.05-0.857v1.836
-                        c-1.714,0.765-3.55,0.918-5.05,0.918c-5.172,0-6.427-3.55-6.427-7.957S144.033,8.125,149.206,8.125z M144.921,15.317h7.957
-                        c0-2.724-0.153-5.295-3.673-5.295C145.655,10.023,145.013,12.563,144.921,15.317z M163.191,14.95
-                        c4.346,0.398,5.387,1.867,5.387,4.376c0,2.356-1.5,4.713-6.151,4.713c-1.469,0-3.581-0.368-4.56-0.765v-1.836
-                        c0.949,0.336,2.418,0.704,4.591,0.704c3.183,0,4.04-1.347,4.04-2.785c0-1.408-0.429-2.387-3.458-2.632
-                        c-4.438-0.398-5.356-1.959-5.356-4.07c0-2.173,1.408-4.529,5.723-4.529c1.438,0,3.06,0.183,4.407,0.765v1.837
-                        c-1.193-0.398-2.387-0.704-4.438-0.704c-3.03,0-3.673,1.133-3.673,2.632C159.703,14.001,160.253,14.705,163.191,14.95z
-                        M17.184,10.327H9.687c-0.194,0-0.35,0.157-0.35,0.35v3.666c0,0.193,0.157,0.35,0.35,0.35h2.925v4.555c0,0-0.657,0.223-2.472,0.223
-                        c-2.142,0-5.134-0.783-5.134-7.362c0-6.582,3.116-7.447,6.041-7.447c2.532,0,3.623,0.446,4.317,0.66
-                        c0.218,0.067,0.42-0.15,0.42-0.344l0.837-3.541c0-0.09-0.031-0.199-0.134-0.274C16.204,0.963,14.484,0,10.139,0
-                        C5.134,0,0,2.129,0,12.366c0,10.241,5.878,11.766,10.832,11.766c4.102,0,6.589-1.752,6.589-1.752c0.102-0.057,0.114-0.2,0.114-0.265
-                        V10.678C17.535,10.484,17.378,10.327,17.184,10.327z M56.129,1.226c0-0.195-0.155-0.352-0.349-0.352h-4.221
-                        c-0.193,0-0.349,0.157-0.349,0.352c0,0.001,0.001,8.158,0.001,8.158h-6.58V1.226c0-0.195-0.156-0.352-0.349-0.352h-4.221
-                        c-0.192,0-0.349,0.157-0.349,0.352v22.095c0,0.194,0.157,0.353,0.349,0.353h4.221c0.193,0,0.349-0.158,0.349-0.353v-9.453h6.58
-                        c0,0-0.012,9.452-0.012,9.453c0,0.194,0.157,0.353,0.349,0.353h4.232c0.193,0,0.348-0.158,0.349-0.353V1.226z M25.303,4.125
-                        c0-1.52-1.218-2.748-2.722-2.748c-1.502,0-2.722,1.228-2.722,2.748c0,1.519,1.22,2.751,2.722,2.751
-                        C24.085,6.876,25.303,5.644,25.303,4.125z M25.002,18.657c0-0.566,0-10.197,0-10.197c0-0.194-0.156-0.352-0.349-0.352h-4.208
-                        c-0.192,0-0.365,0.199-0.365,0.393c0,0,0,12.27,0,14.613c0,0.429,0.268,0.556,0.614,0.556c0,0,1.796,0,3.792,0
-                        c0.416,0,0.518-0.203,0.518-0.564C25.002,22.323,25.002,19.252,25.002,18.657z M72.511,8.141h-4.189
-                        c-0.192,0-0.349,0.158-0.349,0.353v10.831c0,0-1.064,0.779-2.575,0.779c-1.511,0-1.911-0.685-1.911-2.165c0-1.48,0-9.444,0-9.444
-                        c0-0.195-0.156-0.353-0.349-0.353h-4.251c-0.192,0-0.349,0.158-0.349,0.353c0,0,0,5.768,0,10.16c0,4.397,2.448,5.472,5.816,5.472
-                        c2.763,0,4.991-1.526,4.991-1.526s0.106,0.804,0.154,0.9c0.048,0.096,0.173,0.19,0.309,0.19l2.705-0.012
-                        c0.192,0,0.349-0.157,0.349-0.351L72.86,8.495C72.86,8.3,72.704,8.141,72.511,8.141z M84.19,7.645c-2.379,0-3.997,1.061-3.997,1.061
-                        v-7.48c0-0.195-0.156-0.352-0.348-0.352h-4.233c-0.193,0-0.349,0.157-0.349,0.352v22.095c0,0.194,0.156,0.353,0.349,0.353
-                        c0,0,2.937,0,2.937,0c0.132,0,0.232-0.069,0.306-0.188c0.073-0.118,0.178-1.018,0.178-1.018s1.732,1.64,5.009,1.64
-                        c3.847,0,6.053-1.952,6.053-8.764C90.094,8.535,86.571,7.645,84.19,7.645z M82.538,20.091c-1.453-0.045-2.438-0.704-2.438-0.704
-                        v-6.995c0,0,0.971-0.596,2.165-0.702c1.509-0.135,2.962,0.321,2.962,3.919C85.227,19.404,84.571,20.152,82.538,20.091z
-                        M37.058,8.106h-3.166c0,0-0.005-4.183-0.005-4.184c0-0.158-0.081-0.238-0.265-0.238h-4.315c-0.168,0-0.258,0.074-0.258,0.235v4.322
-                        c0,0-2.162,0.522-2.309,0.564c-0.145,0.043-0.253,0.177-0.253,0.337v2.716c0,0.195,0.156,0.353,0.349,0.353h2.212
-                        c0,0,0,2.841,0,6.535c0,4.858,3.404,5.335,5.702,5.335c1.05,0,2.305-0.338,2.513-0.414c0.125-0.045,0.198-0.175,0.198-0.317
-                        l0.004-2.991c0-0.195-0.164-0.353-0.35-0.353c-0.184,0-0.657,0.076-1.142,0.076c-1.556,0-2.082-0.723-2.082-1.66
-                        c0-0.935-0.001-6.211-0.001-6.211h3.167c0.193,0,0.349-0.158,0.349-0.353V8.458C37.407,8.263,37.25,8.106,37.058,8.106z"/>
-                    </svg>
-
-
-                </div>
-                <div class="flex md:p-4 md:p-6 max-md:h-full">
-                    <div class="flex flex-col w-full p-4">
-                        <span class="block mb-1 text-xs font-semibold text-purple-600 uppercase dark:text-purple-500">
-                        GitHub Pages Deploy
-                        </span>
-                        <a class="font-semibold text-gray-800 text-md md:text-xl dark:text-neutral-300 dark:hover:text-white" href="./masodik">
-                            Második tesztprojekt
-                        </a>
-                        <p class="text-xs text-gray-500 md:mt-3 md:text-sm dark:text-neutral-500">
-                            Üres projekt, a GitHub Pages tesztelésére
-                        </p>
-                        <div class="flex flex-wrap gap-2 my-1 md:my-2 max-md:hidden">
-                            <span class="inline-flex items-center gap-x-1.5 py-1 md:py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">HTML</span>
-                            <span class="inline-flex items-center gap-x-1.5 py-1 md:py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500">tailwind/Preline</span>
+                    <!-- End Card -->
+                    <!-- Card -->
+                    <div class="flex flex-col h-full bg-white border border-gray-200 shadow-sm max-md:max-h-40 group rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+                        <div class="flex flex-col items-center justify-center w-full bg-purple-600 h-1/4 md:h-52 rounded-t-xl">
+                            <svg class="mt-3" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                width="169px" height="34px" viewBox="0 0 169 34" enable-background="new 0 0 169 34" xml:space="preserve">
+                            <path fill="#FFFFFF" d="M98.955,23.733h-2.081V0.78h7.009c5.723,0,7.682,3.305,7.682,6.886s-1.959,6.886-7.682,6.886h-4.927V23.733z
+                                M98.955,12.624h5.203c4.315,0,5.141-2.755,5.141-4.958s-0.827-4.958-5.141-4.958h-5.203V12.624z M119.193,10.023
+                                c-2.05,0-3.397,0.367-4.591,0.765V8.951c1.347-0.581,3.122-0.826,4.591-0.826c4.591,0,5.785,2.081,5.785,5.141v10.466h-1.194
+                                l-0.459-1.224c-1.377,1.01-3.091,1.53-4.621,1.53c-4.009,0-5.356-2.357-5.356-4.928c0-2.601,1.439-4.529,5.448-4.774l4.04-0.245
+                                v-0.857C122.835,11.002,122.04,10.023,119.193,10.023z M118.642,15.991c-2.173,0.214-3.122,1.347-3.122,3.121
+                                c0,1.377,0.337,3.03,3.244,3.03c1.653,0,2.754-0.46,4.07-1.224v-5.325L118.642,15.991z M131.71,19.449
+                                c-0.337,0.336-0.582,0.765-0.582,1.132c0,0.765,0.367,1.102,1.163,1.193l5.203,0.612c2.877,0.306,4.193,1.439,4.193,4.101
+                                c0,3.734-3.734,5.203-7.957,5.203c-4.285,0-6.855-1.255-6.855-4.621c0-2.081,1.439-3.459,3.153-4.04v-0.031
+                                c-0.582-0.398-0.979-1.01-0.979-2.02c0-0.856,0.52-1.56,1.163-2.081c-1.836-1.01-2.448-2.877-2.448-5.019
+                                c0-3.152,1.346-5.754,5.968-5.754c0.949,0,1.745,0.122,2.449,0.306h5.203v1.163l-2.571,0.735c0.643,0.979,0.887,2.203,0.887,3.55
+                                c0,3.153-1.347,5.754-5.968,5.754C132.965,19.633,132.291,19.571,131.71,19.449z M132.597,23.58c-2.02,0.46-3.734,1.408-3.734,3.367
+                                c0,2.265,1.714,2.908,4.866,2.908c3.061,0,5.937-0.765,5.937-3.367c0-1.561-0.735-2.173-2.601-2.388L132.597,23.58z M137.708,13.879
+                                c0-2.02-0.398-3.887-3.979-3.887s-3.978,1.867-3.978,3.887s0.398,3.886,3.978,3.886S137.708,15.899,137.708,13.879z M149.206,8.125
+                                c5.203,0,5.815,3.55,5.815,7.957v0.979h-10.1c0.123,2.662,0.827,5.081,4.285,5.081c2.203,0,3.55-0.214,5.05-0.857v1.836
+                                c-1.714,0.765-3.55,0.918-5.05,0.918c-5.172,0-6.427-3.55-6.427-7.957S144.033,8.125,149.206,8.125z M144.921,15.317h7.957
+                                c0-2.724-0.153-5.295-3.673-5.295C145.655,10.023,145.013,12.563,144.921,15.317z M163.191,14.95
+                                c4.346,0.398,5.387,1.867,5.387,4.376c0,2.356-1.5,4.713-6.151,4.713c-1.469,0-3.581-0.368-4.56-0.765v-1.836
+                                c0.949,0.336,2.418,0.704,4.591,0.704c3.183,0,4.04-1.347,4.04-2.785c0-1.408-0.429-2.387-3.458-2.632
+                                c-4.438-0.398-5.356-1.959-5.356-4.07c0-2.173,1.408-4.529,5.723-4.529c1.438,0,3.06,0.183,4.407,0.765v1.837
+                                c-1.193-0.398-2.387-0.704-4.438-0.704c-3.03,0-3.673,1.133-3.673,2.632C159.703,14.001,160.253,14.705,163.191,14.95z
+                                M17.184,10.327H9.687c-0.194,0-0.35,0.157-0.35,0.35v3.666c0,0.193,0.157,0.35,0.35,0.35h2.925v4.555c0,0-0.657,0.223-2.472,0.223
+                                c-2.142,0-5.134-0.783-5.134-7.362c0-6.582,3.116-7.447,6.041-7.447c2.532,0,3.623,0.446,4.317,0.66
+                                c0.218,0.067,0.42-0.15,0.42-0.344l0.837-3.541c0-0.09-0.031-0.199-0.134-0.274C16.204,0.963,14.484,0,10.139,0
+                                C5.134,0,0,2.129,0,12.366c0,10.241,5.878,11.766,10.832,11.766c4.102,0,6.589-1.752,6.589-1.752c0.102-0.057,0.114-0.2,0.114-0.265
+                                V10.678C17.535,10.484,17.378,10.327,17.184,10.327z M56.129,1.226c0-0.195-0.155-0.352-0.349-0.352h-4.221
+                                c-0.193,0-0.349,0.157-0.349,0.352c0,0.001,0.001,8.158,0.001,8.158h-6.58V1.226c0-0.195-0.156-0.352-0.349-0.352h-4.221
+                                c-0.192,0-0.349,0.157-0.349,0.352v22.095c0,0.194,0.157,0.353,0.349,0.353h4.221c0.193,0,0.349-0.158,0.349-0.353v-9.453h6.58
+                                c0,0-0.012,9.452-0.012,9.453c0,0.194,0.157,0.353,0.349,0.353h4.232c0.193,0,0.348-0.158,0.349-0.353V1.226z M25.303,4.125
+                                c0-1.52-1.218-2.748-2.722-2.748c-1.502,0-2.722,1.228-2.722,2.748c0,1.519,1.22,2.751,2.722,2.751
+                                C24.085,6.876,25.303,5.644,25.303,4.125z M25.002,18.657c0-0.566,0-10.197,0-10.197c0-0.194-0.156-0.352-0.349-0.352h-4.208
+                                c-0.192,0-0.365,0.199-0.365,0.393c0,0,0,12.27,0,14.613c0,0.429,0.268,0.556,0.614,0.556c0,0,1.796,0,3.792,0
+                                c0.416,0,0.518-0.203,0.518-0.564C25.002,22.323,25.002,19.252,25.002,18.657z M72.511,8.141h-4.189
+                                c-0.192,0-0.349,0.158-0.349,0.353v10.831c0,0-1.064,0.779-2.575,0.779c-1.511,0-1.911-0.685-1.911-2.165c0-1.48,0-9.444,0-9.444
+                                c0-0.195-0.156-0.353-0.349-0.353h-4.251c-0.192,0-0.349,0.158-0.349,0.353c0,0,0,5.768,0,10.16c0,4.397,2.448,5.472,5.816,5.472
+                                c2.763,0,4.991-1.526,4.991-1.526s0.106,0.804,0.154,0.9c0.048,0.096,0.173,0.19,0.309,0.19l2.705-0.012
+                                c0.192,0,0.349-0.157,0.349-0.351L72.86,8.495C72.86,8.3,72.704,8.141,72.511,8.141z M84.19,7.645c-2.379,0-3.997,1.061-3.997,1.061
+                                v-7.48c0-0.195-0.156-0.352-0.348-0.352h-4.233c-0.193,0-0.349,0.157-0.349,0.352v22.095c0,0.194,0.156,0.353,0.349,0.353
+                                c0,0,2.937,0,2.937,0c0.132,0,0.232-0.069,0.306-0.188c0.073-0.118,0.178-1.018,0.178-1.018s1.732,1.64,5.009,1.64
+                                c3.847,0,6.053-1.952,6.053-8.764C90.094,8.535,86.571,7.645,84.19,7.645z M82.538,20.091c-1.453-0.045-2.438-0.704-2.438-0.704
+                                v-6.995c0,0,0.971-0.596,2.165-0.702c1.509-0.135,2.962,0.321,2.962,3.919C85.227,19.404,84.571,20.152,82.538,20.091z
+                                M37.058,8.106h-3.166c0,0-0.005-4.183-0.005-4.184c0-0.158-0.081-0.238-0.265-0.238h-4.315c-0.168,0-0.258,0.074-0.258,0.235v4.322
+                                c0,0-2.162,0.522-2.309,0.564c-0.145,0.043-0.253,0.177-0.253,0.337v2.716c0,0.195,0.156,0.353,0.349,0.353h2.212
+                                c0,0,0,2.841,0,6.535c0,4.858,3.404,5.335,5.702,5.335c1.05,0,2.305-0.338,2.513-0.414c0.125-0.045,0.198-0.175,0.198-0.317
+                                l0.004-2.991c0-0.195-0.164-0.353-0.35-0.353c-0.184,0-0.657,0.076-1.142,0.076c-1.556,0-2.082-0.723-2.082-1.66
+                                c0-0.935-0.001-6.211-0.001-6.211h3.167c0.193,0,0.349-0.158,0.349-0.353V8.458C37.407,8.263,37.25,8.106,37.058,8.106z"/>
+                            </svg>
                         </div>
-                        <div class="inline-flex flex-wrap gap-2 max-md:hidden">
-                            <span class="inline-flex items-center px-2 py-1 text-xs font-medium text-teal-800 bg-teal-100 rounded-full gap-x-1 dark:bg-teal-500/10 dark:text-teal-500">
-                                <span class="relative flex w-2 h-2">
-                                    <span class="absolute inline-flex w-full h-full bg-teal-800 rounded-full opacity-75 dark:bg-teal-500 animate-ping"></span>
-                                    <span class="relative inline-flex w-2 h-2 bg-teal-900 rounded-full dark:bg-teal-600"></span>
+                        <div class="flex md:p-4 md:p-6 max-md:h-full">
+                            <div class="flex flex-col w-full p-4">
+                                <span class="block mb-1 text-xs font-semibold text-purple-600 uppercase dark:text-purple-500">
+                                GitHub Pages Deploy
                                 </span>
-                                <span class="">Online</span>
-                            </span>
+                                <a class="font-semibold text-gray-800 text-md md:text-xl dark:text-neutral-300 dark:hover:text-white" href="./masodik">
+                                    Második tesztprojekt
+                                </a>
+                                <p class="text-xs text-gray-500 md:mt-3 md:text-sm dark:text-neutral-500">
+                                    Üres projekt, a GitHub Pages tesztelésére
+                                </p>
+                                <div class="flex flex-wrap gap-2 my-1 md:my-2 max-md:hidden">
+                                    <span class="inline-flex items-center gap-x-1.5 py-1 md:py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500"><i class="devicon-html5-plain"></i>HTML</span>
+                                    <span class="inline-flex items-center gap-x-1.5 py-1 md:py-1.5 px-3 rounded-full text-xs font-medium bg-cyan-100 text-cyan-800 dark:bg-cyan-800/30 dark:text-cyan-500"><i class="devicon-tailwindcss-original"></i>tailwind/Preline</span>
+                                </div>
+                                <div class="inline-flex flex-wrap gap-2 max-md:hidden">
+                                    <span class="inline-flex items-center px-2 py-1 text-xs font-medium text-teal-800 bg-teal-100 rounded-full gap-x-1 dark:bg-teal-500/10 dark:text-teal-500">
+                                        <span class="relative flex w-2 h-2">
+                                            <span class="absolute inline-flex w-full h-full bg-teal-800 rounded-full opacity-75 dark:bg-teal-500 animate-ping"></span>
+                                            <span class="relative inline-flex w-2 h-2 bg-teal-900 rounded-full dark:bg-teal-600"></span>
+                                        </span>
+                                        <span class="">Online</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Mobile buttons -->
+                            <div class="flex w-1/6 h-full border-l divide-y divide-gray-200 md:hidden justify-self-end flex-colborder-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
+                                <a href="./masodik" class="inline-flex items-center justify-center w-full h-full px-4 text-purple-500 transition-colors bg-white dark:bg-neutral-900 font-sm rounded-br-xl hover:text-purple-400 disabled:opacity-50 disabled:pointer-events-none dark:hover:bg-neutral-800 hover:bg-gray-50">
+                                    <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14 5C13.4477 5 13 4.55228 13 4C13 3.44772 13.4477 3 14 3H20C20.5523 3 21 3.44772 21 4V10C21 10.5523 20.5523 11 20 11C19.4477 11 19 10.5523 19 10V6.41421L11.7071 13.7071C11.3166 14.0976 10.6834 14.0976 10.2929 13.7071C9.90237 13.3166 9.90237 12.6834 10.2929 12.2929L17.5858 5H14ZM5 7C4.44772 7 4 7.44772 4 8V19C4 19.5523 4.44772 20 5 20H16C16.5523 20 17 19.5523 17 19V14.4375C17 13.8852 17.4477 13.4375 18 13.4375C18.5523 13.4375 19 13.8852 19 14.4375V19C19 20.6569 17.6569 22 16 22H5C3.34315 22 2 20.6569 2 19V8C2 6.34315 3.34315 5 5 5H9.5625C10.1148 5 10.5625 5.44772 10.5625 6C10.5625 6.55228 10.1148 7 9.5625 7H5Z" fill="currentColor"></path> </g></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Desktop buttons -->
+                        <div class="flex mt-auto border-t border-gray-200 divide-x divide-gray-200 max-md:hidden dark:border-neutral-700 dark:divide-neutral-700">
+                            <a class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white transition-colors bg-purple-500 shadow-sm gap-x-2 rounded-es-xl hover:bg-purple-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-purple-800 dark:text-white dark:hover:bg-purple-900" href="./masodik">
+                            Megtekintés
+                            </a>
+                            <a class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-gray-800 bg-white shadow-sm gap-x-2 rounded-ee-xl hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" href="https://github.com/PstasDev/SpcPort/tree/main/masodik">
+                                <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" width="20" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="currentColor" d="M7 12.923a1 1 0 0 1-.554-.166.983.983 0 0 1-.277-1.373l4-5.94a1 1 0 0 1 1.385-.274.983.983 0 0 1 .277 1.373l-4 5.94a1 1 0 0 1-.833.44zm10.708-3.257l-3 2.97a1.02 1.02 0 0 1-1.42 0 .99.99 0 0 1 0-1.406l2.29-2.267-2.29-2.277a.98.98 0 0 1 0-1.4 1.015 1.015 0 0 1 1.42 0l3 2.97a.99.99 0 0 1 0 1.41zM4.712 11.23a.99.99 0 0 1 0 1.406 1.02 1.02 0 0 1-1.42 0l-3-2.97a.99.99 0 0 1 0-1.406l3-2.97a1.015 1.015 0 0 1 1.42 0 .98.98 0 0 1 0 1.4l-2.29 2.273z"></path> </g></svg>
+                                Forráskód
+                            </a>
                         </div>
                     </div>
-                    <!-- Mobile buttons -->
-                    <div class="flex w-1/6 h-full border-l divide-y divide-gray-200 md:hidden justify-self-end flex-colborder-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
-                        <a href="./masodik" class="inline-flex items-center justify-center w-full h-full px-4 text-purple-500 transition-colors bg-white dark:bg-neutral-900 font-sm rounded-br-xl hover:text-purple-400 disabled:opacity-50 disabled:pointer-events-none dark:hover:bg-neutral-800 hover:bg-gray-50">
-                            <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14 5C13.4477 5 13 4.55228 13 4C13 3.44772 13.4477 3 14 3H20C20.5523 3 21 3.44772 21 4V10C21 10.5523 20.5523 11 20 11C19.4477 11 19 10.5523 19 10V6.41421L11.7071 13.7071C11.3166 14.0976 10.6834 14.0976 10.2929 13.7071C9.90237 13.3166 9.90237 12.6834 10.2929 12.2929L17.5858 5H14ZM5 7C4.44772 7 4 7.44772 4 8V19C4 19.5523 4.44772 20 5 20H16C16.5523 20 17 19.5523 17 19V14.4375C17 13.8852 17.4477 13.4375 18 13.4375C18.5523 13.4375 19 13.8852 19 14.4375V19C19 20.6569 17.6569 22 16 22H5C3.34315 22 2 20.6569 2 19V8C2 6.34315 3.34315 5 5 5H9.5625C10.1148 5 10.5625 5.44772 10.5625 6C10.5625 6.55228 10.1148 7 9.5625 7H5Z" fill="currentColor"></path> </g></svg>
-                        </a>
-                    </div>
-                </div>
-                <!-- Desktop buttons -->
-                <div class="flex mt-auto border-t border-gray-200 divide-x divide-gray-200 max-md:hidden dark:border-neutral-700 dark:divide-neutral-700">
-                    <a class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white transition-colors bg-purple-500 shadow-sm gap-x-2 rounded-es-xl hover:bg-purple-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-purple-800 dark:text-white dark:hover:bg-purple-900" href="./masodik">
-                    Megtekintés
-                    </a>
-                    <a class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-gray-800 bg-white shadow-sm gap-x-2 rounded-ee-xl hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" href="https://github.com/PstasDev/SpcPort/tree/main/masodik">
-                        <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" width="20" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="currentColor" d="M7 12.923a1 1 0 0 1-.554-.166.983.983 0 0 1-.277-1.373l4-5.94a1 1 0 0 1 1.385-.274.983.983 0 0 1 .277 1.373l-4 5.94a1 1 0 0 1-.833.44zm10.708-3.257l-3 2.97a1.02 1.02 0 0 1-1.42 0 .99.99 0 0 1 0-1.406l2.29-2.267-2.29-2.277a.98.98 0 0 1 0-1.4 1.015 1.015 0 0 1 1.42 0l3 2.97a.99.99 0 0 1 0 1.41zM4.712 11.23a.99.99 0 0 1 0 1.406 1.02 1.02 0 0 1-1.42 0l-3-2.97a.99.99 0 0 1 0-1.406l3-2.97a1.015 1.015 0 0 1 1.42 0 .98.98 0 0 1 0 1.4l-2.29 2.273z"></path> </g></svg>
-                        Forráskód
-                    </a>
-                </div>
-            </div>
-            <!-- End Card -->
-            <!-- Card -->
-            <div class="flex h-full bg-white border border-gray-200 shadow-sm md:flex-col group rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-                <div class="flex flex-col items-center justify-center min-w-16 bg-emerald-600 md:h-52 max-md:rounded-l-xl md:rounded-t-xl">
-                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            viewBox="0 0 512 512" xml:space="preserve" class="w-12 md:w-32">
-                    <rect x="134.598" y="95.01" style="fill:#A58763;" width="42.227" height="73.897"/>
-                    <polygon style="fill:#A26234;" points="240.165,95.01 240.165,242.804 224.33,242.804 102.928,242.804 71.258,242.804 71.258,95.01
-                        134.598,95.01 134.598,168.907 176.825,168.907 176.825,95.01 "/>
-                    <g>
-                        <path style="fill:#A4A9AB;" d="M303.505,279.753v36.948H224.33c20.374,0,36.948-16.574,36.948-36.948H303.505z"/>
-                        <path style="fill:#A4A9AB;" d="M224.33,316.701H102.928c20.374,0,36.948-16.574,36.948-36.948h47.505
-                            C187.381,300.127,203.955,316.701,224.33,316.701z"/>
-                        <path style="fill:#A4A9AB;" d="M102.928,316.701H44.866c-20.374,0-36.948-16.574-36.948-36.948h58.062
-                            C65.979,300.127,82.553,316.701,102.928,316.701z"/>
-                        <path style="fill:#A4A9AB;" d="M240.165,242.804h63.34v36.948h-42.227c0-20.374-16.574-36.948-36.948-36.948H240.165z"/>
-                        <path style="fill:#A4A9AB;" d="M102.928,242.804H224.33c-20.374,0-36.948,16.574-36.948,36.948h-47.505
-                            C139.876,259.378,123.302,242.804,102.928,242.804z"/>
-                        <path style="fill:#A4A9AB;" d="M71.258,242.804h31.67c-20.374,0-36.948,16.574-36.948,36.948H7.918
-                            c0-10.134,4.117-19.424,10.873-26.075c6.651-6.756,15.941-10.873,26.075-10.873H71.258z"/>
-                    </g>
-                    <g>
-                        <path style="fill:#7E8488;" d="M224.33,316.701c-20.374,0-36.948-16.574-36.948-36.948s16.574-36.948,36.948-36.948
-                            s36.948,16.574,36.948,36.948C261.278,300.127,244.704,316.701,224.33,316.701z"/>
-                        <path style="fill:#7E8488;" d="M102.928,242.804c20.374,0,36.948,16.574,36.948,36.948c0,20.374-16.574,36.948-36.948,36.948
-                            s-36.948-16.574-36.948-36.948S82.553,242.804,102.928,242.804z"/>
-                    </g>
-                    <g>
-                        <rect x="467.134" y="358.928" style="fill:#595E62;" width="36.948" height="100.289"/>
-                        <rect x="303.505" y="358.928" style="fill:#595E62;" width="36.948" height="100.289"/>
-                        <polygon style="fill:#595E62;" points="303.505,316.701 303.505,358.928 266.557,358.928 266.557,459.217 229.608,459.217
-                            229.608,358.928 81.814,358.928 81.814,459.217 44.866,459.217 44.866,358.928 7.918,358.928 7.918,316.701 44.866,316.701
-                            102.928,316.701 224.33,316.701 	"/>
-                    </g>
-                    <rect x="340.454" y="89.732" style="fill:#00ABD5;" width="126.68" height="84.454"/>
-                    <path style="fill:#AFB6BB;" d="M303.505,52.784v306.144h200.577V52.784H303.505z M340.454,89.732h126.68v84.454h-126.68V89.732z"/>
-                    <polygon style="fill:#9DA4A9;" points="340.454,174.186 340.454,89.732 403.794,89.732 403.794,52.784 303.505,52.784
-                        303.505,242.804 303.505,279.753 303.505,316.701 303.505,358.928 340.454,358.928 403.794,358.928 403.794,174.186 "/>
-                    <path style="fill:#0092CA;" d="M370.789,89.732h-30.336v84.454h126.68v-8.174C426.45,153.107,392.408,125.609,370.789,89.732z"/>
-                    <polygon style="fill:#865128;" points="134.598,168.907 134.598,95.01 71.258,95.01 71.258,242.804 102.928,242.804
-                        155.711,242.804 155.711,168.907 "/>
-                    <g>
-                        <rect x="92.371" y="271.835" style="fill:#FFFFFF;" width="21.113" height="15.835"/>
-                        <rect x="213.773" y="271.835" style="fill:#FFFFFF;" width="21.113" height="15.835"/>
-                        <polygon style="fill:#FFFFFF;" points="380.041,147.794 364.206,147.794 364.206,113.485 398.515,113.485 398.515,129.32
-                            380.041,129.32 	"/>
-                        <rect x="329.897" y="203.217" style="fill:#FFFFFF;" width="147.794" height="15.835"/>
-                        <rect x="329.897" y="234.887" style="fill:#FFFFFF;" width="21.113" height="15.835"/>
-                        <rect x="366.845" y="234.887" style="fill:#FFFFFF;" width="21.113" height="15.835"/>
-                        <rect x="456.577" y="234.887" style="fill:#FFFFFF;" width="21.113" height="15.835"/>
-                        <rect x="329.897" y="308.784" style="fill:#FFFFFF;" width="147.794" height="15.835"/>
-                    </g>
-                    <path d="M295.588,44.866v190.021h-47.505V87.093H63.34v147.794H44.866c-12.029,0-23.274,4.684-31.673,13.192
-                        C4.685,256.475,0,267.722,0,279.753c0,11.064,4.035,21.2,10.698,29.031H0v58.062h36.948v100.289h52.784V366.845h131.959v100.289
-                        h52.784V366.845h21.113v100.289h52.784V366.845h110.845v100.289H512V44.866H295.588z M258.498,308.784
-                        c5.037-5.918,8.561-13.155,9.985-21.113h27.105v21.113H258.498z M73.897,279.753c0-16.007,13.023-29.031,29.031-29.031
-                        s29.031,13.024,29.031,29.031c0,16.007-13.023,29.031-29.031,29.031S73.897,295.76,73.897,279.753z M180.178,271.835H147.08
-                        c-1.424-7.959-4.948-15.195-9.985-21.113h53.067C185.127,256.64,181.602,263.876,180.178,271.835z M147.08,287.67h33.097
-                        c1.424,7.959,4.948,15.195,9.985,21.113h-53.067C142.131,302.865,145.656,295.629,147.08,287.67z M195.299,279.753
-                        c0-16.007,13.023-29.031,29.031-29.031s29.031,13.024,29.031,29.031c0,16.007-13.023,29.031-29.031,29.031
-                        S195.299,295.76,195.299,279.753z M295.588,271.835h-27.105c-1.424-7.959-4.948-15.195-9.985-21.113h37.09V271.835z
-                            M142.515,102.928h26.392v58.062h-26.392V102.928z M79.175,102.928h47.505v73.897h58.062v-73.897h47.505v131.959H79.175V102.928z
-                            M24.433,259.232c5.403-5.487,12.66-8.511,20.432-8.511H63.34h5.42c-5.037,5.918-8.561,13.155-9.985,21.113H16.931
-                        c1.331-4.709,3.848-9.006,7.414-12.515L24.433,259.232z M16.941,287.67h41.834c1.424,7.959,4.948,15.195,9.985,21.113H44.866
-                        C31.604,308.784,20.398,299.84,16.941,287.67z M258.639,351.01v100.289h-21.113V351.01H73.897v100.289H52.784V351.01H15.835v-26.392
-                        h279.753v26.392H258.639z M332.536,451.299h-21.113v-84.454h21.113V451.299z M496.165,451.299h-21.113v-84.454h21.113V451.299z
-                            M311.423,351.01V60.701h184.742V351.01H311.423z"/>
-                    <path d="M332.536,81.814v100.289h142.515V81.814H332.536z M459.217,166.268H348.371V97.649h110.845V166.268z"/>
-                    <rect x="108.206" y="197.938" style="fill:#FFFFFF;" width="95.01" height="15.835"/>
-                    </svg>
-
-                </div>
-
-                <div class="w-full p-4 md:p-6">
-                    <span class="block mb-1 text-xs font-semibold uppercase text-emerald-600">
-                        Generátor
-                    </span>
-                    <a class="font-semibold text-gray-800 truncate text-md md:text-xl dark:text-neutral-300 dark:hover:text-white" href="./3000mainGen/">
-                        3000 Main Generátor
-                    </a>
-                    <p class="mt-3 text-xs text-gray-500 md:text-sm dark:text-neutral-500">
-                        3000+-os feladatokhoz, Main függvény Generátor
-                    </p>
-                    <div class="flex flex-wrap gap-2 my-2 max-md:hidden">
-                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">HTML</span>
-                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500">tailwind/Preline</span>
-                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-800/30 dark:text-yellow-500">JavaScript</span>
-                    </div>
-                    <div class="inline-flex flex-wrap gap-2 max-md:hidden">
-                        <span class="inline-flex items-center px-2 py-1 text-xs font-medium text-teal-800 bg-teal-100 rounded-full gap-x-1 dark:bg-teal-500/10 dark:text-teal-500">
-                            <span class="relative flex w-2 h-2">
-                                <span class="absolute inline-flex w-full h-full bg-teal-800 rounded-full opacity-75 dark:bg-teal-500 animate-ping"></span>
-                                <span class="relative inline-flex w-2 h-2 bg-teal-900 rounded-full dark:bg-teal-600"></span>
+                    <!-- End Card -->
+                    <!-- Card -->
+                    <div class="flex h-full bg-white border border-gray-200 shadow-sm md:flex-col group rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+                        <div class="flex flex-col items-center justify-center min-w-16 bg-emerald-600 md:h-52 max-md:rounded-l-xl md:rounded-t-xl">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    viewBox="0 0 512 512" xml:space="preserve" class="w-12 md:w-32">
+                            <rect x="134.598" y="95.01" style="fill:#A58763;" width="42.227" height="73.897"/>
+                            <polygon style="fill:#A26234;" points="240.165,95.01 240.165,242.804 224.33,242.804 102.928,242.804 71.258,242.804 71.258,95.01
+                                134.598,95.01 134.598,168.907 176.825,168.907 176.825,95.01 "/>
+                            <g>
+                                <path style="fill:#A4A9AB;" d="M303.505,279.753v36.948H224.33c20.374,0,36.948-16.574,36.948-36.948H303.505z"/>
+                                <path style="fill:#A4A9AB;" d="M224.33,316.701H102.928c20.374,0,36.948-16.574,36.948-36.948h47.505
+                                    C187.381,300.127,203.955,316.701,224.33,316.701z"/>
+                                <path style="fill:#A4A9AB;" d="M102.928,316.701H44.866c-20.374,0-36.948-16.574-36.948-36.948h58.062
+                                    C65.979,300.127,82.553,316.701,102.928,316.701z"/>
+                                <path style="fill:#A4A9AB;" d="M240.165,242.804h63.34v36.948h-42.227c0-20.374-16.574-36.948-36.948-36.948H240.165z"/>
+                                <path style="fill:#A4A9AB;" d="M102.928,242.804H224.33c-20.374,0-36.948,16.574-36.948,36.948h-47.505
+                                    C139.876,259.378,123.302,242.804,102.928,242.804z"/>
+                                <path style="fill:#A4A9AB;" d="M71.258,242.804h31.67c-20.374,0-36.948,16.574-36.948,36.948H7.918
+                                    c0-10.134,4.117-19.424,10.873-26.075c6.651-6.756,15.941-10.873,26.075-10.873H71.258z"/>
+                            </g>
+                            <g>
+                                <path style="fill:#7E8488;" d="M224.33,316.701c-20.374,0-36.948-16.574-36.948-36.948s16.574-36.948,36.948-36.948
+                                    s36.948,16.574,36.948,36.948C261.278,300.127,244.704,316.701,224.33,316.701z"/>
+                                <path style="fill:#7E8488;" d="M102.928,242.804c20.374,0,36.948,16.574,36.948,36.948c0,20.374-16.574,36.948-36.948,36.948
+                                    s-36.948-16.574-36.948-36.948S82.553,242.804,102.928,242.804z"/>
+                            </g>
+                            <g>
+                                <rect x="467.134" y="358.928" style="fill:#595E62;" width="36.948" height="100.289"/>
+                                <rect x="303.505" y="358.928" style="fill:#595E62;" width="36.948" height="100.289"/>
+                                <polygon style="fill:#595E62;" points="303.505,316.701 303.505,358.928 266.557,358.928 266.557,459.217 229.608,459.217
+                                    229.608,358.928 81.814,358.928 81.814,459.217 44.866,459.217 44.866,358.928 7.918,358.928 7.918,316.701 44.866,316.701
+                                    102.928,316.701 224.33,316.701 	"/>
+                            </g>
+                            <rect x="340.454" y="89.732" style="fill:#00ABD5;" width="126.68" height="84.454"/>
+                            <path style="fill:#AFB6BB;" d="M303.505,52.784v306.144h200.577V52.784H303.505z M340.454,89.732h126.68v84.454h-126.68V89.732z"/>
+                            <polygon style="fill:#9DA4A9;" points="340.454,174.186 340.454,89.732 403.794,89.732 403.794,52.784 303.505,52.784
+                                303.505,242.804 303.505,279.753 303.505,316.701 303.505,358.928 340.454,358.928 403.794,358.928 403.794,174.186 "/>
+                            <path style="fill:#0092CA;" d="M370.789,89.732h-30.336v84.454h126.68v-8.174C426.45,153.107,392.408,125.609,370.789,89.732z"/>
+                            <polygon style="fill:#865128;" points="134.598,168.907 134.598,95.01 71.258,95.01 71.258,242.804 102.928,242.804
+                                155.711,242.804 155.711,168.907 "/>
+                            <g>
+                                <rect x="92.371" y="271.835" style="fill:#FFFFFF;" width="21.113" height="15.835"/>
+                                <rect x="213.773" y="271.835" style="fill:#FFFFFF;" width="21.113" height="15.835"/>
+                                <polygon style="fill:#FFFFFF;" points="380.041,147.794 364.206,147.794 364.206,113.485 398.515,113.485 398.515,129.32
+                                    380.041,129.32 	"/>
+                                <rect x="329.897" y="203.217" style="fill:#FFFFFF;" width="147.794" height="15.835"/>
+                                <rect x="329.897" y="234.887" style="fill:#FFFFFF;" width="21.113" height="15.835"/>
+                                <rect x="366.845" y="234.887" style="fill:#FFFFFF;" width="21.113" height="15.835"/>
+                                <rect x="456.577" y="234.887" style="fill:#FFFFFF;" width="21.113" height="15.835"/>
+                                <rect x="329.897" y="308.784" style="fill:#FFFFFF;" width="147.794" height="15.835"/>
+                            </g>
+                            <path d="M295.588,44.866v190.021h-47.505V87.093H63.34v147.794H44.866c-12.029,0-23.274,4.684-31.673,13.192
+                                C4.685,256.475,0,267.722,0,279.753c0,11.064,4.035,21.2,10.698,29.031H0v58.062h36.948v100.289h52.784V366.845h131.959v100.289
+                                h52.784V366.845h21.113v100.289h52.784V366.845h110.845v100.289H512V44.866H295.588z M258.498,308.784
+                                c5.037-5.918,8.561-13.155,9.985-21.113h27.105v21.113H258.498z M73.897,279.753c0-16.007,13.023-29.031,29.031-29.031
+                                s29.031,13.024,29.031,29.031c0,16.007-13.023,29.031-29.031,29.031S73.897,295.76,73.897,279.753z M180.178,271.835H147.08
+                                c-1.424-7.959-4.948-15.195-9.985-21.113h53.067C185.127,256.64,181.602,263.876,180.178,271.835z M147.08,287.67h33.097
+                                c1.424,7.959,4.948,15.195,9.985,21.113h-53.067C142.131,302.865,145.656,295.629,147.08,287.67z M195.299,279.753
+                                c0-16.007,13.023-29.031,29.031-29.031s29.031,13.024,29.031,29.031c0,16.007-13.023,29.031-29.031,29.031
+                                S195.299,295.76,195.299,279.753z M295.588,271.835h-27.105c-1.424-7.959-4.948-15.195-9.985-21.113h37.09V271.835z
+                                    M142.515,102.928h26.392v58.062h-26.392V102.928z M79.175,102.928h47.505v73.897h58.062v-73.897h47.505v131.959H79.175V102.928z
+                                    M24.433,259.232c5.403-5.487,12.66-8.511,20.432-8.511H63.34h5.42c-5.037,5.918-8.561,13.155-9.985,21.113H16.931
+                                c1.331-4.709,3.848-9.006,7.414-12.515L24.433,259.232z M16.941,287.67h41.834c1.424,7.959,4.948,15.195,9.985,21.113H44.866
+                                C31.604,308.784,20.398,299.84,16.941,287.67z M258.639,351.01v100.289h-21.113V351.01H73.897v100.289H52.784V351.01H15.835v-26.392
+                                h279.753v26.392H258.639z M332.536,451.299h-21.113v-84.454h21.113V451.299z M496.165,451.299h-21.113v-84.454h21.113V451.299z
+                                    M311.423,351.01V60.701h184.742V351.01H311.423z"/>
+                            <path d="M332.536,81.814v100.289h142.515V81.814H332.536z M459.217,166.268H348.371V97.649h110.845V166.268z"/>
+                            <rect x="108.206" y="197.938" style="fill:#FFFFFF;" width="95.01" height="15.835"/>
+                            </svg>
+                        </div>
+                        <div class="w-full p-4 md:p-6">
+                            <span class="block mb-1 text-xs font-semibold uppercase text-emerald-600">
+                                Generátor
                             </span>
-                            <span class="">Online</span>
-                        </span>
+                            <a class="font-semibold text-gray-800 truncate text-md md:text-xl dark:text-neutral-300 dark:hover:text-white" href="./3000mainGen/">
+                                3000 Main Generátor
+                            </a>
+                            <p class="mt-3 text-xs text-gray-500 md:text-sm dark:text-neutral-500">
+                                3000+-os feladatokhoz, Main függvény Generátor
+                            </p>
+                            <div class="flex flex-wrap gap-2 my-2 max-md:hidden">
+                                <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500"><i class="devicon-html5-plain"></i>HTML</span>
+                                <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-cyan-100 text-cyan-800 dark:bg-cyan-800/30 dark:text-cyan-500"><i class="devicon-tailwindcss-original"></i>tailwind/Preline</span>
+                                <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-800/30 dark:text-yellow-500"><i class="devicon-javascript-plain"></i>JavaScript</span>
+                            </div>
+                            <div class="inline-flex flex-wrap gap-2 max-md:hidden">
+                                <span class="inline-flex items-center px-2 py-1 text-xs font-medium text-teal-800 bg-teal-100 rounded-full gap-x-1 dark:bg-teal-500/10 dark:text-teal-500">
+                                    <span class="relative flex w-2 h-2">
+                                        <span class="absolute inline-flex w-full h-full bg-teal-800 rounded-full opacity-75 dark:bg-teal-500 animate-ping"></span>
+                                        <span class="relative inline-flex w-2 h-2 bg-teal-900 rounded-full dark:bg-teal-600"></span>
+                                    </span>
+                                    <span class="">Online</span>
+                                </span>
+                            </div>
+                            <a href="https://3000.botond.eu" class="flex items-center mt-1 text-sm text-gray-500 underline lg:mt-2 gap-x-1 md:text-md dark:text-neutral-500">
+                                További anyagok a 3000-es feladatokhoz
+                                <svg viewBox="0 0 24 24" class="w-6 h-6 md:w-4 md:h-4" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14 5C13.4477 5 13 4.55228 13 4C13 3.44772 13.4477 3 14 3H20C20.5523 3 21 3.44772 21 4V10C21 10.5523 20.5523 11 20 11C19.4477 11 19 10.5523 19 10V6.41421L11.7071 13.7071C11.3166 14.0976 10.6834 14.0976 10.2929 13.7071C9.90237 13.3166 9.90237 12.6834 10.2929 12.2929L17.5858 5H14ZM5 7C4.44772 7 4 7.44772 4 8V19C4 19.5523 4.44772 20 5 20H16C16.5523 20 17 19.5523 17 19V14.4375C17 13.8852 17.4477 13.4375 18 13.4375C18.5523 13.4375 19 13.8852 19 14.4375V19C19 20.6569 17.6569 22 16 22H5C3.34315 22 2 20.6569 2 19V8C2 6.34315 3.34315 5 5 5H9.5625C10.1148 5 10.5625 5.44772 10.5625 6C10.5625 6.55228 10.1148 7 9.5625 7H5Z" fill="currentColor"></path> </g></svg>
+                            </a>
+                        </div>
+                        <!-- Mobile buttons -->
+                        <div class="flex w-1/6 h-full border-l divide-y divide-gray-200 md:hidden justify-self-end flex-colborder-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
+                            <a href="./3000mainGen/" class="inline-flex items-center justify-center w-full h-full px-4 transition-colors bg-white text-emerald-500 dark:bg-neutral-900 font-sm rounded-r-xl hover:text-emerald-400 disabled:opacity-50 disabled:pointer-events-none dark:hover:bg-neutral-800 hover:bg-gray-50">
+                                <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14 5C13.4477 5 13 4.55228 13 4C13 3.44772 13.4477 3 14 3H20C20.5523 3 21 3.44772 21 4V10C21 10.5523 20.5523 11 20 11C19.4477 11 19 10.5523 19 10V6.41421L11.7071 13.7071C11.3166 14.0976 10.6834 14.0976 10.2929 13.7071C9.90237 13.3166 9.90237 12.6834 10.2929 12.2929L17.5858 5H14ZM5 7C4.44772 7 4 7.44772 4 8V19C4 19.5523 4.44772 20 5 20H16C16.5523 20 17 19.5523 17 19V14.4375C17 13.8852 17.4477 13.4375 18 13.4375C18.5523 13.4375 19 13.8852 19 14.4375V19C19 20.6569 17.6569 22 16 22H5C3.34315 22 2 20.6569 2 19V8C2 6.34315 3.34315 5 5 5H9.5625C10.1148 5 10.5625 5.44772 10.5625 6C10.5625 6.55228 10.1148 7 9.5625 7H5Z" fill="currentColor"></path> </g></svg>
+                            </a>
+                        </div>
+                        <!-- Desktop buttons -->
+                        <div class="flex mt-auto border-t border-gray-200 divide-x divide-gray-200 max-md:hidden dark:border-neutral-700 dark:divide-neutral-700">
+                            <a class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white transition-colors shadow-sm bg-emerald-500 gap-x-2 rounded-es-xl hover:bg-emerald-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-emerald-800 dark:text-white dark:hover:bg-emerald-900" href="./3000mainGen">
+                            Megtekintés
+                            </a>
+                            <a class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-gray-800 transition-colors bg-white shadow-sm gap-x-2 rounded-ee-xl hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" href="https://github.com/PstasDev/SpcPort/tree/main/3000mainGen">
+                                <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" width="20" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="currentColor" d="M7 12.923a1 1 0 0 1-.554-.166.983.983 0 0 1-.277-1.373l4-5.94a1 1 0 0 1 1.385-.274.983.983 0 0 1 .277 1.373l-4 5.94a1 1 0 0 1-.833.44zm10.708-3.257l-3 2.97a1.02 1.02 0 0 1-1.42 0 .99.99 0 0 1 0-1.406l2.29-2.267-2.29-2.277a.98.98 0 0 1 0-1.4 1.015 1.015 0 0 1 1.42 0l3 2.97a.99.99 0 0 1 0 1.41zM4.712 11.23a.99.99 0 0 1 0 1.406 1.02 1.02 0 0 1-1.42 0l-3-2.97a.99.99 0 0 1 0-1.406l3-2.97a1.015 1.015 0 0 1 1.42 0 .98.98 0 0 1 0 1.4l-2.29 2.273z"></path> </g></svg>
+                                Forráskód
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <!-- Mobile buttons -->
-                <div class="flex w-1/6 h-full border-l divide-y divide-gray-200 md:hidden justify-self-end flex-colborder-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
-                    <a href="./3000mainGen/" class="inline-flex items-center justify-center w-full h-full px-4 transition-colors bg-white text-emerald-500 dark:bg-neutral-900 font-sm rounded-r-xl hover:text-emerald-400 disabled:opacity-50 disabled:pointer-events-none dark:hover:bg-neutral-800 hover:bg-gray-50">
-                        <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14 5C13.4477 5 13 4.55228 13 4C13 3.44772 13.4477 3 14 3H20C20.5523 3 21 3.44772 21 4V10C21 10.5523 20.5523 11 20 11C19.4477 11 19 10.5523 19 10V6.41421L11.7071 13.7071C11.3166 14.0976 10.6834 14.0976 10.2929 13.7071C9.90237 13.3166 9.90237 12.6834 10.2929 12.2929L17.5858 5H14ZM5 7C4.44772 7 4 7.44772 4 8V19C4 19.5523 4.44772 20 5 20H16C16.5523 20 17 19.5523 17 19V14.4375C17 13.8852 17.4477 13.4375 18 13.4375C18.5523 13.4375 19 13.8852 19 14.4375V19C19 20.6569 17.6569 22 16 22H5C3.34315 22 2 20.6569 2 19V8C2 6.34315 3.34315 5 5 5H9.5625C10.1148 5 10.5625 5.44772 10.5625 6C10.5625 6.55228 10.1148 7 9.5625 7H5Z" fill="currentColor"></path> </g></svg>
-                    </a>
-                </div>
-                <!-- Desktop buttons -->
-                <div class="flex mt-auto border-t border-gray-200 divide-x divide-gray-200 max-md:hidden dark:border-neutral-700 dark:divide-neutral-700">
-                    <a class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white transition-colors shadow-sm bg-emerald-500 gap-x-2 rounded-es-xl hover:bg-emerald-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-emerald-800 dark:text-white dark:hover:bg-emerald-900" href="./3000mainGen">
-                    Megtekintés
-                    </a>
-                    <a class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-gray-800 transition-colors bg-white shadow-sm gap-x-2 rounded-ee-xl hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" href="https://github.com/PstasDev/SpcPort/tree/main/3000mainGen">
-                        <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" width="20" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="currentColor" d="M7 12.923a1 1 0 0 1-.554-.166.983.983 0 0 1-.277-1.373l4-5.94a1 1 0 0 1 1.385-.274.983.983 0 0 1 .277 1.373l-4 5.94a1 1 0 0 1-.833.44zm10.708-3.257l-3 2.97a1.02 1.02 0 0 1-1.42 0 .99.99 0 0 1 0-1.406l2.29-2.267-2.29-2.277a.98.98 0 0 1 0-1.4 1.015 1.015 0 0 1 1.42 0l3 2.97a.99.99 0 0 1 0 1.41zM4.712 11.23a.99.99 0 0 1 0 1.406 1.02 1.02 0 0 1-1.42 0l-3-2.97a.99.99 0 0 1 0-1.406l3-2.97a1.015 1.015 0 0 1 1.42 0 .98.98 0 0 1 0 1.4l-2.29 2.273z"></path> </g></svg>
-                        Forráskód
-                    </a>
-                </div>
-            </div>
-            <!-- End Card -->
-            <!-- Card -->
-            <div class="flex h-full bg-white border border-gray-200 shadow-sm md:flex-col group rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-                <div class="flex flex-col items-center justify-center min-w-16 bg-amber-500 md:h-52 max-md:rounded-l-xl md:rounded-t-xl">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                        viewBox="0 0 512 512" xml:space="preserve" class="w-12 md:w-32">
-                    <g id="bee">
-                        <g>
-                            <polygon style="fill:#FEC738;" points="102,256 77,256 77,282 51,282 51,307 77,307 77,333 102,333 102,358 128,358 128,332.8
-                                128,307.2 128,281.6 128,256 128,230 102,230 		"/>
-                            <polygon style="fill:#FEC738;" points="179,256 154,256 154,281.6 154,307.2 154,332.8 154,358.4 154,384 179.2,384 205,384
-                                205,358.4 205,332.8 205,307.2 205,282 179,282 		"/>
-                            <polygon style="fill:#FEC738;" points="333,282 333,256 333,230 307,230 307,256 307,281.6 307,307.2 307,332.8 307,358 333,358
-                                333,332.8 333,307 358,307 358,282 		"/>
-                            <polygon style="fill:#FEC738;" points="230,307 230,332.8 230,358.4 230,384 256,384 282,384 282,358.4 282,332.8 282,307
-                                256,307 		"/>
-                        </g>
-                        <polygon style="fill:#BFC0C0;" points="307,154 307,128 307,102 281.6,102 256,102 230,102 230,128 256,128 256,154 282,154
-                            282,179 307,179 307,204.8 307,230 333,230 333,204.8 333,179.2 333,154 	"/>
-                        <rect x="128" y="230" style="fill:#070000;" width="26" height="25.68"/>
-                        <rect x="128" y="255.68" style="fill:#070000;" width="26" height="25.68"/>
-                        <polygon style="fill:#FFFFFF;" points="384,230 384,256 384,282 410,282 410,256 410,230 	"/>
-                        <rect x="128" y="281.36" style="fill:#070000;" width="26" height="25.68"/>
-                        <rect x="204.8" y="281.6" style="fill:#070000;" width="25.6" height="25.6"/>
-                        <polygon style="fill:#A0A09C;" points="282,179 282,154 256,154 256,128 230.4,128 205,128 205,102 179.2,102 153.6,102 128,102
-                            128,128 102,128 102,153.6 102,179 128,179 128,204.8 128,230 154,230 154,256 179,256 179,282 204.8,282 230,282 230,307 256,307
-                            282,307 282,282 307,282 307,256 307,230.4 307,204.8 307,179 	"/>
-                        <rect x="281.6" y="281.6" style="fill:#070000;" width="25.6" height="25.6"/>
-                        <rect x="128" y="307.04" style="fill:#070000;" width="26" height="25.68"/>
-                        <rect x="204.8" y="307.2" style="fill:#070000;" width="25.6" height="25.6"/>
-                        <rect x="281.6" y="307.2" style="fill:#070000;" width="25.6" height="25.6"/>
-                        <rect x="128" y="332.72" style="fill:#070000;" width="26" height="25.68"/>
-                        <rect x="204.8" y="332.8" style="fill:#070000;" width="25.6" height="25.6"/>
-                        <rect x="281.6" y="332.8" style="fill:#070000;" width="25.6" height="25.6"/>
-                        <g>
-                            <polygon style="fill:#070000;" points="435,281.6 435,256 435,230 410,230 410,256 410,282 384,282 384,256 384,230 410,230
-                                410,205 384,205 358.4,205 333,205 333,230.4 333,256 333,282 358,282 358,307 384,307 384,333 409.6,333 435,333 435,307.2 		"/>
-                            <rect x="435" y="333" style="fill:#070000;" width="26" height="25"/>
-                        </g>
-                        <rect x="204.8" y="358.4" style="fill:#070000;" width="25.6" height="25.6"/>
-                        <rect x="281.6" y="358.4" style="fill:#070000;" width="25.6" height="25.6"/>
-                        <g>
-                            <rect x="102" y="358" style="fill:#9F7424;" width="26" height="26"/>
-                            <rect x="77" y="384" style="fill:#9F7424;" width="25" height="26"/>
-                            <rect x="179" y="384" style="fill:#9F7424;" width="26" height="26"/>
-                            <rect x="256" y="384" style="fill:#9F7424;" width="26" height="26"/>
-                            <rect x="154" y="410" style="fill:#9F7424;" width="25" height="25"/>
-                            <rect x="230" y="410" style="fill:#9F7424;" width="26" height="25"/>
-                        </g>
-                    </g>
-                    <g id="Layer_1">
-                    </g>
-                    </svg>
-                </div>
-                <div class="w-full p-4 md:p-6">
-                    <span class="block mb-1 text-xs font-semibold uppercase text-amber-500">
-                        NKP mintafeladat
-                    </span>
-                    <a class="font-semibold text-gray-800 text-md md:text-xl dark:text-neutral-300 dark:hover:text-white" href="./mehek">
-                        Méhek
-                    </a>
-                    <p class="mt-3 text-xs text-gray-500 dark:text-neutral-500 md-text-sm">
-                        Információk méhekről. Emellett NKP oktatófeladat kivitelezése: audio, video tagek.
-                    </p>
-                    <div class="flex flex-wrap gap-2 my-2 max-md:hidden">
-                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">HTML</span>
-                        <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500">CSS</span>
-                    </div>
-                    <div class="inline-flex flex-wrap gap-2 max-md:hidden">
-                        <span class="inline-flex items-center px-2 py-1 text-xs font-medium text-teal-800 bg-teal-100 rounded-full gap-x-1 dark:bg-teal-500/10 dark:text-teal-500">
-                            <span class="relative flex w-2 h-2">
-                                <span class="absolute inline-flex w-full h-full bg-teal-800 rounded-full opacity-75 dark:bg-teal-500 animate-ping"></span>
-                                <span class="relative inline-flex w-2 h-2 bg-teal-900 rounded-full dark:bg-teal-600"></span>
+                    <!-- End Card -->
+                    <!-- Card -->
+                    <div class="flex h-full bg-white border border-gray-200 shadow-sm md:flex-col group rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+                        <div class="flex flex-col items-center justify-center min-w-16 bg-amber-500 md:h-52 max-md:rounded-l-xl md:rounded-t-xl">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 512 512" xml:space="preserve" class="w-12 md:w-32">
+                            <g id="bee">
+                                <g>
+                                    <polygon style="fill:#FEC738;" points="102,256 77,256 77,282 51,282 51,307 77,307 77,333 102,333 102,358 128,358 128,332.8
+                                        128,307.2 128,281.6 128,256 128,230 102,230 		"/>
+                                    <polygon style="fill:#FEC738;" points="179,256 154,256 154,281.6 154,307.2 154,332.8 154,358.4 154,384 179.2,384 205,384
+                                        205,358.4 205,332.8 205,307.2 205,282 179,282 		"/>
+                                    <polygon style="fill:#FEC738;" points="333,282 333,256 333,230 307,230 307,256 307,281.6 307,307.2 307,332.8 307,358 333,358
+                                        333,332.8 333,307 358,307 358,282 		"/>
+                                    <polygon style="fill:#FEC738;" points="230,307 230,332.8 230,358.4 230,384 256,384 282,384 282,358.4 282,332.8 282,307
+                                        256,307 		"/>
+                                </g>
+                                <polygon style="fill:#BFC0C0;" points="307,154 307,128 307,102 281.6,102 256,102 230,102 230,128 256,128 256,154 282,154
+                                    282,179 307,179 307,204.8 307,230 333,230 333,204.8 333,179.2 333,154 	"/>
+                                <rect x="128" y="230" style="fill:#070000;" width="26" height="25.68"/>
+                                <rect x="128" y="255.68" style="fill:#070000;" width="26" height="25.68"/>
+                                <polygon style="fill:#FFFFFF;" points="384,230 384,256 384,282 410,282 410,256 410,230 	"/>
+                                <rect x="128" y="281.36" style="fill:#070000;" width="26" height="25.68"/>
+                                <rect x="204.8" y="281.6" style="fill:#070000;" width="25.6" height="25.6"/>
+                                <polygon style="fill:#A0A09C;" points="282,179 282,154 256,154 256,128 230.4,128 205,128 205,102 179.2,102 153.6,102 128,102
+                                    128,128 102,128 102,153.6 102,179 128,179 128,204.8 128,230 154,230 154,256 179,256 179,282 204.8,282 230,282 230,307 256,307
+                                    282,307 282,282 307,282 307,256 307,230.4 307,204.8 307,179 	"/>
+                                <rect x="281.6" y="281.6" style="fill:#070000;" width="25.6" height="25.6"/>
+                                <rect x="128" y="307.04" style="fill:#070000;" width="26" height="25.68"/>
+                                <rect x="204.8" y="307.2" style="fill:#070000;" width="25.6" height="25.6"/>
+                                <rect x="281.6" y="307.2" style="fill:#070000;" width="25.6" height="25.6"/>
+                                <rect x="128" y="332.72" style="fill:#070000;" width="26" height="25.68"/>
+                                <rect x="204.8" y="332.8" style="fill:#070000;" width="25.6" height="25.6"/>
+                                <rect x="281.6" y="332.8" style="fill:#070000;" width="25.6" height="25.6"/>
+                                <g>
+                                    <polygon style="fill:#070000;" points="435,281.6 435,256 435,230 410,230 410,256 410,282 384,282 384,256 384,230 410,230
+                                        410,205 384,205 358.4,205 333,205 333,230.4 333,256 333,282 358,282 358,307 384,307 384,333 409.6,333 435,333 435,307.2 		"/>
+                                    <rect x="435" y="333" style="fill:#070000;" width="26" height="25"/>
+                                </g>
+                                <rect x="204.8" y="358.4" style="fill:#070000;" width="25.6" height="25.6"/>
+                                <rect x="281.6" y="358.4" style="fill:#070000;" width="25.6" height="25.6"/>
+                                <g>
+                                    <rect x="102" y="358" style="fill:#9F7424;" width="26" height="26"/>
+                                    <rect x="77" y="384" style="fill:#9F7424;" width="25" height="26"/>
+                                    <rect x="179" y="384" style="fill:#9F7424;" width="26" height="26"/>
+                                    <rect x="256" y="384" style="fill:#9F7424;" width="26" height="26"/>
+                                    <rect x="154" y="410" style="fill:#9F7424;" width="25" height="25"/>
+                                    <rect x="230" y="410" style="fill:#9F7424;" width="26" height="25"/>
+                                </g>
+                            </g>
+                            <g id="Layer_1">
+                            </g>
+                            </svg>
+                        </div>
+                        <div class="w-full p-4 md:p-6">
+                            <span class="block mb-1 text-xs font-semibold uppercase text-amber-500">
+                                NKP mintafeladat
                             </span>
-                            <span class="">Online</span>
-                        </span>
+                            <a class="font-semibold text-gray-800 text-md md:text-xl dark:text-neutral-300 dark:hover:text-white" href="./mehek">
+                                Méhek
+                            </a>
+                            <p class="mt-3 text-xs text-gray-500 dark:text-neutral-500 md-text-sm">
+                                Információk méhekről. Emellett NKP oktatófeladat kivitelezése: audio, video tagek.
+                            </p>
+                            <div class="flex flex-wrap gap-2 my-2 max-md:hidden">
+                                <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500"><i class="devicon-html5-plain"></i>HTML</span>
+                                <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-cyan-100 text-cyan-800 dark:bg-cyan-800/30 dark:text-cyan-500"><i class="devicon-css3-plain"></i>CSS</span>
+                            </div>
+                            <div class="inline-flex flex-wrap gap-2 max-md:hidden">
+                                <span class="inline-flex items-center px-2 py-1 text-xs font-medium text-teal-800 bg-teal-100 rounded-full gap-x-1 dark:bg-teal-500/10 dark:text-teal-500">
+                                    <span class="relative flex w-2 h-2">
+                                        <span class="absolute inline-flex w-full h-full bg-teal-800 rounded-full opacity-75 dark:bg-teal-500 animate-ping"></span>
+                                        <span class="relative inline-flex w-2 h-2 bg-teal-900 rounded-full dark:bg-teal-600"></span>
+                                    </span>
+                                    <span class="">Online</span>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Mobile buttons -->
+                        <div class="flex w-1/6 h-full border-l divide-y divide-gray-200 md:hidden justify-self-end flex-colborder-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
+                            <a href="./mehek/" class="inline-flex items-center justify-center w-full h-full px-4 transition-colors bg-white text-amber-500 dark:bg-neutral-900 font-sm rounded-r-xl hover:text-amber-400 disabled:opacity-50 disabled:pointer-events-none dark:hover:bg-neutral-800 hover:bg-gray-50">
+                                <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14 5C13.4477 5 13 4.55228 13 4C13 3.44772 13.4477 3 14 3H20C20.5523 3 21 3.44772 21 4V10C21 10.5523 20.5523 11 20 11C19.4477 11 19 10.5523 19 10V6.41421L11.7071 13.7071C11.3166 14.0976 10.6834 14.0976 10.2929 13.7071C9.90237 13.3166 9.90237 12.6834 10.2929 12.2929L17.5858 5H14ZM5 7C4.44772 7 4 7.44772 4 8V19C4 19.5523 4.44772 20 5 20H16C16.5523 20 17 19.5523 17 19V14.4375C17 13.8852 17.4477 13.4375 18 13.4375C18.5523 13.4375 19 13.8852 19 14.4375V19C19 20.6569 17.6569 22 16 22H5C3.34315 22 2 20.6569 2 19V8C2 6.34315 3.34315 5 5 5H9.5625C10.1148 5 10.5625 5.44772 10.5625 6C10.5625 6.55228 10.1148 7 9.5625 7H5Z" fill="currentColor"></path> </g></svg>
+                            </a>
+                        </div>
+                        <!-- Desktop buttons -->
+                        <div class="flex mt-auto border-t border-gray-200 divide-x divide-gray-200 max-md:hidden dark:border-neutral-700 dark:divide-neutral-700">
+                            <a class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white transition-colors shadow-sm bg-amber-500 gap-x-2 rounded-es-xl hover:bg-amber-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-amber-800 dark:text-white dark:hover:bg-amber-900" href="./mehek">
+                            Megtekintés
+                            </a>
+                            <a class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-gray-800 transition-colors bg-white shadow-sm gap-x-2 rounded-ee-xl hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" href="https://www.nkp.hu/tankonyv/digitalis-kultura-okosgyujtemeny-9-12/lecke_05_002#section-75254515156" target="_blank">
+                            Minta
+                            </a>
+                            <a class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-gray-800 transition-colors bg-white shadow-sm gap-x-2 rounded-ee-xl hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" href="https://github.com/PstasDev/SpcPort/tree/main/mehek">
+                                <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" width="20" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="currentColor" d="M7 12.923a1 1 0 0 1-.554-.166.983.983 0 0 1-.277-1.373l4-5.94a1 1 0 0 1 1.385-.274.983.983 0 0 1 .277 1.373l-4 5.94a1 1 0 0 1-.833.44zm10.708-3.257l-3 2.97a1.02 1.02 0 0 1-1.42 0 .99.99 0 0 1 0-1.406l2.29-2.267-2.29-2.277a.98.98 0 0 1 0-1.4 1.015 1.015 0 0 1 1.42 0l3 2.97a.99.99 0 0 1 0 1.41zM4.712 11.23a.99.99 0 0 1 0 1.406 1.02 1.02 0 0 1-1.42 0l-3-2.97a.99.99 0 0 1 0-1.406l3-2.97a1.015 1.015 0 0 1 1.42 0 .98.98 0 0 1 0 1.4l-2.29 2.273z"></path> </g></svg>
+                                Forráskód
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+                </div>
+                <!-- End Grid -->
+            </div>
+        </section>
+        <!-- End Card Blog -->
+        <!-- Features -->
+        <section class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+            <!-- Grid -->
+            <div class="grid items-center gap-6 lg:grid-cols-12 lg:gap-12">
+                <div class="lg:col-span-4">
+                    <!-- Stats -->
+                    <div class="lg:pe-6 xl:pe-12">
+                        <p class="text-6xl font-bold leading-10 text-cyan-600">
+                            4<span class="ml-2 text-2xl">projekt</span>
+                            <span class="ms-1 inline-flex items-center gap-x-1 bg-green-200 font-medium text-green-800 text-xs leading-4 rounded-full py-0.5 px-2 dark:bg-green-800 dark:text-green-300">
+                                2 új
+                            </span>
+                        </p>
+                        <p class="mt-2 text-gray-500 sm:mt-3 dark:text-neutral-500">érhető el az oldalon</p>
+                    </div>
+                    <!-- End Stats -->
+                </div>
+                <!-- End Col -->
+                <div class="relative lg:col-span-8 lg:before:absolute lg:before:top-0 lg:before:-start-12 lg:before:w-px lg:before:h-full lg:before:bg-gray-200 lg:before:dark:bg-neutral-700">
+                    <div class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-3 sm:gap-8">
+                        <!-- Stats -->
+                        <div>
+                            <p class="text-3xl font-semibold text-cyan-600">~6107 <span class="text-sm">sor</span></p>
+                            <p class="mt-1 text-gray-500 dark:text-neutral-500">kód szükséges ennek az oldalnak a működéséhez</p>
+                        </div>
+                        <!-- End Stats -->
+                        <!-- Stats -->
+                        <div>
+                            <p class="text-3xl font-semibold text-cyan-600">2.</p>
+                            <p class="mt-1 text-gray-500 dark:text-neutral-500">Tailwind Component Library amivel próbálkozom ezen az oldalon</p>
+                        </div>
+                        <!-- End Stats -->
+                        <!-- Stats -->
+                        <div>
+                            <p class="text-3xl font-semibold text-cyan-600">most</p>
+                            <p class="mt-1 text-gray-500 dark:text-neutral-500">fogytak el az ötleteim</p>
+                        </div>
+                        <!-- End Stats -->
                     </div>
                 </div>
-                <!-- Mobile buttons -->
-                <div class="flex w-1/6 h-full border-l divide-y divide-gray-200 md:hidden justify-self-end flex-colborder-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
-                    <a href="./mehek/" class="inline-flex items-center justify-center w-full h-full px-4 transition-colors bg-white text-amber-500 dark:bg-neutral-900 font-sm rounded-r-xl hover:text-amber-400 disabled:opacity-50 disabled:pointer-events-none dark:hover:bg-neutral-800 hover:bg-gray-50">
-                        <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M14 5C13.4477 5 13 4.55228 13 4C13 3.44772 13.4477 3 14 3H20C20.5523 3 21 3.44772 21 4V10C21 10.5523 20.5523 11 20 11C19.4477 11 19 10.5523 19 10V6.41421L11.7071 13.7071C11.3166 14.0976 10.6834 14.0976 10.2929 13.7071C9.90237 13.3166 9.90237 12.6834 10.2929 12.2929L17.5858 5H14ZM5 7C4.44772 7 4 7.44772 4 8V19C4 19.5523 4.44772 20 5 20H16C16.5523 20 17 19.5523 17 19V14.4375C17 13.8852 17.4477 13.4375 18 13.4375C18.5523 13.4375 19 13.8852 19 14.4375V19C19 20.6569 17.6569 22 16 22H5C3.34315 22 2 20.6569 2 19V8C2 6.34315 3.34315 5 5 5H9.5625C10.1148 5 10.5625 5.44772 10.5625 6C10.5625 6.55228 10.1148 7 9.5625 7H5Z" fill="currentColor"></path> </g></svg>
-                    </a>
-                </div>
-                <!-- Desktop buttons -->
-                <div class="flex mt-auto border-t border-gray-200 divide-x divide-gray-200 max-md:hidden dark:border-neutral-700 dark:divide-neutral-700">
-                    <a class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white transition-colors shadow-sm bg-amber-500 gap-x-2 rounded-es-xl hover:bg-amber-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-amber-800 dark:text-white dark:hover:bg-amber-900" href="./mehek">
-                    Megtekintés
-                    </a>
-                    <a class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-gray-800 transition-colors bg-white shadow-sm gap-x-2 rounded-ee-xl hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" href="https://www.nkp.hu/tankonyv/digitalis-kultura-okosgyujtemeny-9-12/lecke_05_002#section-75254515156" target="_blank">
-                    Minta
-                    </a>
-                    <a class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-gray-800 transition-colors bg-white shadow-sm gap-x-2 rounded-ee-xl hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800" href="https://github.com/PstasDev/SpcPort/tree/main/mehek">
-                        <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" width="20" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="currentColor" d="M7 12.923a1 1 0 0 1-.554-.166.983.983 0 0 1-.277-1.373l4-5.94a1 1 0 0 1 1.385-.274.983.983 0 0 1 .277 1.373l-4 5.94a1 1 0 0 1-.833.44zm10.708-3.257l-3 2.97a1.02 1.02 0 0 1-1.42 0 .99.99 0 0 1 0-1.406l2.29-2.267-2.29-2.277a.98.98 0 0 1 0-1.4 1.015 1.015 0 0 1 1.42 0l3 2.97a.99.99 0 0 1 0 1.41zM4.712 11.23a.99.99 0 0 1 0 1.406 1.02 1.02 0 0 1-1.42 0l-3-2.97a.99.99 0 0 1 0-1.406l3-2.97a1.015 1.015 0 0 1 1.42 0 .98.98 0 0 1 0 1.4l-2.29 2.273z"></path> </g></svg>
-                        Forráskód
-                    </a>
-                </div>
+                <!-- End Col -->
             </div>
-            <!-- End Card -->
-        </div>
-        <!-- End Grid -->
-    </div>
-    <!-- End Card Blog -->
+            <!-- End Grid -->
+        </section>
+        <!-- End Features -->
 
-    <!-- Features -->
-    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-        <!-- Grid -->
-        <div class="grid items-center gap-6 lg:grid-cols-12 lg:gap-12">
-            <div class="lg:col-span-4">
-                <!-- Stats -->
-                <div class="lg:pe-6 xl:pe-12">
-                    <p class="text-6xl font-bold leading-10 text-blue-600">
-                        4<span class="ml-2 text-2xl">projekt</span>
-                        <span class="ms-1 inline-flex items-center gap-x-1 bg-green-200 font-medium text-green-800 text-xs leading-4 rounded-full py-0.5 px-2 dark:bg-green-800 dark:text-green-300">
-                            2 új
-                        </span>
+        <!-- Hero -->
+        <section class="relative bg-gradient-to-bl from-cyan-100 via-transparent dark:from-cyan-950 dark:via-transparent">
+            <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+            <!-- Grid -->
+            <div class="grid items-center gap-8 md:grid-cols-2 lg:gap-12">
+                <div>
+                <p class="inline-block text-sm font-medium text-transparent bg-clip-text bg-gradient-to-l from-cyan-600 to-violet-500 dark:from-cyan-400 dark:to-violet-400">
+                    Az egyetlen form az oldalon
+                </p>
+        
+                <!-- Title -->
+                <div class="max-w-2xl mt-4 md:mb-12">
+                    <h1 class="mb-4 text-4xl font-semibold text-gray-800 lg:text-5xl dark:text-neutral-200">
+                    Itt egy form, ami <span class="text-red-500">NEM</span> fog feliratkoztatni semmilyen hírlevélre
+                    </h1>
+                    <p class="text-gray-600 dark:text-neutral-400">
+                    De én kipipálhatom a formot mint követelmény.
                     </p>
-                    <p class="mt-2 text-gray-500 sm:mt-3 dark:text-neutral-500">érhető el az oldalon</p>
                 </div>
-                <!-- End Stats -->
-            </div>
-            <!-- End Col -->
-            <div class="relative lg:col-span-8 lg:before:absolute lg:before:top-0 lg:before:-start-12 lg:before:w-px lg:before:h-full lg:before:bg-gray-200 lg:before:dark:bg-neutral-700">
-                <div class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-3 sm:gap-8">
-                    <!-- Stats -->
-                    <div>
-                        <p class="text-3xl font-semibold text-blue-600">~4512 <span class="text-sm">sor</span></p>
-                        <p class="mt-1 text-gray-500 dark:text-neutral-500">kód szükséges ennek az oldalnak a működéséhez</p>
+                <!-- End Title -->
+        
+                <!-- Blockquote -->
+                <blockquote class="relative hidden max-w-sm md:block">
+                    <svg class="absolute top-0 text-gray-200 transform -translate-x-6 -translate-y-8 start-0 size-16 dark:text-neutral-800" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M7.39762 10.3C7.39762 11.0733 7.14888 11.7 6.6514 12.18C6.15392 12.6333 5.52552 12.86 4.76621 12.86C3.84979 12.86 3.09047 12.5533 2.48825 11.94C1.91222 11.3266 1.62421 10.4467 1.62421 9.29999C1.62421 8.07332 1.96459 6.87332 2.64535 5.69999C3.35231 4.49999 4.33418 3.55332 5.59098 2.85999L6.4943 4.25999C5.81354 4.73999 5.26369 5.27332 4.84476 5.85999C4.45201 6.44666 4.19017 7.12666 4.05926 7.89999C4.29491 7.79332 4.56983 7.73999 4.88403 7.73999C5.61716 7.73999 6.21938 7.97999 6.69067 8.45999C7.16197 8.93999 7.39762 9.55333 7.39762 10.3ZM14.6242 10.3C14.6242 11.0733 14.3755 11.7 13.878 12.18C13.3805 12.6333 12.7521 12.86 11.9928 12.86C11.0764 12.86 10.3171 12.5533 9.71484 11.94C9.13881 11.3266 8.85079 10.4467 8.85079 9.29999C8.85079 8.07332 9.19117 6.87332 9.87194 5.69999C10.5789 4.49999 11.5608 3.55332 12.8176 2.85999L13.7209 4.25999C13.0401 4.73999 12.4903 5.27332 12.0713 5.85999C11.6786 6.44666 11.4168 7.12666 11.2858 7.89999C11.5215 7.79332 11.7964 7.73999 12.1106 7.73999C12.8437 7.73999 13.446 7.97999 13.9173 8.45999C14.3886 8.93999 14.6242 9.55333 14.6242 10.3Z" fill="currentColor"/>
+                    </svg>
+        
+                    <div class="relative z-10">
+                    <p class="text-xl italic text-gray-800 dark:text-white">
+                        Hihetelenül nem érkeznek meg a nem létező levelek.
+                    </p>
                     </div>
-                    <!-- End Stats -->
-                    <!-- Stats -->
-                    <div>
-                        <p class="text-3xl font-semibold text-blue-600">2.</p>
-                        <p class="mt-1 text-gray-500 dark:text-neutral-500">Tailwind Component Library amivel próbálkozom ezen az oldalon</p>
+        
+                    <footer class="mt-3">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                        <img class="rounded-full size-8" src="https://hips.hearstapps.com/hmg-prod/images/apple-ceo-steve-jobs-speaks-during-an-apple-special-event-news-photo-1683661736.jpg?crop=0.800xw:0.563xh;0.0657xw,0.0147xh&resize=1200:*" alt="Image Description">
+                        </div>
+                        <div class="grow ms-4">
+                        <div class="font-semibold text-gray-800 dark:text-neutral-200">Steve Jobs</div>
+                        <div class="text-xs text-gray-500 dark:text-neutral-500">Ex -CEO | Apple (nem kapja meg a leveleket mert meghalt)</div>
+                        </div>
                     </div>
-                    <!-- End Stats -->
-                    <!-- Stats -->
-                    <div>
-                        <p class="text-3xl font-semibold text-blue-600">most</p>
-                        <p class="mt-1 text-gray-500 dark:text-neutral-500">fogytak el az ötleteim</p>
-                    </div>
-                    <!-- End Stats -->
+                    </footer>
+                </blockquote>
+                <!-- End Blockquote -->
                 </div>
-            </div>
-            <!-- End Col -->
-        </div>
-        <!-- End Grid -->
-    </div>
-    <!-- End Features -->
+                <!-- End Col -->
+        
+                <div>
+                <!-- Form -->
+                <form action="/igazatmondtam">
+                    <div class="lg:max-w-lg lg:mx-auto lg:me-0 ms-auto">
+                    <!-- Card -->
+                    <div class="flex flex-col p-4 bg-white shadow-lg sm:p-7 rounded-2xl dark:bg-neutral-900">
+                        <div class="text-center">
+                        <h1 class="block text-2xl font-bold text-gray-800 dark:text-white">Iratkozz fel valami hírlevélre</h1>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-neutral-400">
+                            Iratkozz fel, hogy meglehessen a form követelményem
+                        </p>
+                        </div>
+        
+                        <div class="mt-5">
+        
+                        <!-- Grid -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Input Group -->
+                            <div>
+                            <!-- Floating Input -->
+                            <div class="relative">
+                                <input type="text" id="hs-hero-signup-form-floating-input-first-name" class="peer p-4 block w-full border-gray-200 rounded-lg text-sm placeholder:text-transparent focus:border-cyan-500 focus:ring-cyan-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600
+                                focus:pt-6
+                                focus:pb-2
+                                [&:not(:placeholder-shown)]:pt-6
+                                [&:not(:placeholder-shown)]:pb-2
+                                autofill:pt-6
+                                autofill:pb-2" placeholder="John">
+                                <label for="hs-hero-signup-form-floating-input-first-name" maxlength="50" class="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent origin-[0_0] dark:text-white peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                                peer-focus:scale-90
+                                peer-focus:translate-x-0.5
+                                peer-focus:-translate-y-1.5
+                                peer-focus:text-gray-500 dark:peer-focus:text-neutral-500
+                                peer-[:not(:placeholder-shown)]:scale-90
+                                peer-[:not(:placeholder-shown)]:translate-x-0.5
+                                peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                                peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Vezetéknév</label>
+                            </div>
+                            <!-- End Floating Input -->
+                            </div>
+                            <!-- End Input Group -->
+        
+                            <!-- Input Group -->
+                            <div>
+                            <!-- Floating Input -->
+                            <div class="relative">
+                                <input type="text" id="hs-hero-signup-form-floating-input-last-name" maxlength="50" class="peer p-4 block w-full border-gray-200 rounded-lg text-sm placeholder:text-transparent focus:border-cyan-500 focus:ring-cyan-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600
+                                focus:pt-6
+                                focus:pb-2
+                                [&:not(:placeholder-shown)]:pt-6
+                                [&:not(:placeholder-shown)]:pb-2
+                                autofill:pt-6
+                                autofill:pb-2" placeholder="Doe">
+                                <label for="hs-hero-signup-form-floating-input-last-name" class="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent origin-[0_0] dark:text-white peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                                peer-focus:scale-90
+                                peer-focus:translate-x-0.5
+                                peer-focus:-translate-y-1.5
+                                peer-focus:text-gray-500 dark:peer-focus:text-neutral-500
+                                peer-[:not(:placeholder-shown)]:scale-90
+                                peer-[:not(:placeholder-shown)]:translate-x-0.5
+                                peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                                peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Keresztnév</label>
+                            </div>
+                            <!-- End Floating Input -->
+                            </div>
+                            <!-- End Input Group -->
+        
+                            <!-- Input Group -->
+                            <div class="col-span-2">
+                            <!-- Floating Input -->
+                            <div class="relative">
+                                <input type="email" maxlength="500" id="hs-hero-signup-form-floating-input-email" class="peer p-4 block w-full border-gray-200 rounded-lg text-sm placeholder:text-transparent focus:border-cyan-500 focus:ring-cyan-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:focus:ring-neutral-600
+                                focus:pt-6
+                                focus:pb-2
+                                [&:not(:placeholder-shown)]:pt-6
+                                [&:not(:placeholder-shown)]:pb-2
+                                autofill:pt-6
+                                autofill:pb-2" placeholder="you@email.com">
+                                <label for="hs-hero-signup-form-floating-input-email" class="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent origin-[0_0] dark:text-white peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                                peer-focus:scale-90
+                                peer-focus:translate-x-0.5
+                                peer-focus:-translate-y-1.5
+                                peer-focus:text-gray-500 dark:peer-focus:text-neutral-500
+                                peer-[:not(:placeholder-shown)]:scale-90
+                                peer-[:not(:placeholder-shown)]:translate-x-0.5
+                                peer-[:not(:placeholder-shown)]:-translate-y-1.5
+                                peer-[:not(:placeholder-shown)]:text-gray-500 dark:peer-[:not(:placeholder-shown)]:text-neutral-500 dark:text-neutral-500">Email</label>
+                            </div>
+                            <!-- End Floating Input -->
+                            </div>
+                            <!-- End Input Group -->
+                        </div>
+                        <!-- End Grid -->
+        
+                        <!-- Checkbox -->
+                        <div class="flex items-center mt-5">
+                            <div class="flex">
+                            <input id="remember-me" name="remember-me" type="checkbox" class="shrink-0 mt-0.5 border-gray-200 rounded text-cyan-600 focus:ring-cyan-500 dark:bg-neutral-900 dark:border-neutral-700 dark:checked:bg-cyan-500 dark:checked:border-cyan-500 dark:focus:ring-offset-gray-800">
+                            </div>
+                            <div class="ms-3">
+                            <label for="remember-me" class="text-sm dark:text-white">Elfogadom a <span class="font-medium text-cyan-600 decoration-2 hover:underline dark:text-cyan-500">nincs backend - nem kezelünk adatokat tájékozatót</span>.</label>
+                            </div>
+                        </div>
+                        <!-- End Checkbox -->
+        
+                        <div class="flex">
+                            <input type="radio" name="hs-default-radio" class="shrink-0 mt-0.5 border-gray-200 rounded-full text-cyan-600 focus:ring-cyan-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-cyan-500 dark:checked:border-cyan-500 dark:focus:ring-offset-gray-800" id="hs-default-radio">
+                            <label for="hs-default-radio" class="text-sm text-gray-500 ms-2 dark:text-neutral-400">Elhiszem, hogy nem kapok leveleket</label>
+                          </div>
+                          
+                          <div class="flex">
+                            <input type="radio" name="hs-default-radio" class="shrink-0 mt-0.5 border-gray-200 rounded-full text-cyan-600 focus:ring-cyan-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-cyan-500 dark:checked:border-cyan-500 dark:focus:ring-offset-gray-800" id="hs-checked-radio" checked="">
+                            <label for="hs-checked-radio" class="text-sm text-gray-500 ms-2 dark:text-neutral-400">Nem hiszem el, hogy nem kapok leveleket</label>
+                          </div>
 
+                        <div class="mt-5">
+                            <button type="submit" class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-semibold text-white border border-transparent rounded-lg gap-x-2 bg-cyan-600 hover:bg-cyan-700 disabled:opacity-50 disabled:pointer-events-none">Felirakozom</button>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+                    </div>
+                </form>
+                <!-- End Form -->
+                </div>
+                <!-- End Col -->
+            </div>
+            <!-- End Grid -->
+        
+        </section>
+  <!-- End Hero -->
+
+    </main>
 
 
     <!-- ========== FOOTER ========== -->
     <footer class="mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
         <hr class="w-full mb-3 border-slate-500 dark:border-neutral-500">
+        <div class="flex justify-center w-full my-2">
+            <button type="button" class="block px-3 py-2 text-sm font-bold text-center text-white max-md:w-full bg-neutral-900 rounded-xl hs-dark-mode hs-dark-mode-active:hidden" data-hs-theme-click-value="dark">
+                Sötét
+            </button>
+            <button type="button" class="hidden px-3 py-2 text-sm font-bold text-center text-black bg-white max-md:w-full rounded-xl hs-dark-mode hs-dark-mode-active:block" data-hs-theme-click-value="light">
+                Világos
+            </button>
+        </div>
         <!-- Grid -->
         <div class="text-center">
             <div>
@@ -526,7 +1068,7 @@
             </div>
             <!-- End Col -->
             <div class="mt-3">
-                <p class="text-gray-500 dark:text-neutral-500">Balla Botond</p>
+                <p class="text-gray-500 dark:text-neutral-500">Made with 🍲 & ☕☕☕ in Hungary</p>
             </div>
             <!-- Social Brands -->
             <div class="mt-3 space-x-2">
@@ -540,8 +1082,33 @@
         </div>
         <!-- End Grid -->
     </footer>
+    <!-- To the top button -->
+
+    <div class="fixed w-full right-5 bottom-3">
+        <a href="#" type="button" id="tothetop" class="absolute inline-flex items-center px-3 py-3 text-sm font-semibold text-white transition-all border border-transparent rounded-full opacity-0 md:px-4 bottom-3 right-3 bg-neutral-500 gap-x-2 hover:bg-neutral-700 disabled:opacity-50 disabled:pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-from-line"><path d="m18 9-6-6-6 6"/><path d="M12 3v14"/><path d="M5 21h14"/></svg>
+            <span class="max-md:hidden">A lap tetejére</span>
+        </a>
+    </div>
     <!-- ========== END FOOTER ========== -->
 
-    <script src="./node_modules/preline/dist/preline.js"></script>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" class="" preserveAspectRatio="none" viewBox="0 350 1440 200">
+        <g mask="url(&quot;#SvgjsMask1067&quot;)" fill="none">
+            <path d="M1536 560L0 560 L0 394.93Q45.77 368.7, 72 414.47Q144.15 366.63, 192 438.78Q231.13 357.91, 312 397.05Q356.95 370, 384 414.96Q430.61 389.56, 456 436.17Q500.31 360.48, 576 404.78Q604.74 361.51, 648 390.25Q707.65 377.9, 720 437.55Q765.34 362.88, 840 408.22Q906.34 354.56, 960 420.9Q1003.23 392.13, 1032 435.36Q1054.78 386.14, 1104 408.93Q1170.72 355.65, 1224 422.37Q1243.81 370.18, 1296 389.99Q1365.44 339.43, 1416 408.87Q1488.32 361.19, 1536 433.5z" class="fill-cyan-600 dark:fill-cyan-900"></path>
+            <path d="M1464 560L0 560 L0 475.49Q21.1 424.59, 72 445.68Q113.3 414.98, 144 456.27Q192.88 385.15, 264 434.04Q322.47 420.51, 336 478.98Q380.99 403.97, 456 448.95Q523.78 396.73, 576 464.5Q617.69 434.19, 648 475.89Q688.47 396.36, 768 436.83Q841.06 389.89, 888 462.95Q916.94 419.89, 960 448.84Q1037.95 406.79, 1080 484.74Q1116.85 401.59, 1200 438.44Q1274.6 393.04, 1320 467.64Q1365.69 441.33, 1392 487.03Q1409.47 432.5, 1464 449.98z" class="fill-cyan-700 dark:fill-cyan-800"></path>
+            <path d="M1464 560L0 560 L0 500.99Q70.33 451.32, 120 521.65Q185.99 467.64, 240 533.63Q270.14 443.77, 360 473.91Q442.06 435.98, 480 518.04Q547.57 465.61, 600 533.17Q630.5 443.67, 720 474.17Q763.96 446.13, 792 490.1Q846.12 472.22, 864 526.34Q912.7 455.04, 984 503.73Q1029.82 429.55, 1104 475.36Q1184.12 435.48, 1224 515.59Q1274.86 446.45, 1344 497.3Q1418.15 451.46, 1464 525.61z" class="fill-cyan-800 dark:fill-cyan-700"></path>
+            <path d="M1560 560L0 560 L0 516.68Q60.7 457.38, 120 518.08Q194.39 472.47, 240 546.86Q308.53 495.39, 360 563.92Q374.1 506.02, 432 520.12Q507.9 476.02, 552 551.93Q603.44 483.37, 672 534.81Q722.71 513.52, 744 564.23Q770.75 518.99, 816 545.74Q843.66 501.4, 888 529.07Q970.72 491.79, 1008 574.51Q1039.88 486.38, 1128 518.26Q1206.35 476.61, 1248 554.95Q1319.18 506.13, 1368 577.31Q1398.39 535.7, 1440 566.09Q1488.65 494.74, 1560 543.39z" class="fill-cyan-900 dark:fill-cyan-600"></path>
+        </g>
+        <defs>
+            <mask id="SvgjsMask1067">
+                <rect width="1440" height="560" fill="#ffffff"></rect>
+            </mask>
+        </defs>
+    </svg>
+
+    <script src="static/js/preline.js"></script>
+
+    <script src="static/js/onscroll.js"></script>
+
 </body>
 </html>
